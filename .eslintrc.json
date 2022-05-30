@@ -26,7 +26,7 @@
   },
   "rules": {
     "arrow-body-style": "off",
-    "semi": ["warn", "never"],
+    "semi": ["warn", "always"],
     "react/function-component-definition": [
       "warn",
       { "namedComponents": "arrow-function" }
