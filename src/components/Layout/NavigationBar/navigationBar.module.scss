@@ -1,4 +1,39 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
 .navigationBarWrapper {
+  @include flexbox.flexbox(between, center);
   width: 100vw;
-  height: 10rem;
+  height: 3rem;
+  padding: 0 1rem;
+  background-color: colors.$CONTAINER_BG;
+
+  h3 {
+    font-weight: 500;
+
+    b {
+      font-weight: 600;
+    }
+    color: colors.$CONTAINER_TEXT;
+  }
+}
+
+.navigationBarUL {
+  @include flexbox.flexbox(start, center);
+  flex-direction: row;
+
+  & > li {
+    margin: 0 0.5rem;
+
+    svg {
+      height: 1.5rem;
+      fill: colors.$NAV_ICONS;
+    }
+  }
+
+  .isActive {
+    svg {
+      fill: colors.$NAV_ICONS_ACTIVE;
+    }
+  }
 }
