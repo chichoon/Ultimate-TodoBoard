@@ -2,12 +2,11 @@
 @use 'styles/mixins/flexbox';
 
 .navigationBarWrapper {
-  @include flexbox.flexbox(start, start);
+  @include flexbox.flexbox(start, center);
   flex-direction: column;
-  width: 3rem;
+  width: 5rem;
   height: 100vh;
   background-color: colors.$CONTAINER_BG;
-  box-shadow: 0 0 0.5rem colors.$CONTAINER_SHADOW;
 }
 
 .navigationBarUL {
@@ -15,7 +14,7 @@
   flex-direction: column;
 
   & > li {
-    margin: 0 0.5rem;
+    margin: 1rem 0;
 
     svg {
       height: 1.5rem;

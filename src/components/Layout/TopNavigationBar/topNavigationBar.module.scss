@@ -3,20 +3,34 @@
 @use 'styles/mixins/position';
 
 .navigationBarWrapper {
-  @include flexbox.flexbox(between, center);
+  @include flexbox.flexbox(start, center);
   width: 100vw;
   height: 4rem;
-  padding: 0 1rem;
   color: colors.$CONTAINER_TEXT;
   background-color: colors.$CONTAINER_BG;
-  box-shadow: 0 0 0.5rem colors.$CONTAINER_SHADOW;
 
-  h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
+  .navigationBarIcon {
+    @include flexbox.flexbox(center, center);
+    width: 5rem;
+    height: 4rem;
+    background: linear-gradient(colors.$NAV_TITLE_ICON_BG1, colors.$NAV_TITLE_ICON_BG2);
 
-    b {
-      font-weight: 600;
+    svg {
+      fill: colors.$WHITE;
+    }
+  }
+
+  .navigationBarRight {
+    @include flexbox.flexbox(between, center);
+    padding: 0 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      b {
+        font-weight: 600;
+      }
     }
   }
 }

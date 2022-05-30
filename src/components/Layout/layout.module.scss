@@ -1,4 +1,5 @@
 @use 'styles/mixins/position';
+@use 'styles/mixins/flexbox';
 @use 'styles/constants/colors';
 @use 'styles/constants/levels';
 
@@ -14,6 +15,7 @@
     height: 100%;
     filter: blur(5px);
     opacity: 0.5;
+    transform: scale(110%);
     object-fit: cover;
   }
 
@@ -22,5 +24,10 @@
     z-index: levels.$LAYOUT_FRONTDIV;
     width: 100%;
     height: 100%;
+
+    .layoutBottom {
+      @include flexbox.flexbox(between, center);
+      flex-direction: row;
+    }
   }
 }
