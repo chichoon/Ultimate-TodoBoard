@@ -1,3 +1,17 @@
-.dashboardWrapper {
-  border: 1px solid black;
+@use 'styles/constants/colors';
+
+.dashboardHeader {
+  padding: 0 1rem;
+  margin: 1rem 0;
+
+  h1 {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    color: colors.$CONTAINER_TEXT;
+  }
+}
+
+.dashboardMain {
+  border: 1px solid black; // TODO: 대시보드 스타일링
 }
