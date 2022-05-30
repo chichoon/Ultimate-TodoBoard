@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Layout = ({ imageUrl }: IProps) => {
-  const backgroundImage = imageUrl ?? '/defaultWallpaper.webp';
+  const backgroundImage = imageUrl ?? '/seashore.webp';
   return (
     <div className={styles.layoutWrapper}>
       <img className={styles.layoutBack} src={backgroundImage} alt='background' />
@@ -17,7 +17,9 @@ const Layout = ({ imageUrl }: IProps) => {
         <TopNavigationBar />
         <div className={styles.layoutBottom}>
           <SideNavigationBar />
-          <Outlet />
+          <div className={styles.layoutOutlet}>
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

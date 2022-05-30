@@ -23,7 +23,7 @@ const SideNavigationBar = () => {
         {NAVLINK_DATA.map((item) => (
           <li key={`navlink-${item}`}>
             <NavLink to={item} className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-              {navIcons[item]}
+              <div className={styles.navigationBarItem}>{navIcons[item]}</div>
             </NavLink>
           </li>
         ))}
