@@ -16,6 +16,7 @@ const Dashboard = () => {
 // TODO: 디데이 컨테이너
 // TODO: 날씨 컨테이너
 // TODO: 깃허브 잔디 컨테이너
+// TODO: 이미지 링크 컨테이너
 // TODO: 임베드 컨테이너
 
 export default Dashboard;
