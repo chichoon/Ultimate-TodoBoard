@@ -1,5 +1,6 @@
 @use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
 
 .navigationBarWrapper {
   @include flexbox.flexbox(between, center);
@@ -16,26 +17,6 @@
 
     b {
       font-weight: 600;
-    }
-  }
-}
-
-.navigationBarUL {
-  @include flexbox.flexbox(start, center);
-  flex-direction: row;
-
-  & > li {
-    margin: 0 0.5rem;
-
-    svg {
-      height: 1.5rem;
-      fill: colors.$NAV_ICONS;
-    }
-  }
-
-  .isActive {
-    svg {
-      fill: colors.$NAV_ICONS_ACTIVE;
     }
   }
 }

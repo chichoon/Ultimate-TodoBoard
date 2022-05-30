@@ -1,0 +1,31 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.navigationBarWrapper {
+  @include flexbox.flexbox(start, start);
+  flex-direction: column;
+  width: 3rem;
+  height: 100vh;
+  background-color: colors.$CONTAINER_BG;
+  box-shadow: 0 0 0.5rem colors.$CONTAINER_SHADOW;
+}
+
+.navigationBarUL {
+  @include flexbox.flexbox(start, center);
+  flex-direction: column;
+
+  & > li {
+    margin: 0 0.5rem;
+
+    svg {
+      height: 1.5rem;
+      fill: colors.$NAV_ICONS;
+    }
+  }
+
+  .isActive {
+    svg {
+      fill: colors.$NAV_ICONS_ACTIVE;
+    }
+  }
+}

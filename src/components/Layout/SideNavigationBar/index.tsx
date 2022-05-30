@@ -1,26 +1,23 @@
-import { DashboardIcon, SettingsIcon, StatsIcon } from 'assets/svgs';
 import { NavLink } from 'react-router-dom';
-import styles from './navigationBar.module.scss';
 import cx from 'classnames';
 
+import { DashboardIcon, SettingsIcon, StatsIcon } from 'assets/svgs';
+import styles from './sideNavigationBar.module.scss';
+
 const NAVLINK_DATA: string[] = ['dashboard', 'statistics', 'settings'];
+
 interface IIconObj {
   [index: string]: JSX.Element;
 }
 
-const NavigationBar = () => {
+const SideNavigationBar = () => {
   const navIcons: IIconObj = {
     dashboard: <DashboardIcon />,
     statistics: <StatsIcon />,
     settings: <SettingsIcon />,
   };
-
   return (
-    <nav className={styles.navigationBarWrapper}>
-      <h3>
-        <b>chichoon</b>님 안녕하세요!
-      </h3>{' '}
-      {/* TODO: 닉네임 교체 */}
+    <div className={styles.navigationBarWrapper}>
       <ul className={styles.navigationBarUL}>
         {NAVLINK_DATA.map((item) => (
           <li key={`navlink-${item}`}>
@@ -30,8 +27,8 @@ const NavigationBar = () => {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 };
 
-export default NavigationBar;
+export default SideNavigationBar;
