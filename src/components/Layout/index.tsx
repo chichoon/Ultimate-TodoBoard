@@ -14,9 +14,7 @@ const Layout = ({ imageUrl }: IProps) => {
       <img className={styles.layoutBack} src={backgroundImage} alt='background' />
       <div className={styles.layoutFront}>
         <NavigationBar />
-        <div className={styles.layoutContainer}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );
