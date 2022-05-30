@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom';
 import styles from './layout.module.scss';
 
 interface IProps {
-  imageUrl: string;
+  imageUrl?: string;
 }
 
 const Layout = ({ imageUrl }: IProps) => {
-  const backgroundImage = imageUrl ?? '/defaultWallpaper';
+  const backgroundImage = `url(${imageUrl ?? '/defaultWallpaper.webp'})`;
   return (
     <div style={{ backgroundImage }}>
       <div className={styles.layoutWrapper}>
