@@ -1,30 +1,46 @@
 @use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 
 .navigationBarWrapper {
-  @include flexbox.flexbox(start, center);
-  flex-direction: column;
-  width: 5rem;
-  height: 100vh;
   background-color: colors.$CONTAINER_BG;
-}
 
-.navigationBarUL {
-  @include flexbox.flexbox(start, center);
-  flex-direction: column;
+  .navigationBarUL {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
+    width: 100vw;
+    height: 4rem;
 
-  & > li {
-    margin: 1rem 0;
+    & > li {
+      @include flexbox.flexbox(center, center);
+      flex: 1;
+      height: 100%;
+      transition: background-color 0.2s;
 
-    svg {
-      height: 1.5rem;
-      fill: colors.$NAV_ICONS;
+      svg {
+        height: 1.5rem;
+        fill: colors.$NAV_ICONS;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: colors.$CONTAINER_BG_HOVER;
+      }
     }
   }
 
-  .isActive {
-    svg {
-      fill: colors.$NAV_ICONS_ACTIVE;
+  @include responsive.after(SD) {
+    .navigationBarUL {
+      flex-direction: column;
+      justify-content: start;
+      width: 5rem;
+      height: 100vh;
+
+      & > li {
+        flex: none;
+        width: 100%;
+        height: 4rem;
+      }
     }
   }
 }

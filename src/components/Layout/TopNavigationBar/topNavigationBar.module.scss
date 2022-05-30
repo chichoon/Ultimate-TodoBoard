@@ -1,6 +1,6 @@
 @use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
-@use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
 
 .navigationBarWrapper {
   @include flexbox.flexbox(start, center);
@@ -31,6 +31,13 @@
       b {
         font-weight: 600;
       }
+    }
+  }
+
+  @include responsive.after(M) {
+    .navigationBarRight > h3 ::after {
+      font-weight: 500;
+      content: '님 안녕하세요!';
     }
   }
 }

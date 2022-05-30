@@ -16,8 +16,9 @@ const SideNavigationBar = () => {
     statistics: <StatsIcon />,
     settings: <SettingsIcon />,
   };
+
   return (
-    <div className={styles.navigationBarWrapper}>
+    <nav className={styles.navigationBarWrapper}>
       <ul className={styles.navigationBarUL}>
         {NAVLINK_DATA.map((item) => (
           <li key={`navlink-${item}`}>
@@ -27,7 +28,7 @@ const SideNavigationBar = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
