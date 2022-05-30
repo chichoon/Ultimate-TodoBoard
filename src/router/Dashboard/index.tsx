@@ -1,4 +1,15 @@
 import styles from './dashboard.module.scss';
+import { ITodo } from 'types/todo';
+import DashboardItem from './DashboardItem';
+
+const TEST_TODO: ITodo = {
+  type: 'todo',
+  items: [
+    { todoTitle: '끝내주게 숨쉬기', createDate: '2021-10-06' },
+    { todoTitle: '밥개맛있게먹기', createDate: '2021-11-13' },
+  ],
+  itemsDone: [],
+};
 
 const Dashboard = () => {
   return (
@@ -8,8 +19,7 @@ const Dashboard = () => {
       </header>
       <main className={styles.dashboardMain}>
         <ul>
-          <li>끝내주게 숨쉬기</li>
-          <li>밥개맛있게먹기</li>
+          <DashboardItem item={TEST_TODO} />
           <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
         </ul>
       </main>
