@@ -13,7 +13,7 @@ const TEST_TODO: ITodo = {
 
 const Dashboard = () => {
   return (
-    <>
+    <div className={styles.dashboardWrapper}>
       <header className={styles.dashboardHeader}>
         <h1>대시보드</h1>
       </header>
@@ -23,7 +23,7 @@ const Dashboard = () => {
           <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
         </ul>
       </main>
-    </>
+    </div>
   );
 };
 
