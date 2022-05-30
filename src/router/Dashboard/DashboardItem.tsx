@@ -1,3 +1,6 @@
+import { IBaekjoon } from 'types/baekjoon';
+import { IDDay } from 'types/dday';
+import { ITodo } from 'types/todo';
 import BaekjoonContainer from './BaekjoonContainer';
 import DDayContainer from './DDayContainer';
 import EmbedContainer from './EmbedContainer';
@@ -7,10 +10,10 @@ import TodoContainer from './TodoContainer';
 import WeatherContainer from './WeatherContainer';
 
 interface IProps {
-  types: 'todo' | 'dday' | 'weather' | 'baekjoon' | 'github' | 'image' | 'embed';
+  item: ITodo | IBaekjoon | IDDay;
 }
 
-const DashboardItem = ({ types }: IProps) => {
+const DashboardItem = ({ item }: IProps) => {
   const containerItem = {
     todo: <TodoContainer />,
     dday: <DDayContainer />,
@@ -19,7 +22,7 @@ const DashboardItem = ({ types }: IProps) => {
     github: <GithubContainer />,
     image: <ImageContainer />,
     embed: <EmbedContainer />,
-  }[types];
+  }[item.type];
   return <li>{containerItem}</li>;
 };
 
