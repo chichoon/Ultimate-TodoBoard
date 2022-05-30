@@ -7,11 +7,14 @@ interface IProps {
 }
 
 const Layout = ({ imageUrl }: IProps) => {
-  const backgroundImage = `url(${imageUrl ?? '/defaultWallpaper.webp'})`;
+  const backgroundImage = imageUrl ?? '/defaultWallpaper.webp';
   return (
-    <div style={{ backgroundImage }}>
-      <div className={styles.layoutWrapper}>
-        <Outlet />
+    <div className={styles.layoutWrapper}>
+      <img className={styles.layoutBack} src={backgroundImage} alt='background' />
+      <div className={styles.layoutFront}>
+        <div className={styles.layoutContainer}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

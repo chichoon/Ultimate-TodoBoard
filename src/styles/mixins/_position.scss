@@ -1,6 +1,6 @@
+/* stylelint-disable indentation */
 @use 'sass:list';
 
-// Positioning
 @function _unpack-shorthand($shorthand) {
   @if length($shorthand) == 1 {
     @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);

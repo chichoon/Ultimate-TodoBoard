@@ -1,4 +1,25 @@
+@use 'styles/mixins/position';
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+
 .layoutWrapper {
+  @include position.relative(0);
   width: 100vw;
   height: 100vh;
+
+  .layoutBack {
+    @include position.absolute((0, 0));
+    z-index: levels.$LAYOUT_IMAGE;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+  }
+
+  .layoutFront {
+    @include position.absolute((0, 0));
+    z-index: levels.$LAYOUT_FRONTDIV;
+    width: 100%;
+    height: 100%;
+  }
 }
