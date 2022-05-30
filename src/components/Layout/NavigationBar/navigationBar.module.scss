@@ -4,17 +4,18 @@
 .navigationBarWrapper {
   @include flexbox.flexbox(between, center);
   width: 100vw;
-  height: 3rem;
+  height: 4rem;
   padding: 0 1rem;
+  color: colors.$CONTAINER_TEXT;
   background-color: colors.$CONTAINER_BG;
 
   h3 {
+    font-size: 1.1rem;
     font-weight: 500;
 
     b {
       font-weight: 600;
     }
-    color: colors.$CONTAINER_TEXT;
   }
 }
 
