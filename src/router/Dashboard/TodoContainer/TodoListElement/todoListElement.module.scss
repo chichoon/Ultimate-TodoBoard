@@ -1,0 +1,22 @@
+@use 'styles/mixins/position';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+
+.todoElementWrapper {
+  @include flexbox.flexbox(between, center);
+  width: 100%;
+  height: 4rem;
+  padding: 0 2rem;
+
+  .todoInfo {
+    @include flexbox.flexbox(center, center);
+    flex-direction: column;
+
+    .todoDeadline {
+      margin-top: 0.3rem;
+      color: colors.$CONTAINER_SUBTEXT;
+    }
+  }
+}
