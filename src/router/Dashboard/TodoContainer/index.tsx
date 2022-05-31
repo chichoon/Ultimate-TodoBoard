@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import cx from 'classnames';
 
 import { useAppSelector } from 'hooks/useAppSelector';
@@ -8,7 +8,6 @@ import TodoListElement from './TodoListElement';
 
 import { PlusIcon } from 'assets/svgs';
 import styles from './todoContainer.module.scss';
-import { useClickAway } from 'react-use';
 
 const TodoContainer = () => {
   const [isAddFormShown, setIsAddFormShown] = useState(false);
@@ -16,7 +15,6 @@ const TodoContainer = () => {
 
   const handleAddButtonClick = () => {
     setIsAddFormShown((prevState) => !prevState);
-    console.log('add');
   };
 
   return (
