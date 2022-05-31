@@ -6,6 +6,7 @@ import Router from 'router';
 import reportWebVitals from './reportWebVitals';
 
 import 'styles/index.scss';
+import 'styles/global.scss';
 import { Provider } from 'react-redux';
 import { store } from 'states';
 
