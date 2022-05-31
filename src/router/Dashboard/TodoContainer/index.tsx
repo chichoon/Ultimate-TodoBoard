@@ -1,20 +1,39 @@
+import { useRef, useState } from 'react';
 import cx from 'classnames';
 
 import { useAppSelector } from 'hooks/useAppSelector';
 import { getTodo } from 'states/todo';
-
-import styles from './todoContainer.module.scss';
+import TodoAddFormElement from './TodoAddFormElement';
 import TodoListElement from './TodoListElement';
 
+import { PlusIcon } from 'assets/svgs';
+import styles from './todoContainer.module.scss';
+import { useClickAway } from 'react-use';
+
 const TodoContainer = () => {
+  const [isAddFormShown, setIsAddFormShown] = useState(false);
   const todo = useAppSelector(getTodo);
+
+  const handleAddButtonClick = () => {
+    setIsAddFormShown((prevState) => !prevState);
+    console.log('add');
+  };
+
   return (
     <div className={cx(styles.todoWrapper, 'listContainer')}>
       <div className={cx(styles.todoHeader, 'listContainerHeader')}>
         <h3>오늘의 할 일</h3>
+        <button type='button' onClick={handleAddButtonClick}>
+          <PlusIcon className={cx(styles.addForm, { [styles.isRemoving]: isAddFormShown })} />
+        </button>
       </div>
       <div className={styles.todoListWrapper}>
         <ul>
+          {isAddFormShown && (
+            <li>
+              <TodoAddFormElement />
+            </li>
+          )}
           {todo.items.map((item, index) => {
             const key = `todo-index-${index}`;
             return (

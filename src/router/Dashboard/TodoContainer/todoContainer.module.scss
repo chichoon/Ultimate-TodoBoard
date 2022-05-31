@@ -1,0 +1,25 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.todoWrapper {
+  .todoHeader {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
+
+    .addForm {
+      transition: 0.2s;
+
+      &.isRemoving {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .todoListWrapper {
+    height: 20rem;
+
+    li {
+      border-bottom: 1px solid colors.$LIST_BORDER;
+    }
+  }
+}
