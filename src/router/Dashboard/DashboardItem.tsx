@@ -16,13 +16,13 @@ interface IProps {
 
 const DashboardItem = ({ item }: IProps) => {
   const containerItem = {
-    todo: <TodoContainer item={item as ITodo} />,
-    dday: <DDayContainer item={item as IDDay} />,
-    weather: <WeatherContainer item={item as IWeather} />,
-    baekjoon: <BaekjoonContainer item={item as IBaekjoon} />,
-    // github: <GithubContainer item={item} />,
-    // image: <ImageContainer item={item} />,
-    // embed: <EmbedContainer item={item} />,
+    todo: <TodoContainer />,
+    dday: <DDayContainer ddayItem={item as IDDay} />,
+    weather: <WeatherContainer weatherItem={item as IWeather} />,
+    baekjoon: <BaekjoonContainer baekjoonItem={item as IBaekjoon} />,
+    // github: <GithubContainer githubItem={item} />,
+    // image: <ImageContainer imageItem={item} />,
+    // embed: <EmbedContainer embedItem={item} />,
   }[item.type];
   return <li>{containerItem}</li>;
 };

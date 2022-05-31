@@ -1,10 +1,10 @@
 import { IDDay } from 'types/dday';
 
 interface IProps {
-  item: IDDay;
+  ddayItem: IDDay;
 }
 
-const DDayContainer = ({ item }: IProps) => {
+const DDayContainer = ({ ddayItem }: IProps) => {
   return <div>디데이 컨테이너지롱</div>;
 };
 

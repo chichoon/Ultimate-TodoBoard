@@ -1,10 +1,10 @@
 import { IBaekjoon } from 'types/baekjoon';
 
 interface IProps {
-  item: IBaekjoon;
+  baekjoonItem: IBaekjoon;
 }
 
-const BaekjoonContainer = ({ item }: IProps) => {
+const BaekjoonContainer = ({ baekjoonItem }: IProps) => {
   return <div>백준 컨테이너지롱</div>;
 };
 
