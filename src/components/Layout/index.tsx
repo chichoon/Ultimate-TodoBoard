@@ -5,12 +5,7 @@ import styles from './layout.module.scss';
 import SideNavigationBar from './SideNavigationBar';
 import TopNavigationBar from './TopNavigationBar';
 
-interface IProps {
-  imageUrl?: string;
-}
-
-const Layout = ({ imageUrl }: IProps) => {
-  const backgroundImage = imageUrl ?? '/seashore.webp';
+const Layout = () => {
   const [isBarHidden, setIsBarHidden] = useState(true);
 
   return (
