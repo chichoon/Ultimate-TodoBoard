@@ -9,13 +9,16 @@ import 'styles/index.scss';
 import 'styles/global.scss';
 import { Provider } from 'react-redux';
 import { store } from 'states';
+import { RecoilRoot } from 'recoil';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Router />
+        <RecoilRoot>
+          <Router />
+        </RecoilRoot>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
