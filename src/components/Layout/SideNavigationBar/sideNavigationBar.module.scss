@@ -48,6 +48,8 @@
   }
 
   @include responsive.after(SD) {
+    height: 100%;
+
     &.isBarHidden {
       display: block;
     }
@@ -56,7 +58,6 @@
       flex-direction: column;
       justify-content: start;
       width: 5rem;
-      height: 100vh;
 
       & > li {
         flex: none;
