@@ -15,14 +15,11 @@ const Layout = ({ imageUrl }: IProps) => {
 
   return (
     <div className={styles.layoutWrapper}>
-      <img className={styles.layoutBack} src={backgroundImage} alt='background' />
-      <div className={styles.layoutFront}>
-        <TopNavigationBar setIsBarHidden={setIsBarHidden} />
-        <div className={styles.layoutBottom}>
-          <SideNavigationBar isBarHidden={isBarHidden} />
-          <div className={styles.layoutOutlet}>
-            <Outlet />
-          </div>
+      <TopNavigationBar setIsBarHidden={setIsBarHidden} />
+      <div className={styles.layoutBottom}>
+        <SideNavigationBar isBarHidden={isBarHidden} />
+        <div className={styles.layoutOutlet}>
+          <Outlet />
         </div>
       </div>
     </div>
