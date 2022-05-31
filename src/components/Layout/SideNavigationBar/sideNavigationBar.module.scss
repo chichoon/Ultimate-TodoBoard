@@ -4,12 +4,17 @@
 
 .navigationBarWrapper {
   background-color: colors.$CONTAINER_BG;
+  transition: 0.2s;
+
+  &.isBarHidden {
+    display: none;
+  }
 
   .navigationBarUL {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
     width: 100vw;
-    height: 4rem;
+    height: 3rem;
 
     & > li {
       width: 100%;
@@ -43,6 +48,10 @@
   }
 
   @include responsive.after(SD) {
+    &.isBarHidden {
+      display: block;
+    }
+
     .navigationBarUL {
       flex-direction: column;
       justify-content: start;

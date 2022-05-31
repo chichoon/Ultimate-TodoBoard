@@ -10,7 +10,11 @@ interface IIconObj {
   [index: string]: JSX.Element;
 }
 
-const SideNavigationBar = () => {
+interface IProps {
+  isBarHidden: boolean;
+}
+
+const SideNavigationBar = ({ isBarHidden }: IProps) => {
   const navIcons: IIconObj = {
     dashboard: <DashboardIcon />,
     statistics: <StatsIcon />,
@@ -18,7 +22,7 @@ const SideNavigationBar = () => {
   };
 
   return (
-    <nav className={styles.navigationBarWrapper}>
+    <nav className={cx(styles.navigationBarWrapper, { [styles.isBarHidden]: isBarHidden })}>
       <ul className={styles.navigationBarUL}>
         {NAVLINK_DATA.map((item) => (
           <li key={`navlink-${item}`}>

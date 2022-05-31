@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import styles from './layout.module.scss';
@@ -10,13 +11,15 @@ interface IProps {
 
 const Layout = ({ imageUrl }: IProps) => {
   const backgroundImage = imageUrl ?? '/seashore.webp';
+  const [isBarHidden, setIsBarHidden] = useState(true);
+
   return (
     <div className={styles.layoutWrapper}>
       <img className={styles.layoutBack} src={backgroundImage} alt='background' />
       <div className={styles.layoutFront}>
-        <TopNavigationBar />
+        <TopNavigationBar setIsBarHidden={setIsBarHidden} />
         <div className={styles.layoutBottom}>
-          <SideNavigationBar />
+          <SideNavigationBar isBarHidden={isBarHidden} />
           <div className={styles.layoutOutlet}>
             <Outlet />
           </div>

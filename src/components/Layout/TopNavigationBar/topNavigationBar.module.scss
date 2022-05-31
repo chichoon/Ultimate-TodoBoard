@@ -12,6 +12,7 @@
   .navigationBarIcon {
     @include flexbox.flexbox(center, center);
     width: 5rem;
+    min-width: 5rem;
     height: 4rem;
     background: linear-gradient(colors.$NAV_TITLE_ICON_BG1, colors.$NAV_TITLE_ICON_BG2);
 
@@ -22,6 +23,7 @@
 
   .navigationBarRight {
     @include flexbox.flexbox(between, center);
+    width: 100%;
     padding: 0 1rem;
 
     h3 {
@@ -31,6 +33,26 @@
       b {
         font-weight: 600;
       }
+    }
+
+    .hamburgerButton {
+      width: 2rem;
+      height: 2rem;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+
+        path {
+          fill: colors.$NAV_ICONS;
+        }
+      }
+    }
+  }
+
+  @include responsive.after(SD) {
+    .hamburgerButton {
+      display: none;
     }
   }
 
