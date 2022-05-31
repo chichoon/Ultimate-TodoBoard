@@ -24,20 +24,28 @@
   }
 
   .layoutBottom {
+    @include flexbox.flexbox(between, start);
     flex: 1;
+    flex-direction: column;
     width: 100vw;
-    border: 1px solid red;
   }
 
-  .dashboardHeader {
-    padding: 0 1rem;
-    margin: 1rem 0;
+  .layoutOutlet {
+    @include flexbox.flexbox(start, start);
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
 
-    h1 {
-      width: 100%;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: colors.$CONTAINER_TEXT;
+    .dashboardHeader {
+      padding: 0 1rem;
+      margin: 1rem 0;
+
+      h1 {
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: colors.$CONTAINER_TEXT;
+      }
     }
   }
 
