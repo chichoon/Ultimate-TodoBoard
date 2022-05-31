@@ -94,4 +94,4 @@ export const { addTodo, setTodoFinished, deleteTodo, deleteFinishedTodo } = todo
 
 export default todoSlice.reducer;
 
-export const getTodoState = (state: RootState): ITodo => state.todo;
+export const getTodo = (state: RootState): ITodo => state.todo;
