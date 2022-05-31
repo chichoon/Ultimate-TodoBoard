@@ -1,19 +1,16 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-import { useRecoilValue } from 'recoil';
 import dayjs from 'dayjs';
-import DatePicker from 'react-datepicker';
 
-import { todayDateState } from 'states/atoms';
-
+import 'react-datepicker/dist/react-datepicker.css';
 import styles from './todoAddFormElement.module.scss';
+import CustomDatePicker from './CustomDatePicker';
 
-const today = dayjs().format('YYYY-MM-DD');
+const today = new Date();
 
 const TodoAddFormElement = () => {
   const [title, setTitle] = useState('');
   const [isDeadLine, setIsDeadline] = useState(false);
-  const [deadLine, setDeadLine] = useState<Date | null>(null);
-  const todayDate = useRecoilValue(todayDateState);
+  const [deadLine, setDeadLine] = useState<Date>(today);
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value);
@@ -34,9 +31,9 @@ const TodoAddFormElement = () => {
   };
 
   useEffect(() => {
-    if (isDeadLine) setDeadLine(new Date(todayDate));
-    else setDeadLine(null);
-  }, [isDeadLine, todayDate]);
+    setDeadLine(today);
+    console.log(today);
+  }, [isDeadLine]);
 
   return (
     <div className={styles.todoAddFormWrapper}>
@@ -47,7 +44,7 @@ const TodoAddFormElement = () => {
             <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
             <label htmlFor='isDeadLine'>마감일 추가하기</label>
           </div>
-          {isDeadLine && <DatePicker selected={deadLine} onChange={handleDeadlineChange} />}
+          {isDeadLine && <CustomDatePicker today={today} selected={deadLine} onChange={handleDeadlineChange} />}
         </div>
         <button type='submit'>추가</button>
       </form>

@@ -20,17 +20,21 @@
   }
 
   button {
-    width: 3rem;
+    width: 2rem;
+    height: 3rem;
     color: colors.$CONTAINER_TEXT;
   }
 }
 
 .formLeft {
   @include flexbox.flexbox(center, start);
+  flex: 1;
   flex-direction: column;
+  margin-right: 1rem;
 
-  input[type='text'] {
-    width: 10rem;
+  & > input[type='text'] {
+    width: 70%;
+    min-width: 7rem;
     color: colors.$CONTAINER_TEXT;
     border-bottom: 1px solid colors.$LIST_BORDER;
   }
@@ -46,5 +50,15 @@
       line-height: 1rem;
       color: colors.$LABEL_TEXT;
     }
+  }
+
+  .react-datepicker__header {
+    position: relative;
+    padding-top: 8px;
+    text-align: center;
+    background-color: #81868a;
+    border-bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
