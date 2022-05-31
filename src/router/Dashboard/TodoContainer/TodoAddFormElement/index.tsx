@@ -41,10 +41,15 @@ const TodoAddFormElement = () => {
   return (
     <div className={styles.todoAddFormWrapper}>
       <form onSubmit={handleFormSubmit}>
-        <input type='text' value={title} onChange={handleTitleChange} />
-        <input type='checkbox' checked={isDeadLine} onChange={handleCheckboxChange} />
-        {isDeadLine && <DatePicker selected={deadLine} onChange={handleDeadlineChange} />}
-        <button type='submit'>할일 추가하기</button>
+        <div className={styles.formLeft}>
+          <input type='text' value={title} onChange={handleTitleChange} placeholder='할 일 제목' />
+          <div className={styles.checkboxArea}>
+            <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
+            <label htmlFor='isDeadLine'>마감일 추가하기</label>
+          </div>
+          {isDeadLine && <DatePicker selected={deadLine} onChange={handleDeadlineChange} />}
+        </div>
+        <button type='submit'>추가</button>
       </form>
     </div>
   );

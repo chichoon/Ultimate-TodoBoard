@@ -1,0 +1,50 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+
+.todoAddFormWrapper {
+  width: 100%;
+  padding: 1rem;
+
+  form {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
+  }
+
+  .todoInfo {
+    @include flexbox.flexbox(center, center);
+    flex-direction: column;
+
+    .todoDeadline {
+      color: colors.$CONTAINER_SUBTEXT;
+    }
+  }
+
+  button {
+    width: 3rem;
+    color: colors.$CONTAINER_TEXT;
+  }
+}
+
+.formLeft {
+  @include flexbox.flexbox(center, start);
+  flex-direction: column;
+
+  input[type='text'] {
+    width: 10rem;
+    color: colors.$CONTAINER_TEXT;
+    border-bottom: 1px solid colors.$LIST_BORDER;
+  }
+
+  .checkboxArea {
+    @include flexbox.flexbox(center, start);
+    flex-direction: row;
+    margin: 0.8rem 0;
+
+    label {
+      margin-left: 0.5rem;
+      font-size: 0.8rem;
+      line-height: 1rem;
+      color: colors.$LABEL_TEXT;
+    }
+  }
+}
