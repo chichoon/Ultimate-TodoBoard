@@ -13,17 +13,12 @@ const TEST_TODO: ITodo = {
 
 const Dashboard = () => {
   return (
-    <>
-      <header className={styles.dashboardHeader}>
-        <h1>대시보드</h1>
-      </header>
-      <main className={styles.dashboardMain}>
-        <ul>
-          <DashboardItem item={TEST_TODO} />
-          <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
-        </ul>
-      </main>
-    </>
+    <main className={styles.dashboardMain}>
+      <ul>
+        <DashboardItem item={TEST_TODO} />
+        <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
+      </ul>
+    </main>
   );
 };
 

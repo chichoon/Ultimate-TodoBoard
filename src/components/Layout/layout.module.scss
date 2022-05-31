@@ -29,6 +29,18 @@
     border: 1px solid red;
   }
 
+  .dashboardHeader {
+    padding: 0 1rem;
+    margin: 1rem 0;
+
+    h1 {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: colors.$CONTAINER_TEXT;
+    }
+  }
+
   @include responsive.after(SD) {
     .layoutBottom {
       @include flexbox.flexbox(between, center);
