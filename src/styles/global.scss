@@ -1,0 +1,17 @@
+@use 'styles/constants/colors';
+
+.listContainer {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: colors.$CONTAINER_BG;
+  border-radius: 0.5rem;
+}
+
+.listContainerHeader {
+  padding: 10px 0;
+
+  h3 {
+    font-size: 1.2rem;
+    color: colors.$CONTAINER_TEXT;
+  }
+}
