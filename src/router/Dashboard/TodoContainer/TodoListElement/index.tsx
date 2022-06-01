@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
+import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import { XIcon } from 'assets/svgs';
 import styles from './todoListElement.module.scss';
@@ -17,6 +19,7 @@ interface IProps {
 const TodoListElement = ({ item, index, isDone }: IProps) => {
   const today = dayjs().format('YYYY-MM-DD');
   const deadLine = dayjs(item.deadLineDate);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const dispatch = useAppDispatch();
 
   const handleCheckboxChange = () => {
@@ -25,8 +28,17 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
   };
 
   const handleXButtonClick = () => {
+    setIsDeleteModalOpen(true);
+  };
+
+  const handleDeleteButtonClick = () => {
     if (!isDone) dispatch(deleteTodo(index));
     else dispatch(deleteFinishedTodo(index));
+    setIsDeleteModalOpen(false);
+  };
+
+  const handleCancelButtonClick = () => {
+    setIsDeleteModalOpen(false);
   };
 
   return (
@@ -37,6 +49,18 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
       </button>
+      {isDeleteModalOpen && (
+        <DeleteConfirmModal title={item.todoTitle} setIsDeleteModalOpen={setIsDeleteModalOpen}>
+          <>
+            <button type='button' onClick={handleDeleteButtonClick}>
+              확인
+            </button>
+            <button type='button' onClick={handleCancelButtonClick}>
+              취소
+            </button>
+          </>
+        </DeleteConfirmModal>
+      )}
     </div>
   );
 };
