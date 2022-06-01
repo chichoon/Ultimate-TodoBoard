@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cx from 'classnames';
 
-import { useAppSelector } from 'hooks/useAppSelector';
+import { useAppSelector } from 'hooks';
 import { getTodo } from 'states/todo';
 import TodoAddFormElement from './TodoAddFormElement';
 import TodoListElement from './TodoListElement';

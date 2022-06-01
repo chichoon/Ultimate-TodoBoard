@@ -8,7 +8,7 @@ import Settings from './Settings';
 import Statistics from './Statistics';
 import { setTodo } from 'states/todo';
 import { setInfo } from 'states/information';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppDispatch } from 'hooks';
 
 const Router = () => {
   const dispatch = useAppDispatch();

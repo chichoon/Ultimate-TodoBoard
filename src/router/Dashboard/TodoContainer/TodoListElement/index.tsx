@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppDispatch } from 'hooks';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
 

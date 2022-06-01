@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './todoAddFormElement.module.scss';
 import CustomDatePicker from './CustomDatePicker';
-import { useAppDispatch } from 'hooks/useAppDispatch';
+import { useAppDispatch } from 'hooks';
 import { addTodo } from 'states/todo';
 
 const today = new Date();
