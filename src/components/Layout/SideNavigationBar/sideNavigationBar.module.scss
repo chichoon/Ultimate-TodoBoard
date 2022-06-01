@@ -6,6 +6,7 @@
 .navigationBarWrapper {
   z-index: levels.$SIDENAV;
   height: 3rem;
+  min-height: 3rem;
   background-color: colors.$WHITE;
   transition: margin-top 0.2s;
 
