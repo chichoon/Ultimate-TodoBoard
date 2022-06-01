@@ -1,5 +1,3 @@
-import { IWeather } from 'types/weather';
-
 const WeatherContainer = () => {
   return <div>날씨 컨테이너지롱</div>;
 };

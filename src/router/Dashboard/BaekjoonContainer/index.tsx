@@ -1,4 +1,3 @@
-import { IBaekjoon } from 'types/baekjoon';
 import cx from 'classnames';
 
 import styles from './baekjoonContainer.module.scss';

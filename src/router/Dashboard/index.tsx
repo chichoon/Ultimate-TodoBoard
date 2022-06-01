@@ -1,5 +1,4 @@
 import styles from './dashboard.module.scss';
-import { ITodo } from 'types/todo';
 import DashboardItem from './DashboardItem';
 
 const Dashboard = () => {
