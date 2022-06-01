@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import todo from './todo';
 import information from './information';
+import error from './error';
 import problemID from 'router/Dashboard/BaekjoonContainer/states/problemID';
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     todo,
     information,
     problemID,
+    error,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
