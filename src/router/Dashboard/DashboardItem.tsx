@@ -1,6 +1,6 @@
 import BaekjoonContainer from './BaekjoonContainer';
 import DDayContainer from './DDayContainer';
-// import GithubContainer from './GithubContainer';
+import GithubContainer from './GithubContainer';
 import TodoContainer from './TodoContainer';
 import WeatherContainer from './WeatherContainer';
 
@@ -14,7 +14,7 @@ const DashboardItem = ({ type }: IProps) => {
     dday: <DDayContainer />,
     weather: <WeatherContainer />,
     baekjoon: <BaekjoonContainer />,
-    // github: <GithubContainer githubItem={item} />,
+    github: <GithubContainer />,
   }[type];
   return <li>{containerItem}</li>;
 };
