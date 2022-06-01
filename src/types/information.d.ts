@@ -22,3 +22,8 @@ export interface IDDay {
   icon: string;
   date: string;
 }
+
+export interface IError {
+  status: number;
+  data: string;
+}
