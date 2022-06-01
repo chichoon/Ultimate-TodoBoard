@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const INIT_ERROR: IError = {
   status: 200,
-  data: '',
+  data: 'No Error',
 };
 
 const errorSlice = createSlice({
@@ -19,4 +19,4 @@ export const { setError } = errorSlice.actions;
 
 export default errorSlice.reducer;
 
-export const getBaekjoonItems = (state: RootState): IError => state.error;
+export const getError = (state: RootState): IError => state.error;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useLocation } from 'react-use';
+import ErrorMessage from './ErrorMessage';
 
 import styles from './layout.module.scss';
 import SideNavigationBar from './SideNavigationBar';
@@ -20,6 +21,7 @@ const Layout = () => {
   return (
     <div className={styles.layoutWrapper}>
       <TopNavigationBar setIsBarHidden={setIsBarHidden} />
+      <ErrorMessage />
       <div className={styles.layoutBottom}>
         <SideNavigationBar isBarHidden={isBarHidden} />
         <div className={styles.layoutOutlet}>

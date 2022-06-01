@@ -2,10 +2,10 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
-@use 'styles/constants/levels';
 
 .layoutWrapper {
   @include flexbox.flexbox(between, center);
+  @include position.relative((0));
   flex-direction: column;
   width: 100vw;
   height: 100vh;

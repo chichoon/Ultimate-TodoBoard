@@ -1,0 +1,32 @@
+@use 'styles/mixins/position';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+
+.errorMessageWrapper {
+  @include position.absolute((4rem, 0, 0, calc(100% - 10rem)));
+  @include flexbox.flexbox(start, center);
+  z-index: levels.$ERROR_MESSAGE;
+  width: 10rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: colors.$WHITE;
+  background-color: colors.$PRIMARY;
+
+  .errorCode {
+    @include flexbox.flexbox(center, center);
+    width: 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-right: 2px solid colors.$WHITE;
+  }
+
+  .errorData {
+    width: 7rem;
+    padding: 0 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
