@@ -1,9 +1,11 @@
-import { XIcon } from 'assets/svgs';
 import dayjs from 'dayjs';
+import cx from 'classnames';
+
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
 
+import { XIcon } from 'assets/svgs';
 import styles from './todoListElement.module.scss';
 
 interface IProps {
@@ -30,7 +32,7 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
   return (
     <div className={styles.todoElementWrapper}>
       <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
-      <p className={styles.todoTitle}>{item.todoTitle}</p>
+      <p className={cx(styles.todoTitle, { [styles.isTodoDone]: isDone })}>{item.todoTitle}</p>
       {item.deadLineDate && <p className={styles.todoDeadline}>D-{deadLine.diff(today, 'd')}</p>}
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
