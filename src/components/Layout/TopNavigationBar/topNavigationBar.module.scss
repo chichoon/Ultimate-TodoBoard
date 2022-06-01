@@ -1,9 +1,11 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/levels';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 
 .navigationBarWrapper {
   @include flexbox.flexbox(start, center);
+  z-index: levels.$TOPNAV;
   width: 100vw;
   height: 4rem;
   color: colors.$DARK;

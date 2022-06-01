@@ -1,20 +1,24 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/levels';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 
 .navigationBarWrapper {
+  z-index: levels.$SIDENAV;
+  height: 3rem;
   background-color: colors.$WHITE;
-  transition: 0.2s;
+  transition: margin-top 0.2s;
 
   &.isBarHidden {
-    display: none;
+    margin-top: -3rem;
   }
 
   .navigationBarUL {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
     width: 100vw;
-    height: 3rem;
+    height: 100%;
+    transition: 0.2s;
 
     & > li {
       width: 100%;
@@ -51,7 +55,7 @@
     height: 100%;
 
     &.isBarHidden {
-      display: block;
+      margin-top: 0;
     }
 
     .navigationBarUL {
