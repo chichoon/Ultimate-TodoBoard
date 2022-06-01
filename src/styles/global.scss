@@ -12,7 +12,7 @@
 }
 
 .listContainerHeader {
-  padding: 10px 0;
+  padding: 1rem 0;
 
   h3 {
     font-size: 1.2rem;
@@ -23,7 +23,7 @@
 .listContainerAddHeader {
   @include flexbox.flexbox(between, center);
   flex-direction: row;
-  padding: 10px 0;
+  padding: 1rem 0;
 
   h3 {
     font-size: 1.2rem;

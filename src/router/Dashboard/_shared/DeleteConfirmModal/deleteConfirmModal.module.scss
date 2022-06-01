@@ -10,8 +10,8 @@
   z-index: levels.$MODAL_BACKGROUND;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(colors.$DARK, 30%);
-  backdrop-filter: blur(2px);
+  background-color: rgba(colors.$DARK, 20%);
+  backdrop-filter: blur(0.2rem);
 }
 
 .deleteModalWrapper {
@@ -24,6 +24,7 @@
   height: 12rem;
   background-color: colors.$WHITE;
   border-radius: sizes.$BORDER_RADIUS;
+  box-shadow: 0 0 2rem 0.1rem colors.$DARK30;
 
   header {
     width: 100%;
