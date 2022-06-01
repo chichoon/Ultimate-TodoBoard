@@ -25,10 +25,8 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
   return (
     <div className={styles.todoElementWrapper}>
       <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
-      <div className={styles.todoInfo}>
-        <p className={styles.todoTitle}>{item.todoTitle}</p>
-        {item.deadLineDate && <p className={styles.todoDeadline}>D-{deadLine.diff(today, 'd')}</p>}
-      </div>
+      <p className={styles.todoTitle}>{item.todoTitle}</p>
+      {item.deadLineDate && <p className={styles.todoDeadline}>D-{deadLine.diff(today, 'd')}</p>}
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
       </button>

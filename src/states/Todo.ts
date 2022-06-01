@@ -18,6 +18,15 @@ const INIT_TODO: ITodo = {
       createDate: '2022-05-23',
       deadLineDate: '2022-06-10',
     },
+    {
+      todoTitle: '엄청엄청짱짱긴제목제목제목아아아아',
+      createDate: '2022-05-23',
+      deadLineDate: '2022-06-10',
+    },
+    {
+      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
+      createDate: '2022-05-23',
+    },
   ],
   itemsDone: [],
 };

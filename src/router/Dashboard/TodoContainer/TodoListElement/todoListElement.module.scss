@@ -7,13 +7,20 @@
   height: 4rem;
   padding: 0 1rem;
 
-  .todoInfo {
-    @include flexbox.flexbox(center, center);
-    flex-direction: column;
+  input[type='checkbox'] {
+    margin-right: 2rem;
+  }
 
-    .todoDeadline {
-      margin-top: 0.3rem;
-      color: colors.$CONTAINER_SUBTEXT;
-    }
+  .todoTitle {
+    flex: 1;
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .todoDeadline {
+    margin-right: 1rem;
+    color: colors.$CONTAINER_SUBTEXT;
   }
 }
