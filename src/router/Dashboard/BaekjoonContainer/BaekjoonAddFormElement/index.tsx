@@ -27,7 +27,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
       return;
     }
     const problemID = Number(value);
-    if (isNaN(problemID)) return;
+    if (isNaN(problemID) || problemID < 1000) return;
     dispatch(setProblemID(problemID));
     setIsAddFormShown(false);
   };
