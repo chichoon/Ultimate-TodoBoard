@@ -1,41 +1,45 @@
 @use 'styles/constants/colors';
 
-.tier0Icon > polygon {
+.tier0Icon > .cls1 {
   fill: colors.$TIER_UNRATED;
 }
 
-.tier1Icon > polygon {
+.tier1Icon > .cls1 {
   fill: colors.$TIER_BRONZE;
 }
 
-.tier2Icon > polygon {
+.tier2Icon > .cls1 {
   fill: colors.$TIER_SILVER;
 }
 
-.tier3Icon > polygon {
+.tier3Icon > .cls1 {
   fill: colors.$TIER_GOLD;
 }
 
-.tier4Icon > polygon {
+.tier4Icon > .cls1 {
   fill: colors.$TIER_PLATINUM;
 }
 
-.tier5Icon > polygon {
+.tier5Icon > .cls1 {
   fill: colors.$TIER_DIAMOND;
 }
 
-.tier6Icon > polygon {
+.tier6Icon > .cls1 {
   fill: colors.$TIER_RUBY;
 }
 
-.tierIcon {
+.tier1Icon,
+.tier0Icon,
+.tier2Icon,
+.tier3Icon,
+.tier4Icon,
+.tier5Icon,
+.tier6Icon {
   path {
     fill: colors.$WHITE;
   }
 
-  // Solved.ac 아이콘에 기본으로 붙어있는 클래스, 수정불가
-  /* stylelint-disable-next-line selector-class-pattern */
-  .cls-2 {
+  .cls2 {
     fill: colors.$WHITE;
   }
 }
