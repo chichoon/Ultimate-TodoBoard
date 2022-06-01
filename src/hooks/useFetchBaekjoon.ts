@@ -15,7 +15,6 @@ export const useFetchBaekjoon = () => {
     enabled: problemID !== 0,
     cacheTime: 60000,
     onSuccess: (response) => {
-      console.log(response);
       dispatch(addBaekjoon(response));
     },
   });
