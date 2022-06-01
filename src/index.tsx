@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 
 import 'styles/index.scss';
 import 'styles/global.scss';
+import 'styles/icons.scss';
 
 const queryClient = new QueryClient({
   defaultOptions: {

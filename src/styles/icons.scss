@@ -1,0 +1,41 @@
+@use 'styles/constants/colors';
+
+.tier0Icon > polygon {
+  fill: colors.$TIER_UNRATED;
+}
+
+.tier1Icon > polygon {
+  fill: colors.$TIER_BRONZE;
+}
+
+.tier2Icon > polygon {
+  fill: colors.$TIER_SILVER;
+}
+
+.tier3Icon > polygon {
+  fill: colors.$TIER_GOLD;
+}
+
+.tier4Icon > polygon {
+  fill: colors.$TIER_PLATINUM;
+}
+
+.tier5Icon > polygon {
+  fill: colors.$TIER_DIAMOND;
+}
+
+.tier6Icon > polygon {
+  fill: colors.$TIER_RUBY;
+}
+
+.tierIcon {
+  path {
+    fill: colors.$WHITE;
+  }
+
+  // Solved.ac 아이콘에 기본으로 붙어있는 클래스, 수정불가
+  /* stylelint-disable-next-line selector-class-pattern */
+  .cls-2 {
+    fill: colors.$WHITE;
+  }
+}
