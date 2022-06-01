@@ -1,5 +1,7 @@
 import { XIcon } from 'assets/svgs';
 import dayjs from 'dayjs';
+import { useAppDispatch } from 'hooks/useAppDispatch';
+import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
 
 import styles from './todoListElement.module.scss';
@@ -13,13 +15,16 @@ interface IProps {
 const TodoListElement = ({ item, index, isDone }: IProps) => {
   const today = dayjs().format('YYYY-MM-DD');
   const deadLine = dayjs(item.deadLineDate);
+  const dispatch = useAppDispatch();
 
   const handleCheckboxChange = () => {
-    console.log('으아아아');
+    if (!isDone) dispatch(setTodoFinished(index));
+    else dispatch(setTodoActive(index));
   };
 
   const handleXButtonClick = () => {
-    console.log('지울거야..?');
+    if (!isDone) dispatch(deleteTodo(index));
+    else dispatch(deleteFinishedTodo(index));
   };
 
   return (

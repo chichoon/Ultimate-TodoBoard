@@ -13,5 +13,6 @@ export interface ITodoItem {
 export interface ITodoItemDone {
   todoTitle: string;
   createDate: string;
+  deadLineDate?: string;
   finishedDate: string;
 }

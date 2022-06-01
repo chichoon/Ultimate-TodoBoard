@@ -5,35 +5,35 @@ import store from 'store';
 import { ITodo } from 'types/todo';
 import { RootState } from 'states';
 
-const today = dayjs().format('YYYY-MM-DD');
+const today = dayjs().format('YYYY-MM-DD HH:mm');
 const INIT_TODO: ITodo = {
   type: 'todo',
   items: [
     {
       todoTitle: '맛있는거 먹기',
-      createDate: '2022-05-31',
+      createDate: '2022-05-31 12:18',
     },
     {
       todoTitle: '데이트하기',
-      createDate: '2022-05-23',
+      createDate: '2022-05-23 22:45',
       deadLineDate: '2022-06-10',
     },
     {
       todoTitle: '엄청엄청짱짱긴제목제목제목아아아아',
-      createDate: '2022-05-23',
+      createDate: '2022-05-23 14:59',
       deadLineDate: '2022-06-10',
     },
     {
       todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23',
+      createDate: '2022-05-23 11:33',
     },
     {
       todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23',
+      createDate: '2022-05-23 11:00',
     },
     {
       todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23',
+      createDate: '2022-05-23 12:04',
     },
   ],
   itemsDone: [],
@@ -74,6 +74,7 @@ const todoSlice = createSlice({
           {
             todoTitle: state.items[action.payload].todoTitle,
             createDate: state.items[action.payload].createDate,
+            ...(state.items[action.payload].deadLineDate && { deadLineDate: state.items[action.payload].deadLineDate }),
             finishedDate: today,
           },
         ].sort((a, b) => {
@@ -81,6 +82,28 @@ const todoSlice = createSlice({
           if (dayjs(a.createDate) > dayjs(b.createDate)) return -1;
           return 0;
         }),
+      };
+      store.set('todoList', newTodo);
+      return newTodo;
+    },
+    setTodoActive: (state: ITodo, action: PayloadAction<number>) => {
+      const newTodo: ITodo = {
+        type: 'todo',
+        items: [
+          ...state.items,
+          {
+            todoTitle: state.itemsDone[action.payload].todoTitle,
+            createDate: state.itemsDone[action.payload].createDate,
+            ...(state.itemsDone[action.payload].deadLineDate && {
+              deadLineDate: state.itemsDone[action.payload].deadLineDate,
+            }),
+          },
+        ].sort((a, b) => {
+          if (dayjs(a.createDate) < dayjs(b.createDate)) return 1;
+          if (dayjs(a.createDate) > dayjs(b.createDate)) return -1;
+          return 0;
+        }),
+        itemsDone: state.itemsDone.filter((_, index) => index !== action.payload),
       };
       store.set('todoList', newTodo);
       return newTodo;
@@ -106,7 +129,7 @@ const todoSlice = createSlice({
   },
 });
 
-export const { setTodo, addTodo, setTodoFinished, deleteTodo, deleteFinishedTodo } = todoSlice.actions;
+export const { setTodo, addTodo, setTodoFinished, setTodoActive, deleteTodo, deleteFinishedTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;
 
