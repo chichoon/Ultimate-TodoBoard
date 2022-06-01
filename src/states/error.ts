@@ -1,6 +1,8 @@
-import { IError } from 'types/information';
-import { RootState } from 'states';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { RootState } from 'states';
+
+import { IError } from 'types/information';
 
 const INIT_ERROR: IError = {
   status: 200,

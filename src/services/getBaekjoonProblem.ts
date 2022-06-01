@@ -1,5 +1,6 @@
-import { IBaekjoonItem } from 'types/information.d';
 import axios from 'axios';
+
+import { IBaekjoonItem } from 'types/information.d';
 
 const getBaekjoonProblem = (problemId: number) =>
   axios

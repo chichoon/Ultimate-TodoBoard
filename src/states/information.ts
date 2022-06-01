@@ -1,6 +1,7 @@
-import { RootState } from 'states';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
+
+import { RootState } from 'states';
 
 import { IInformation, IBaekjoonItem } from '../types/information.d';
 

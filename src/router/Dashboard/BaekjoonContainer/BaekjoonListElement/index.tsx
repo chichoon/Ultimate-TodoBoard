@@ -3,12 +3,12 @@ import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
 import { IBaekjoonItem } from 'types/information';
+import { deleteBaekjoon } from 'states/information';
 import solvedacIcon from './solvedacIcon';
 import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import styles from './baekjoonListElement.module.scss';
 import { XIcon } from 'assets/svgs';
-import { deleteBaekjoon } from 'states/information';
 
 interface IProps {
   item: IBaekjoonItem;

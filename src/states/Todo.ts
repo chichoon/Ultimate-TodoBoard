@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
-import { createDateSort, deadlineDateSort, today, INIT_TODO } from './todoUtils';
-import { ITodo } from 'types/todo';
 import { RootState } from 'states';
+
+import { ITodo } from 'types/todo';
+import { createDateSort, deadlineDateSort, today, INIT_TODO } from './todoUtils';
 
 interface ICreateNewTodo {
   title: string;

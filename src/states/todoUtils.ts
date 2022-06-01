@@ -1,5 +1,6 @@
-import { ITodoItemDone, ITodo, ITodoItem } from '../types/todo.d';
 import dayjs from 'dayjs';
+
+import { ITodoItemDone, ITodo, ITodoItem } from 'types/todo.d';
 
 const today = dayjs().format('YYYY-MM-DD HH:mm');
 

@@ -1,5 +1,6 @@
-import styles from './dashboard.module.scss';
 import DashboardItem from './DashboardItem';
+
+import styles from './dashboard.module.scss';
 
 const Dashboard = () => {
   return (

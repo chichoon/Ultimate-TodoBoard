@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useRef } from 'react';
 import { useClickAway } from 'react-use';
 
 import ModalPortal from '../modalPortal';
+
 import styles from './deleteConfirmModal.module.scss';
 
 interface IProps {
