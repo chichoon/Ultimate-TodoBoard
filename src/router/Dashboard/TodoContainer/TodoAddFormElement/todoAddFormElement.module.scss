@@ -33,13 +33,6 @@
   flex-direction: column;
   margin-right: 1rem;
 
-  & > input[type='text'] {
-    width: 70%;
-    min-width: 7rem;
-    color: colors.$DARK;
-    border-bottom: 1px solid colors.$DARK30;
-  }
-
   .checkboxArea {
     @include flexbox.flexbox(center, start);
     flex-direction: row;

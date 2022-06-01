@@ -10,25 +10,14 @@
     @include flexbox.flexbox(between, center);
     flex-direction: row;
 
+    input[type='text'] {
+      margin: 0.8rem 0;
+    }
+
     button {
       width: 2rem;
       height: 3rem;
       color: colors.$DARK;
     }
-  }
-}
-
-.baekjoonIDInput {
-  input[type='text'] {
-    width: 5rem;
-    color: colors.$DARK;
-    border-bottom: 1px solid colors.$DARK30;
-  }
-
-  label {
-    margin-right: 0.5rem;
-    font-size: 0.8rem;
-    line-height: 1rem;
-    color: colors.$DARK30;
   }
 }
