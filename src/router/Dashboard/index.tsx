@@ -7,6 +7,7 @@ const Dashboard = () => {
       <ul className={styles.dashboardListWrapper}>
         <DashboardItem type='todo' />
         <DashboardItem type='baekjoon' />
+        <DashboardItem type='dday' />
         <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
       </ul>
     </main>
