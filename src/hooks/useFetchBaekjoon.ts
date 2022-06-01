@@ -1,7 +1,22 @@
-import { useAppDispatch } from 'hooks';
 import { useQuery } from 'react-query';
 
-export const useFetchBaekjoon = (problemID: number) => {
+import { getProblemID } from '../states/problemID';
+import { useAppSelector, useAppDispatch } from 'hooks';
+import { getBaekjoonProblem } from 'services';
+import { addBaekjoon } from 'states/information';
+
+export const useFetchBaekjoon = () => {
   const dispatch = useAppDispatch();
-  useQuery(['baekjoonProblem', problemID], () => getBae);
+  const problemID = useAppSelector(getProblemID);
+
+  useQuery(['baekjoonProblem', problemID], () => getBaekjoonProblem(problemID), {
+    refetchOnWindowFocus: false,
+    staleTime: 60000,
+    enabled: problemID !== 0,
+    cacheTime: 60000,
+    onSuccess: (response) => {
+      console.log(response);
+      dispatch(addBaekjoon(response));
+    },
+  });
 };

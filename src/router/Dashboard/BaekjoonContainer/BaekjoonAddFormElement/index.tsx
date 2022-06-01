@@ -1,4 +1,6 @@
-import { useState, ChangeEvent, FormEvent, useEffect, Dispatch, SetStateAction } from 'react';
+import { useAppDispatch } from 'hooks';
+import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'react';
+import { setProblemID } from 'states/problemID';
 
 import styles from './baekjoonAddFormElement.module.scss';
 
@@ -7,15 +9,18 @@ interface IProps {
 }
 
 const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
-  const [problemID, setProblemID] = useState('');
+  const [value, setValue] = useState('');
+  const dispatch = useAppDispatch();
 
   const handleIDChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setProblemID(e.currentTarget.value);
+    setValue(e.currentTarget.value);
   };
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(problemID);
+    const problemID = Number(value);
+    if (isNaN(problemID)) return;
+    dispatch(setProblemID(problemID));
     setIsAddFormShown(false);
   };
 
@@ -24,7 +29,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
       <form onSubmit={handleFormSubmit}>
         <div className={styles.baekjoonIDInput}>
           <label htmlFor='baekjoonID'>문제 ID</label>
-          <input type='text' name='baekjoonID' value={problemID} onChange={handleIDChange} />
+          <input type='text' name='baekjoonID' value={value} onChange={handleIDChange} />
         </div>
         <button type='submit'>추가</button>
       </form>

@@ -1,16 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cx from 'classnames';
+
+import BaekjoonAddFormElement from './BaekjoonAddFormElement';
+import { useAppSelector, useFetchBaekjoon } from 'hooks';
+import { getBaekjoonItems } from 'states/information';
 
 import { PlusIcon } from 'assets/svgs';
 import styles from './baekjoonContainer.module.scss';
-import BaekjoonAddFormElement from './BaekjoonAddFormElement';
 
 const BaekjoonContainer = () => {
   const [isAddFormShown, setIsAddFormShown] = useState(false);
+  const baekjoonList = useAppSelector(getBaekjoonItems);
+  useFetchBaekjoon();
 
   const handleAddButtonClick = () => {
     setIsAddFormShown((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    console.log(baekjoonList);
+  }, [baekjoonList]);
 
   return (
     <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
