@@ -4,7 +4,7 @@ import store from 'store';
 import { RootState } from 'states';
 
 import { ITodo } from 'types/todo';
-import { createDateSort, deadlineDateSort, today, INIT_TODO } from './todoUtils';
+import { createDateSort, deadlineDateSort, today, INIT_TODO } from 'utils/todoUtils';
 
 interface ICreateNewTodo {
   title: string;

@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
-import { RootState } from 'states';
+import { IDDay, IInformation, IBaekjoonItem } from 'types/information.d';
+import { ddaySort } from 'utils/infoUtils';
 
-import { IInformation, IBaekjoonItem } from '../types/information.d';
+import { RootState } from 'states';
 
 const INIT_INFO: IInformation = {
   baekjoon: [],
@@ -33,6 +34,22 @@ const informationSlice = createSlice({
       const newData = {
         ...state,
         baekjoon: state.baekjoon.filter((_, index) => index !== action.payload),
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    addDDay: (state: IInformation, action: PayloadAction<IDDay>) => {
+      const newData = {
+        ...state,
+        dday: [...state.dday, action.payload].sort(ddaySort),
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    deleteDday: (state: IInformation, action: PayloadAction<number>) => {
+      const newData = {
+        ...state,
+        dday: state.dday.filter((_, index) => index !== action.payload),
       };
       store.set('infoData', newData);
       return newData;
