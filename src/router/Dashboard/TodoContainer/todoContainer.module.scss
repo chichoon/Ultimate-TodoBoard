@@ -16,10 +16,6 @@
 
     li {
       border-bottom: 1px solid colors.$DARK30;
-
-      &:last-child {
-        border-bottom: none;
-      }
     }
   }
 }
