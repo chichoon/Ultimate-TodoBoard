@@ -2,9 +2,9 @@ import dayjs from 'dayjs';
 
 import { ITodoItemDone, ITodo, ITodoItem } from 'types/todo.d';
 
-const today = dayjs().format('YYYY-MM-DD HH:mm');
+export const today = dayjs().format('YYYY-MM-DD HH:mm');
 
-const createDateSort = (a: ITodoItem | ITodoItemDone, b: ITodoItem | ITodoItemDone) => {
+export const createDateSort = (a: ITodoItem | ITodoItemDone, b: ITodoItem | ITodoItemDone) => {
   const createA = dayjs(a.createDate);
   const createB = dayjs(b.createDate);
 
@@ -13,17 +13,17 @@ const createDateSort = (a: ITodoItem | ITodoItemDone, b: ITodoItem | ITodoItemDo
   return 0;
 };
 
-const deadlineDateSort = (a: ITodoItem, b: ITodoItem) => {
-  if (!a.deadLineDate) return 1;
+export const deadlineDateSort = (a: ITodoItem, b: ITodoItem) => {
   if (!b.deadLineDate) return -1;
   const deadlineA = dayjs(a.deadLineDate);
   const deadlineB = dayjs(b.deadLineDate);
+  if (!a.deadLineDate) return 1;
   if (deadlineA < deadlineB) return -1;
   if (deadlineA > deadlineB) return 1;
   return 0;
 };
 
-const INIT_TODO: ITodo = {
+export const INIT_TODO: ITodo = {
   type: 'todo',
   items: [
     {
@@ -57,5 +57,3 @@ const INIT_TODO: ITodo = {
     .sort(deadlineDateSort),
   itemsDone: [],
 };
-
-export { createDateSort, deadlineDateSort, today, INIT_TODO };
