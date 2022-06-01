@@ -22,8 +22,10 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
   return (
     <div className={styles.baekjoonAddFormWrapper}>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor='baekjoonID'>문제 ID</label>
-        <input type='text' name='baekjoonID' value={problemID} onChange={handleIDChange} />
+        <div className={styles.baekjoonIDInput}>
+          <label htmlFor='baekjoonID'>문제 ID</label>
+          <input type='text' name='baekjoonID' value={problemID} onChange={handleIDChange} />
+        </div>
         <button type='submit'>추가</button>
       </form>
     </div>
