@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import cx from 'classnames';
 
+import { useAppDispatch } from 'hooks';
 import { IBaekjoonItem } from 'types/information';
 import solvedacIcon from './solvedacIcon';
 import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import styles from './baekjoonListElement.module.scss';
 import { XIcon } from 'assets/svgs';
+import { deleteBaekjoon } from 'states/information';
 
 interface IProps {
   item: IBaekjoonItem;
@@ -16,14 +18,14 @@ interface IProps {
 const BaekjoonListElement = ({ item, index }: IProps) => {
   const tierClass = `tier${Math.floor((item.tier + 4) / 5)}`;
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleXButtonClick = () => {
-    console.log(`삭제 ${index}`);
     setIsDeleteModalOpen(true);
   };
 
   const handleDeleteButtonClick = () => {
-    console.log('삭제');
+    dispatch(deleteBaekjoon(index));
     setIsDeleteModalOpen(false);
   };
 
@@ -44,7 +46,7 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
         <XIcon />
       </button>
       {isDeleteModalOpen && (
-        <DeleteConfirmModal title={item.problem}>
+        <DeleteConfirmModal title={item.problem} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
             <button type='button' onClick={handleDeleteButtonClick}>
               확인
