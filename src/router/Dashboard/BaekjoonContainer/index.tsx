@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import cx from 'classnames';
 
 import BaekjoonAddFormElement from './BaekjoonAddFormElement';
@@ -17,10 +17,6 @@ const BaekjoonContainer = () => {
   const handleAddButtonClick = () => {
     setIsAddFormShown((prevState) => !prevState);
   };
-
-  useEffect(() => {
-    console.log(baekjoonList);
-  }, [baekjoonList]);
 
   return (
     <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
