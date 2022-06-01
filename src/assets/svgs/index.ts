@@ -30,7 +30,7 @@ import {
   Tier28Icon,
   Tier29Icon,
   Tier30Icon,
-} from './baekjoon';
+} from './solvedac';
 
 export { ReactComponent as DashboardIcon } from './dashboardIcon.svg';
 export { ReactComponent as SettingsIcon } from './settingsIcon.svg';
@@ -39,7 +39,7 @@ export { ReactComponent as FeatherIcon } from './featherIcon.svg';
 export { ReactComponent as HamburgerIcon } from './hamburgerIcon.svg';
 export { ReactComponent as XIcon } from './xIcon.svg';
 export { ReactComponent as PlusIcon } from './plusIcon.svg';
-export const baekjoonIcon = {
+export const solvedacIcon = {
   0: Tier0Icon,
   1: Tier1Icon,
   2: Tier2Icon,
