@@ -19,10 +19,10 @@ const TodoContainer = () => {
 
   return (
     <div className={cx(styles.todoWrapper, 'listContainer')}>
-      <div className={cx(styles.todoHeader, 'listContainerHeader')}>
+      <div className={cx('listContainerAddHeader')}>
         <h3>오늘의 할 일</h3>
         <button type='button' onClick={handleAddButtonClick}>
-          <PlusIcon className={cx(styles.addForm, { [styles.isRemoving]: isAddFormShown })} />
+          <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
       <div className={styles.todoListWrapper}>

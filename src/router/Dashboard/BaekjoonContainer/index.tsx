@@ -14,10 +14,10 @@ const BaekjoonContainer = () => {
 
   return (
     <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
-      <div className={cx(styles.baekjoonHeader, 'listContainerHeader')}>
+      <div className={cx('listContainerAddHeader')}>
         <h3>밀린 백준 문제 목록</h3>
         <button type='button' onClick={handleAddButtonClick}>
-          <PlusIcon className={cx(styles.addForm, { [styles.isRemoving]: isAddFormShown })} />
+          <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
       <div className={styles.todoListWrapper}>

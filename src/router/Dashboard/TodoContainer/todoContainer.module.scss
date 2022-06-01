@@ -2,20 +2,6 @@
 @use 'styles/mixins/flexbox';
 
 .todoWrapper {
-  .todoHeader {
-    @include flexbox.flexbox(between, center);
-    flex-direction: row;
-
-    .addForm {
-      stroke: colors.$DARK;
-      transition: 0.2s;
-
-      &.isRemoving {
-        transform: rotate(45deg);
-      }
-    }
-  }
-
   .todoListWrapper {
     @include flexbox.flexbox(start, start);
     flex-direction: column;
