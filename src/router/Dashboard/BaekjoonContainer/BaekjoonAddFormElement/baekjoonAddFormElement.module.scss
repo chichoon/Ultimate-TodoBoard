@@ -10,14 +10,25 @@
     @include flexbox.flexbox(between, center);
     flex-direction: row;
 
-    input[type='text'] {
-      margin: 0.8rem 0;
-    }
-
     button {
       width: 2rem;
       height: 3rem;
       color: colors.$DARK;
     }
+  }
+}
+
+.baekjoonInputWrapper {
+  @include flexbox.flexbox(start, start);
+  flex-direction: column;
+
+  input[type='text'] {
+    margin: 0.8rem 0;
+  }
+
+  span {
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+    color: colors.$ALERT;
   }
 }

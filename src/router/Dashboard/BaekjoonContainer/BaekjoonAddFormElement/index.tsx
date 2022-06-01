@@ -1,5 +1,7 @@
-import { useAppDispatch } from 'hooks';
 import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'react';
+
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { getBaekjoonItems } from 'states/information';
 import { setProblemID } from 'states/problemID';
 
 import styles from './baekjoonAddFormElement.module.scss';
@@ -10,6 +12,8 @@ interface IProps {
 
 const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [value, setValue] = useState('');
+  const [isLimit, setIsLimit] = useState(false);
+  const baekjoonList = useAppSelector(getBaekjoonItems);
   const dispatch = useAppDispatch();
 
   const handleIDChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +22,10 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (baekjoonList.length > 20) {
+      setIsLimit(true);
+      return;
+    }
     const problemID = Number(value);
     if (isNaN(problemID)) return;
     dispatch(setProblemID(problemID));
@@ -27,7 +35,10 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
   return (
     <div className={styles.baekjoonAddFormWrapper}>
       <form onSubmit={handleFormSubmit}>
-        <input type='text' name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
+        <div className={styles.baekjoonInputWrapper}>
+          <input type='text' name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
+          {isLimit && <span>문제는 20개까지 등록 가능합니다.</span>}
+        </div>
         <button type='submit'>추가</button>
       </form>
     </div>
