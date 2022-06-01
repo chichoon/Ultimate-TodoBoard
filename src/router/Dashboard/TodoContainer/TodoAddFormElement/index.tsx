@@ -44,7 +44,6 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
 
   useEffect(() => {
     setDeadLine(today);
-    console.log(today);
   }, [isDeadLine]);
 
   return (
