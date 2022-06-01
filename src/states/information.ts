@@ -19,6 +19,7 @@ const informationSlice = createSlice({
   name: 'information',
   initialState: INIT_INFO,
   reducers: {
+    setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
       const newData = {
         ...state,
@@ -38,7 +39,7 @@ const informationSlice = createSlice({
   },
 });
 
-export const { addBaekjoon, deleteBaekjoon } = informationSlice.actions;
+export const { setInfo, addBaekjoon, deleteBaekjoon } = informationSlice.actions;
 
 export default informationSlice.reducer;
 

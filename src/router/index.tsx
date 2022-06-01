@@ -7,14 +7,17 @@ import Dashboard from './Dashboard';
 import Settings from './Settings';
 import Statistics from './Statistics';
 import { setTodo } from 'states/todo';
+import { setInfo } from 'states/information';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 
 const Router = () => {
   const dispatch = useAppDispatch();
 
   useMount(() => {
-    const storeData = store.get('todoList');
-    if (storeData) dispatch(setTodo(storeData));
+    const storeTodoData = store.get('todoList');
+    const storeInfoData = store.get('infoData');
+    if (storeTodoData) dispatch(setTodo(storeTodoData));
+    if (storeInfoData) dispatch(setInfo(storeInfoData));
   });
 
   return (
