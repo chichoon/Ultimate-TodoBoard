@@ -36,6 +36,14 @@ const TodoContainer = () => {
               </li>
             );
           })}
+          {todo.itemsDone.map((item, index) => {
+            const key = `todo-index-${index}-done`;
+            return (
+              <li key={key}>
+                <TodoListElement item={item} index={index} isDone />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
