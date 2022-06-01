@@ -6,18 +6,15 @@ import { Layout } from 'components';
 import Dashboard from './Dashboard';
 import Settings from './Settings';
 import Statistics from './Statistics';
-import { useAppSelector } from 'hooks/useAppSelector';
-import { getTodo, setTodo } from 'states/todo';
+import { setTodo } from 'states/todo';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 
 const Router = () => {
-  const todo = useAppSelector(getTodo);
   const dispatch = useAppDispatch();
 
   useMount(() => {
     const storeData = store.get('todoList');
     if (storeData) dispatch(setTodo(storeData));
-    store.set('todoList', todo);
   });
 
   return (
