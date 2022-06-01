@@ -25,29 +25,25 @@
 .baekjoonElementLeft {
   @include flexbox.flexbox(start, start);
   flex-direction: row;
-  width: 100%;
+  overflow: hidden;
 
-  .baekjoonInfo {
-    @include flexbox.flexbox(start, center);
-    flex: 1;
-    flex-direction: row;
+  p {
     height: 4rem;
-    padding: 0 1rem;
+    line-height: 4rem;
+  }
+
+  .baekjoonID {
+    width: 3rem;
+    margin: 0 0.5rem;
+    color: colors.$DARK50;
+  }
+
+  .baekjoonProblem {
+    flex: 1;
     overflow: hidden;
-
-    .baekjoonID {
-      width: 3rem;
-      margin-right: 0.5rem;
-      color: colors.$DARK50;
-    }
-
-    .baekjoonProblem {
-      flex: 3;
-      overflow: hidden;
-      color: colors.$DARK;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    color: colors.$DARK;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
