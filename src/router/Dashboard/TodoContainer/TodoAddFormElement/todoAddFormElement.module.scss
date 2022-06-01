@@ -4,7 +4,7 @@
 .todoAddFormWrapper {
   width: 100%;
   padding: 1rem;
-  border-bottom: 2px solid colors.$LIST_BORDER;
+  border-bottom: 2px solid colors.$DARK30;
 
   form {
     @include flexbox.flexbox(between, center);
@@ -16,14 +16,14 @@
     flex-direction: column;
 
     .todoDeadline {
-      color: colors.$CONTAINER_SUBTEXT;
+      color: colors.$DARK50;
     }
   }
 
   button {
     width: 2rem;
     height: 3rem;
-    color: colors.$CONTAINER_TEXT;
+    color: colors.$DARK;
   }
 }
 
@@ -36,8 +36,8 @@
   & > input[type='text'] {
     width: 70%;
     min-width: 7rem;
-    color: colors.$CONTAINER_TEXT;
-    border-bottom: 1px solid colors.$LIST_BORDER;
+    color: colors.$DARK;
+    border-bottom: 1px solid colors.$DARK30;
   }
 
   .checkboxArea {
@@ -49,7 +49,7 @@
       margin-left: 0.5rem;
       font-size: 0.8rem;
       line-height: 1rem;
-      color: colors.$LABEL_TEXT;
+      color: colors.$DARK30;
     }
   }
 }

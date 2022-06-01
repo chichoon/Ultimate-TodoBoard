@@ -6,15 +6,15 @@
   @include flexbox.flexbox(start, center);
   width: 100vw;
   height: 4rem;
-  color: colors.$CONTAINER_TEXT;
-  background-color: colors.$CONTAINER_BG;
+  color: colors.$DARK;
+  background-color: colors.$WHITE;
 
   .navigationBarIcon {
     @include flexbox.flexbox(center, center);
     width: 5rem;
     min-width: 5rem;
     height: 4rem;
-    background: linear-gradient(colors.$NAV_TITLE_ICON_BG1, colors.$NAV_TITLE_ICON_BG2);
+    background: linear-gradient(colors.$PRIMARY, colors.$ICON_GRADIENT);
 
     svg {
       fill: colors.$WHITE;
@@ -44,7 +44,7 @@
         height: 2rem;
 
         path {
-          fill: colors.$NAV_ICONS;
+          fill: colors.$DARK50;
         }
       }
     }

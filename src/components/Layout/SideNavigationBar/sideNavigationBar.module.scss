@@ -3,7 +3,7 @@
 @use 'styles/mixins/responsive';
 
 .navigationBarWrapper {
-  background-color: colors.$CONTAINER_BG;
+  background-color: colors.$WHITE;
   transition: 0.2s;
 
   &.isBarHidden {
@@ -29,17 +29,17 @@
 
       svg {
         height: 1.5rem;
-        fill: colors.$NAV_ICONS;
+        fill: colors.$DARK50;
       }
 
       &:hover {
         cursor: pointer;
-        background-color: colors.$CONTAINER_BG_HOVER;
+        background-color: colors.$MIDDLE20;
       }
     }
 
     .isActive > .navigationBarItem {
-      background-color: colors.$CONTAINER_BG_SELECTED;
+      background-color: colors.$MIDDLE40;
 
       svg {
         fill: colors.$WHITE;

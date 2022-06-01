@@ -1,26 +1,15 @@
 // Grayscale
 $WHITE: #ffffff;
 $BLACK: #000000;
-$GRAY2: #222222;
-$GRAY3: #333333;
-$GRAY6: #666666;
-$GRAYA: #aaaaaa;
-$GRAYD: #dddddd;
-$GRAYE: #eeeeee;
 
-$CONTAINER_BG: rgba($WHITE, 80%);
-$CONTAINER_BG_HOVER: rgba(#6d9cda, 10%);
-$CONTAINER_BG_SELECTED: rgba(#6d9cda, 50%);
-$CONTAINER_TEXT: #37414d;
-$CONTAINER_SUBTEXT: rgba(#37414d, 50%);
-$CHECKBOX_FILL: #6d9cda;
-
-// Navigation Bar
-$NAV_ICONS: rgba(#4f6585, 50%);
-$NAV_ICONS_ACTIVE: #4f6585;
-$NAV_TITLE_ICON_BG1: #6d9cda;
-$NAV_TITLE_ICON_BG2: #6c82f0;
-
-// Todo List
-$LIST_BORDER: rgba(#4f6585, 50%);
-$LABEL_TEXT: rgba(#4f6585, 50%);
+// THEME_BLUE
+$PRIMARY: #6d9cda;
+$ICON_GRADIENT: #6c82f0;
+$SECONDARY: #4d6e99;
+$DARK: #2d4059;
+$DARK30: rgba($DARK, 30%);
+$DARK50: rgba($DARK, 50%);
+$MIDDLE: #6089bf;
+$MIDDLE20: rgba($MIDDLE, 20%);
+$MIDDLE40: rgba($MIDDLE, 40%);
+$LIGHT: #f1f6f9;

@@ -5,23 +5,11 @@
 @use 'styles/constants/levels';
 
 .layoutWrapper {
-  @include position.relative(0);
   @include flexbox.flexbox(between, center);
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-
-  &::before {
-    @include position.fixed((0, 0));
-    z-index: levels.$LAYOUT_IMAGE;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-image: url('../../assets/images/seashore.webp');
-    filter: blur(5px);
-    opacity: 0.5;
-    transform: scale(110%);
-  }
+  background-color: colors.$LIGHT;
 
   .layoutBottom {
     @include flexbox.flexbox(between, start);
@@ -44,7 +32,7 @@
         width: 100%;
         font-size: 1.5rem;
         font-weight: 500;
-        color: colors.$CONTAINER_TEXT;
+        color: colors.$DARK;
       }
     }
   }
