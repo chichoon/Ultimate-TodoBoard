@@ -7,6 +7,7 @@
     flex-direction: row;
 
     .addForm {
+      stroke: colors.$DARK;
       transition: 0.2s;
 
       &.isRemoving {
