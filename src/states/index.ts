@@ -3,14 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import todo from './todo';
 import information from './information';
 import problemID from 'router/Dashboard/BaekjoonContainer/states/problemID';
-import baekjoonError from 'router/Dashboard/BaekjoonContainer/states/baekjoonError';
 
 export const store = configureStore({
   reducer: {
     todo,
     information,
     problemID,
-    baekjoonError,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),

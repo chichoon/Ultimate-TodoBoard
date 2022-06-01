@@ -4,7 +4,6 @@ import { getProblemID } from 'router/Dashboard/BaekjoonContainer/states/problemI
 import { useAppSelector, useAppDispatch } from 'hooks';
 import { getBaekjoonProblem } from 'services';
 import { addBaekjoon, getBaekjoonItems } from 'states/information';
-import { AxiosError } from 'axios';
 
 export const useFetchBaekjoon = () => {
   const dispatch = useAppDispatch();
@@ -16,11 +15,9 @@ export const useFetchBaekjoon = () => {
     staleTime: 60000,
     enabled: problemID !== 0 && info.length < 20,
     cacheTime: 60000,
+    retry: false,
     onSuccess: (response) => {
       dispatch(addBaekjoon(response));
-    },
-    onError: (error: AxiosError) => {
-      console.log(error.response?.data);
     },
   });
 };
