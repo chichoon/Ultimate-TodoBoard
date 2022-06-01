@@ -9,10 +9,12 @@
   @include flexbox.flexbox(start, center);
   z-index: levels.$ERROR_MESSAGE;
   width: 10rem;
-  height: 2rem;
+  height: 0;
+  overflow: hidden;
   line-height: 2rem;
   color: colors.$WHITE;
   background-color: colors.$PRIMARY;
+  transition: 0.2s;
 
   .errorCode {
     @include flexbox.flexbox(center, center);
@@ -29,4 +31,25 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
+
+.isError {
+  @keyframes fade {
+    0% {
+      height: 0;
+    }
+
+    20% {
+      height: 2rem;
+    }
+
+    80% {
+      height: 2rem;
+    }
+
+    100% {
+      height: 0;
+    }
+  }
+  animation: fade 1.5s ease-in-out;
 }

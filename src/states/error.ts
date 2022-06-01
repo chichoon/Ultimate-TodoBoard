@@ -3,7 +3,7 @@ import { RootState } from 'states';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const INIT_ERROR: IError = {
-  status: 200,
+  status: 302,
   data: 'No Error',
 };
 
