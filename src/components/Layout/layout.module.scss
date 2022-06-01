@@ -12,18 +12,13 @@
   background-color: colors.$LIGHT;
 
   .layoutBottom {
-    @include flexbox.flexbox(between, start);
-    flex: 1;
-    flex-direction: column;
     width: 100%;
     overflow: hidden;
   }
 
   .layoutOutlet {
-    @include flexbox.flexbox(start, start);
-    flex: 1;
-    flex-direction: column;
     width: 100%;
+    height: 100%;
     overflow: auto;
 
     .dashboardHeader {
