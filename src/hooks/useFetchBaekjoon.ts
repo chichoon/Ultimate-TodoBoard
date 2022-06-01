@@ -1,9 +1,11 @@
+import { AxiosError } from 'axios';
 import { useQuery } from 'react-query';
 
 import { getProblemID } from 'router/Dashboard/BaekjoonContainer/states/problemID';
 import { useAppSelector, useAppDispatch } from 'hooks';
 import { getBaekjoonProblem } from 'services';
 import { addBaekjoon, getBaekjoonItems } from 'states/information';
+import { setError } from 'states/error';
 
 export const useFetchBaekjoon = () => {
   const dispatch = useAppDispatch();
@@ -18,6 +20,16 @@ export const useFetchBaekjoon = () => {
     retry: false,
     onSuccess: (response) => {
       dispatch(addBaekjoon(response));
+    },
+    onError: (error: AxiosError<string>) => {
+      if (!error.response) dispatch(setError({ status: 0, data: 'Unknown Error' }));
+      else
+        dispatch(
+          setError({
+            status: error.response.status,
+            data: error.response.data ?? '',
+          })
+        );
     },
   });
 };
