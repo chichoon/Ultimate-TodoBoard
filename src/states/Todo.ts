@@ -1,43 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import dayjs from 'dayjs';
 import store from 'store';
 
+import { createDateSort, deadlineDateSort, today, INIT_TODO } from './todoUtils';
 import { ITodo } from 'types/todo';
 import { RootState } from 'states';
-
-const today = dayjs().format('YYYY-MM-DD HH:mm');
-const INIT_TODO: ITodo = {
-  type: 'todo',
-  items: [
-    {
-      todoTitle: '맛있는거 먹기',
-      createDate: '2022-05-31 12:18',
-    },
-    {
-      todoTitle: '데이트하기',
-      createDate: '2022-05-23 22:45',
-      deadLineDate: '2022-06-10',
-    },
-    {
-      todoTitle: '엄청엄청짱짱긴제목제목제목아아아아',
-      createDate: '2022-05-23 14:59',
-      deadLineDate: '2022-06-10',
-    },
-    {
-      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23 11:33',
-    },
-    {
-      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23 11:00',
-    },
-    {
-      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23 12:04',
-    },
-  ],
-  itemsDone: [],
-};
 
 interface ICreateNewTodo {
   title: string;
@@ -55,11 +21,9 @@ const todoSlice = createSlice({
         items: [
           ...state.items,
           { todoTitle: action.payload.title, createDate: today, deadLineDate: action.payload.deadLineDate },
-        ].sort((a, b) => {
-          if (dayjs(a.createDate) < dayjs(b.createDate)) return 1;
-          if (dayjs(a.createDate) > dayjs(b.createDate)) return -1;
-          return 0;
-        }),
+        ]
+          .sort(createDateSort)
+          .sort(deadlineDateSort),
         itemsDone: state.itemsDone,
       };
       store.set('todoList', newTodo);
@@ -77,11 +41,9 @@ const todoSlice = createSlice({
             ...(state.items[action.payload].deadLineDate && { deadLineDate: state.items[action.payload].deadLineDate }),
             finishedDate: today,
           },
-        ].sort((a, b) => {
-          if (dayjs(a.createDate) < dayjs(b.createDate)) return 1;
-          if (dayjs(a.createDate) > dayjs(b.createDate)) return -1;
-          return 0;
-        }),
+        ]
+          .sort(createDateSort)
+          .sort(deadlineDateSort),
       };
       store.set('todoList', newTodo);
       return newTodo;
@@ -98,11 +60,9 @@ const todoSlice = createSlice({
               deadLineDate: state.itemsDone[action.payload].deadLineDate,
             }),
           },
-        ].sort((a, b) => {
-          if (dayjs(a.createDate) < dayjs(b.createDate)) return 1;
-          if (dayjs(a.createDate) > dayjs(b.createDate)) return -1;
-          return 0;
-        }),
+        ]
+          .sort(createDateSort)
+          .sort(deadlineDateSort),
         itemsDone: state.itemsDone.filter((_, index) => index !== action.payload),
       };
       store.set('todoList', newTodo);
