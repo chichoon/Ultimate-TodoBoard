@@ -4,9 +4,9 @@ import { ITodo } from 'types/todo';
 import { IWeather } from 'types/weather';
 import BaekjoonContainer from './BaekjoonContainer';
 import DDayContainer from './DDayContainer';
-import EmbedContainer from './EmbedContainer';
-import GithubContainer from './GithubContainer';
-import ImageContainer from './ImageContainer';
+// import EmbedContainer from './EmbedContainer';
+// import GithubContainer from './GithubContainer';
+// import ImageContainer from './ImageContainer';
 import TodoContainer from './TodoContainer';
 import WeatherContainer from './WeatherContainer';
 
