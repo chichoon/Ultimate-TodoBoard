@@ -1,0 +1,69 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+@use 'styles/constants/colors';
+
+.baekjoonElementWrapper {
+  @include flexbox.flexbox(between, center);
+  width: 100%;
+  padding-right: 1rem;
+  border-top: 3px solid;
+  border-right: 3px solid;
+
+  a {
+    @include flexbox.flexbox(start, start);
+    flex: 1;
+    height: 3rem;
+  }
+
+  svg {
+    width: 2rem;
+  }
+
+  .baekjoonDoneButton {
+    @include flexbox.flexbox(center, center);
+    padding: 0.5rem;
+  }
+}
+
+.baekjoonInformation {
+  @include flexbox.flexbox(start, center);
+  flex: 1;
+  flex-direction: row;
+  height: 100%;
+  padding: 0 1rem;
+
+  dt {
+    width: 3rem;
+    margin-right: 1rem;
+    color: colors.$DARK50;
+  }
+
+  dd {
+    flex: 1;
+    color: colors.$DARK;
+  }
+}
+
+.tier0 {
+  border-color: colors.$TIER_UNRATED;
+}
+
+.tier1 {
+  border-color: colors.$TIER_BRONZE;
+}
+
+.tier3 {
+  border-color: colors.$TIER_GOLD;
+}
+
+.tier4 {
+  border-color: colors.$TIER_PLATINUM;
+}
+
+.tier5 {
+  border-color: colors.$TIER_DIAMOND;
+}
+
+.tier6 {
+  border-color: colors.$TIER_RUBY;
+}

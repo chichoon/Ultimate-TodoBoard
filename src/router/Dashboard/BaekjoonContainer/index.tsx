@@ -7,6 +7,7 @@ import { getBaekjoonItems } from 'states/information';
 
 import { PlusIcon } from 'assets/svgs';
 import styles from './baekjoonContainer.module.scss';
+import BaekjoonListElement from './BaekjoonListElement';
 
 const BaekjoonContainer = () => {
   const [isAddFormShown, setIsAddFormShown] = useState(false);
@@ -31,6 +32,16 @@ const BaekjoonContainer = () => {
       </div>
       <div className={styles.todoListWrapper}>
         {isAddFormShown && <BaekjoonAddFormElement setIsAddFormShown={setIsAddFormShown} />}
+        <ul>
+          {baekjoonList.map((item, index) => {
+            const key = `baekjoon-index-${index}`;
+            return (
+              <li key={key}>
+                <BaekjoonListElement item={item} index={index} />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
