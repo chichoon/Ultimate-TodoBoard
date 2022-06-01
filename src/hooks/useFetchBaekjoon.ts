@@ -1,9 +1,10 @@
 import { useQuery } from 'react-query';
 
-import { getProblemID } from '../states/problemID';
+import { getProblemID } from 'router/Dashboard/BaekjoonContainer/states/problemID';
 import { useAppSelector, useAppDispatch } from 'hooks';
 import { getBaekjoonProblem } from 'services';
 import { addBaekjoon, getBaekjoonItems } from 'states/information';
+import { AxiosError } from 'axios';
 
 export const useFetchBaekjoon = () => {
   const dispatch = useAppDispatch();
@@ -17,6 +18,9 @@ export const useFetchBaekjoon = () => {
     cacheTime: 60000,
     onSuccess: (response) => {
       dispatch(addBaekjoon(response));
+    },
+    onError: (error: AxiosError) => {
+      console.log(error.response?.data);
     },
   });
 };

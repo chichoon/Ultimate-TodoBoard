@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'reac
 
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { getBaekjoonItems } from 'states/information';
-import { setProblemID } from 'states/problemID';
+import { setProblemID } from '../states/problemID';
 
 import styles from './baekjoonAddFormElement.module.scss';
 
