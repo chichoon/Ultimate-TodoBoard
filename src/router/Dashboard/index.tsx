@@ -2,20 +2,12 @@ import styles from './dashboard.module.scss';
 import { ITodo } from 'types/todo';
 import DashboardItem from './DashboardItem';
 
-const TEST_TODO: ITodo = {
-  type: 'todo',
-  items: [
-    { todoTitle: '끝내주게 숨쉬기', createDate: '2021-10-06' },
-    { todoTitle: '밥개맛있게먹기', createDate: '2021-11-13' },
-  ],
-  itemsDone: [],
-};
-
 const Dashboard = () => {
   return (
     <main className={styles.dashboardMain}>
       <ul>
-        <DashboardItem item={TEST_TODO} />
+        <DashboardItem type='todo' />
+        <DashboardItem type='baekjoon' />
         <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
       </ul>
     </main>

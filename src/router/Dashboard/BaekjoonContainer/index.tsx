@@ -1,11 +1,10 @@
 import { IBaekjoon } from 'types/baekjoon';
+import cx from 'classnames';
 
-interface IProps {
-  baekjoonItem: IBaekjoon;
-}
+import styles from './baekjoonContainer.module.scss';
 
-const BaekjoonContainer = ({ baekjoonItem }: IProps) => {
-  return <div>백준 컨테이너지롱</div>;
+const BaekjoonContainer = () => {
+  return <div className={cx(styles.baekjoonWrapper, 'listContainer')}>백준 컨테이너지롱</div>;
 };
 
 export default BaekjoonContainer;

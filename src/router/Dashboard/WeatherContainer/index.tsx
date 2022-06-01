@@ -1,10 +1,6 @@
 import { IWeather } from 'types/weather';
 
-interface IProps {
-  weatherItem: IWeather;
-}
-
-const WeatherContainer = ({ weatherItem }: IProps) => {
+const WeatherContainer = () => {
   return <div>날씨 컨테이너지롱</div>;
 };
 
