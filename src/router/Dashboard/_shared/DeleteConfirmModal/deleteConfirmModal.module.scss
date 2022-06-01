@@ -1,0 +1,25 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/mixins/flexbox';
+
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: levels.$MODAL_BACKGROUND;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(colors.$BLACK, 80%);
+  backdrop-filter: blur(2px);
+}
+
+.deleteModalWrapper {
+  @include flexbox.flexbox(center, center);
+  position: fixed;
+  top: calc(50% - 5rem);
+  left: calc(50% - 3rem);
+  flex-direction: column;
+  width: 10rem;
+  height: 6rem;
+  background-color: colors.$WHITE;
+}
