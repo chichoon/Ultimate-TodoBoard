@@ -57,8 +57,10 @@ const informationSlice = createSlice({
   },
 });
 
-export const { setInfo, addBaekjoon, deleteBaekjoon } = informationSlice.actions;
+export const { setInfo, addBaekjoon, deleteBaekjoon, addDDay, deleteDday } = informationSlice.actions;
 
 export default informationSlice.reducer;
 
 export const getBaekjoonItems = (state: RootState): IBaekjoonItem[] => state.information.baekjoon;
+
+export const getDDays = (state: RootState): IDDay[] => state.information.dday;
