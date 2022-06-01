@@ -1,16 +1,23 @@
-import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect, Dispatch, SetStateAction } from 'react';
 import dayjs from 'dayjs';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './todoAddFormElement.module.scss';
 import CustomDatePicker from './CustomDatePicker';
+import { useAppDispatch } from 'hooks/useAppDispatch';
+import { addTodo } from 'states/todo';
 
 const today = new Date();
 
-const TodoAddFormElement = () => {
+interface IProps {
+  setIsAddFormShown: Dispatch<SetStateAction<boolean>>;
+}
+
+const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [title, setTitle] = useState('');
   const [isDeadLine, setIsDeadline] = useState(false);
   const [deadLine, setDeadLine] = useState<Date>(today);
+  const dispatch = useAppDispatch();
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value);
@@ -26,8 +33,13 @@ const TodoAddFormElement = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(title);
-    console.log(deadLine);
+    dispatch(
+      addTodo({
+        title,
+        ...(isDeadLine && { deadLineDate: dayjs(deadLine).format('YYYY-MM-DD') }),
+      })
+    );
+    setIsAddFormShown(false);
   };
 
   useEffect(() => {

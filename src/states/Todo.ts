@@ -42,7 +42,6 @@ const INIT_TODO: ITodo = {
 interface ICreateNewTodo {
   title: string;
   deadLineDate?: string;
-  index: number;
 }
 
 const todoSlice = createSlice({

@@ -26,7 +26,7 @@ const TodoContainer = () => {
         </button>
       </div>
       <div className={styles.todoListWrapper}>
-        {isAddFormShown && <TodoAddFormElement />}
+        {isAddFormShown && <TodoAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {todo.items.map((item, index) => {
             const key = `todo-index-${index}`;
