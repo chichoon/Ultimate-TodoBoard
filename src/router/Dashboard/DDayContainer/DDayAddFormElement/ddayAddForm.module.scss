@@ -1,0 +1,25 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.ddayFormWrapper {
+  @include flexbox.flexbox(between, center);
+  flex-direction: row;
+  padding: 0 1rem;
+
+  .formLeft {
+    @include flexbox.flexbox(between, center);
+    flex-direction: column;
+
+    input[type='text'] {
+      width: 8rem;
+
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .paletteButton {
+    padding: 0.5rem;
+  }
+}

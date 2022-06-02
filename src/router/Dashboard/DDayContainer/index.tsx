@@ -3,11 +3,10 @@ import cx from 'classnames';
 
 import { useAppSelector } from 'hooks';
 import { getDDays } from 'states/information';
-
-import { PlusIcon } from 'assets/svgs';
-import styles from './ddayContainer.module.scss';
 import DDayListElement from './DDayListElement';
 import DDayAddFormElement from './DDayAddFormElement';
+
+import styles from './ddayContainer.module.scss';
 
 const DDayContainer = () => {
   const [isAddButtonShown, setIsAddButtonShown] = useState(true);
