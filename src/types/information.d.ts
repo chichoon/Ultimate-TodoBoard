@@ -21,6 +21,7 @@ export interface IDDay {
   title: string;
   icon: string;
   date: string;
+  color: string;
 }
 
 export interface IError {
