@@ -11,7 +11,7 @@ import styles from './baekjoonContainer.module.scss';
 
 const BaekjoonContainer = () => {
   const [isAddFormShown, setIsAddFormShown] = useState(false);
-  const baekjoonList = useAppSelector(getBaekjoonItems);
+  const baekjoonItems = useAppSelector(getBaekjoonItems);
   useFetchBaekjoon();
 
   const handleAddButtonClick = () => {
@@ -26,10 +26,10 @@ const BaekjoonContainer = () => {
           <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
-      <div className={styles.baekjoonListWrapper}>
+      <div className={styles.baekjoonItemsWrapper}>
         {isAddFormShown && <BaekjoonAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
-          {baekjoonList.map((item, index) => {
+          {baekjoonItems.map((item, index) => {
             const key = `baekjoon-index-${index}`;
             return (
               <li key={key}>
