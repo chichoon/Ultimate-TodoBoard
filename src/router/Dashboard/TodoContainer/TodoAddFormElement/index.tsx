@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import { addTodo } from 'states/todo';
 import { useAppDispatch } from 'hooks';
-import CustomDatePicker from './CustomDatePicker';
+import { CustomDatePicker } from 'components';
 
 import styles from './todoAddFormElement.module.scss';
 import 'react-datepicker/dist/react-datepicker.css';

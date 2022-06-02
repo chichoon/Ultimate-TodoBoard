@@ -1,3 +1,4 @@
 import Layout from './Layout';
+import CustomDatePicker from './CustomDatePicker';
 
-export { Layout };
+export { Layout, CustomDatePicker };
