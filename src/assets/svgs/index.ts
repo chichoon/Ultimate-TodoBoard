@@ -39,3 +39,4 @@ export { ReactComponent as FeatherIcon } from './featherIcon.svg';
 export { ReactComponent as HamburgerIcon } from './hamburgerIcon.svg';
 export { ReactComponent as XIcon } from './xIcon.svg';
 export { ReactComponent as PlusIcon } from './plusIcon.svg';
+export { ReactComponent as ColorFillIcon } from './colorFillIcon.svg';
