@@ -76,7 +76,7 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
           <span className={cx({ [styles.isFillWhite]: color === '#ffffff' })}>{color}</span>
           {isColorPaletteShown && (
             <div className={styles.paletteWrapper}>
-              <GithubPicker triangle='hide' color={color} onChangeComplete={handleColorChange} />
+              <GithubPicker width='60vw' triangle='hide' color={color} onChangeComplete={handleColorChange} />
             </div>
           )}
         </button>

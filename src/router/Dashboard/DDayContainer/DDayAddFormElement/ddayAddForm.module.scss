@@ -42,12 +42,13 @@
 
     .paletteWrapper {
       position: absolute;
-      top: 4rem;
-      left: -5rem;
+      top: 2.3rem;
+      left: 0;
       z-index: levels.$PALETTE;
 
       & > div {
         justify-content: center;
+        max-width: 14.5rem;
       }
     }
 
