@@ -2,6 +2,7 @@ import DatePicker from 'react-datepicker';
 import { ko } from 'date-fns/esm/locale';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import styles from './customDatePicker.module.scss';
 
 interface IProps {
   selected: Date;
@@ -10,7 +11,15 @@ interface IProps {
 }
 
 const CustomDatePicker = ({ selected, today, onChange }: IProps) => {
-  return <DatePicker locale={ko} minDate={today} selected={selected} onChange={onChange} />;
+  return (
+    <DatePicker
+      className={styles.datePickerWrapper}
+      locale={ko}
+      minDate={today}
+      selected={selected}
+      onChange={onChange}
+    />
+  );
 };
 
 export default CustomDatePicker;
