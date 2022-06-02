@@ -1,4 +1,5 @@
 import { useState, Dispatch, SetStateAction } from 'react';
+import cx from 'classnames';
 
 import DDayAddForm from './DDayAddForm';
 
@@ -26,7 +27,7 @@ const DDayAddFormElement = ({ setIsAddButtonShown }: IProps) => {
 
   return (
     <li>
-      <div className={styles.ddayAddFormWrapper}>{elementContent}</div>
+      <div className={cx(styles.ddayAddFormWrapper, { [styles.isForm]: isFormShown })}>{elementContent}</div>
     </li>
   );
 };

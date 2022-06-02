@@ -5,7 +5,8 @@
 .ddayAddFormWrapper {
   @include flexbox.flexbox(center, center);
   width: 100%;
-  height: 5rem;
+  min-height: 3rem;
+  padding: 1rem;
   background-color: colors.$MIDDLE20;
   border-radius: sizes.$BORDER_RADIUS;
 
@@ -13,5 +14,9 @@
     width: 2rem;
     height: 2rem;
     stroke: colors.$WHITE;
+  }
+
+  &.isForm {
+    justify-content: space-between;
   }
 }

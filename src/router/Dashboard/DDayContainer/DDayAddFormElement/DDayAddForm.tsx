@@ -1,6 +1,7 @@
 import { useState, FormEvent, ChangeEvent, useRef, Dispatch, SetStateAction } from 'react';
 import { useClickAway } from 'react-use';
-import { ColorResult, TwitterPicker } from 'react-color';
+import { ColorResult, GithubPicker } from 'react-color';
+import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
 import { CustomDatePicker } from 'components';
@@ -18,7 +19,7 @@ const today = new Date();
 const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
   const [title, setTitle] = useState('');
   const [dday, setDDay] = useState(today);
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#B90000');
   const [icon, setIcon] = useState('');
   const [isColorPaletteShown, setIsColorPaletteShown] = useState(false);
   const paletteRef = useRef(null);
@@ -64,13 +65,23 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
       <div className={styles.formLeft}>
         <input type='text' maxLength={10} value={title} onChange={handleTitleChange} placeholder='디데이 이름 (10자)' />
         <input type='text' maxLength={1} value={icon} onChange={handleIconChange} placeholder='식별 문자' />
+        <button
+          type='button'
+          style={{ backgroundColor: color }}
+          className={styles.paletteButton}
+          onClick={handleColorClick}
+          ref={paletteRef}
+        >
+          <ColorFillIcon />
+          <span className={cx({ [styles.isFillWhite]: color === '#ffffff' })}>{color}</span>
+          {isColorPaletteShown && (
+            <div className={styles.paletteWrapper}>
+              <GithubPicker triangle='hide' color={color} onChangeComplete={handleColorChange} />
+            </div>
+          )}
+        </button>
+        <CustomDatePicker selected={dday} today={today} onChange={handleDDayChange} />
       </div>
-      <button type='button' className={styles.paletteButton} onClick={handleColorClick} ref={paletteRef}>
-        <ColorFillIcon style={{ fill: color }} />
-        <span>{color}</span>
-        {isColorPaletteShown && <TwitterPicker color={color} onChangeComplete={handleColorChange} />}
-      </button>
-      <CustomDatePicker selected={dday} today={today} onChange={handleDDayChange} />
       <button type='submit' className={styles.submitButton}>
         추가
       </button>{' '}

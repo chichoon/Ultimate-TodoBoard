@@ -1,25 +1,62 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
 
 .ddayFormWrapper {
   @include flexbox.flexbox(between, center);
   flex-direction: row;
-  padding: 0 1rem;
 
   .formLeft {
-    @include flexbox.flexbox(between, center);
+    @include flexbox.flexbox(center, start);
     flex-direction: column;
 
-    input[type='text'] {
-      width: 8rem;
+    & > input[type='text'] {
+      width: 4rem;
+      margin-bottom: 0.5rem;
 
       &:first-child {
-        margin-bottom: 0.5rem;
+        width: 8rem;
       }
     }
   }
 
   .paletteButton {
+    @include position.relative((0));
+    @include flexbox.flexbox(start, start);
+    flex-direction: row;
+    width: 6rem;
     padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: white;
+    border-radius: sizes.$BORDER_RADIUS;
+
+    span {
+      color: colors.$WHITE;
+
+      &.isFillWhite {
+        color: colors.$DARK;
+      }
+    }
+
+    .paletteWrapper {
+      position: absolute;
+      top: 4rem;
+      left: -5rem;
+      z-index: levels.$PALETTE;
+
+      & > div {
+        justify-content: center;
+      }
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      fill: colors.$WHITE;
+      stroke: colors.$WHITE;
+    }
   }
 }
