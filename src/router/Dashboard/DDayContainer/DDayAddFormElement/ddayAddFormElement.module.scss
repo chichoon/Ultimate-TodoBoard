@@ -8,4 +8,10 @@
   height: 5rem;
   background-color: colors.$MIDDLE20;
   border-radius: sizes.$BORDER_RADIUS;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    stroke: colors.$WHITE;
+  }
 }

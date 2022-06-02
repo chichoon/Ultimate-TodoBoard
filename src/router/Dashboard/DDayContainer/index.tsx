@@ -7,24 +7,16 @@ import { getDDays } from 'states/information';
 import { PlusIcon } from 'assets/svgs';
 import styles from './ddayContainer.module.scss';
 import DDayListElement from './DDayListElement';
-import DDayAddForm from './DDayAddForm';
+import DDayAddFormElement from './DDayAddFormElement';
 
 const DDayContainer = () => {
-  const [isAddFormShown, setIsAddFormShown] = useState(false);
   const [isAddButtonShown, setIsAddButtonShown] = useState(true);
   const ddays = useAppSelector(getDDays);
-
-  const handleAddButtonClick = () => {
-    const promise = new Promise((resolve) => {
-      resolve(setIsAddFormShown(true));
-    });
-    promise.then(() => setIsAddButtonShown(false));
-  };
 
   useEffect(() => {
     if (ddays.length < 4) setIsAddButtonShown(true);
     else setIsAddButtonShown(false);
-  }, [ddays, isAddFormShown]);
+  }, [ddays]);
 
   return (
     <div className={cx(styles.ddayWrapper, 'listContainer')}>
@@ -41,14 +33,7 @@ const DDayContainer = () => {
               </li>
             );
           })}
-          {isAddButtonShown && (
-            <li className={styles.ddayAddForm}>
-              <button type='button' onClick={handleAddButtonClick}>
-                <PlusIcon />
-              </button>
-            </li>
-          )}
-          {isAddFormShown && <DDayAddForm setIsAddFormShown={setIsAddButtonShown} />}
+          {isAddButtonShown && <DDayAddFormElement setIsAddButtonShown={setIsAddButtonShown} />}
         </ul>
       </div>
     </div>
