@@ -1,0 +1,11 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
+.ddayAddFormWrapper {
+  @include flexbox.flexbox(center, center);
+  width: 100%;
+  height: 5rem;
+  background-color: colors.$MIDDLE20;
+  border-radius: sizes.$BORDER_RADIUS;
+}
