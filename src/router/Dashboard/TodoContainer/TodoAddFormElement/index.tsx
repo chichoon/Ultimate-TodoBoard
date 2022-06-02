@@ -6,7 +6,6 @@ import { useAppDispatch } from 'hooks';
 import { CustomDatePicker } from 'components';
 
 import styles from './todoAddFormElement.module.scss';
-import 'react-datepicker/dist/react-datepicker.css';
 
 const today = new Date();
 
@@ -17,7 +16,7 @@ interface IProps {
 const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [title, setTitle] = useState('');
   const [isDeadLine, setIsDeadline] = useState(false);
-  const [deadLine, setDeadLine] = useState<Date>(today);
+  const [deadLine, setDeadLine] = useState(today);
   const dispatch = useAppDispatch();
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
