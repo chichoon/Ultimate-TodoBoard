@@ -89,7 +89,7 @@
 .buttons {
   @include flexbox.flexbox(center, center);
 
-  button:first-child {
+  & > button:first-child {
     margin-right: 1rem;
   }
 }

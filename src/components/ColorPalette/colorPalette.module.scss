@@ -7,13 +7,13 @@
 .paletteWrapper {
   @include flexbox.flexbox(center, center);
   @include position.absolute((2.3rem, 0, 0, 0));
-  z-index: levels.$PALETTE;
+  z-index: levels.$DROPDOWN;
   width: 10rem;
   height: fit-content;
   padding: 0.5rem 1rem;
   background-color: colors.$WHITE;
+  border: 1px solid colors.$DARK30;
   border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
 }
 
 .paletteList {

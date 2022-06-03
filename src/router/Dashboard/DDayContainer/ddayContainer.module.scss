@@ -8,7 +8,7 @@
   flex-direction: column;
   width: 100%;
 
-  ul {
+  & > ul {
     @include flexbox.flexbox(start, start);
     flex-flow: wrap;
     width: 100%;
@@ -21,7 +21,7 @@
   }
 
   @include responsive.between(0, 480px) {
-    ul {
+    & > ul {
       flex-flow: column;
 
       li {
