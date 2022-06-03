@@ -8,7 +8,7 @@
   margin-bottom: 1rem;
   background-color: colors.$WHITE;
   border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: 0 0 1rem 0.05rem colors.$DARK10;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
 }
 
 .listContainerHeader,
