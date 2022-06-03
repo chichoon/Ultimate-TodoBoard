@@ -115,7 +115,7 @@ export const getDDays = (state: RootState): IDDay[] => state.information.dday;
 
 export const getNickname = (state: RootState): string => state.information.nickname;
 
-export const getTheme = (state: RootState): string => state.information.theme;
+export const getTheme = (state: RootState): 'lightblue' | 'darkblue' => state.information.theme;
 
 export const getWeather = (state: RootState): IWeather => state.information.weather;
 
