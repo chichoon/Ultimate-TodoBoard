@@ -1,0 +1,28 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+
+.paletteWrapper {
+  @include flexbox.flexbox(center, center);
+  @include position.absolute((2.3rem, 0, 0, 0));
+  z-index: levels.$PALETTE;
+  width: 10rem;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: colors.$WHITE;
+  border-radius: sizes.$BORDER_RADIUS;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
+}
+
+.paletteList {
+  @include flexbox.flexbox(between, center);
+  flex-flow: wrap;
+  height: 4rem;
+
+  button {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}

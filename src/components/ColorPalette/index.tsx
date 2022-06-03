@@ -9,9 +9,9 @@ interface IProps {
 const ColorPalette = ({ onColorSet }: IProps) => {
   return (
     <div className={styles.paletteWrapper}>
-      <ul>
+      <ul className={styles.paletteList}>
         {PALETTE_COLORS.map((color) => (
-          <li key={`colors-${color}`} className={styles.colorChip}>
+          <li key={`colors-${color}`}>
             <button type='button' style={{ backgroundColor: color }} onClick={() => onColorSet(color)}>
               {' '}
             </button>
