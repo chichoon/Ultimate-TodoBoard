@@ -3,6 +3,7 @@
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
 
 .ddayFormWrapper {
   @include flexbox.flexbox(between, center);
@@ -12,10 +13,25 @@
   & > div {
     flex: 1;
   }
+
+  @include responsive.between(0, 519) {
+    @include flexbox.flexbox(center, center);
+    flex-flow: column;
+
+    .pickers,
+    .inputs {
+      @include flexbox.flexbox(center, center);
+      flex-flow: column;
+
+      input {
+        text-align: center;
+      }
+    }
+  }
 }
 
 .inputs {
-  @include flexbox.flexbox(center, center);
+  @include flexbox.flexbox(center, start);
   flex-direction: column;
   padding: 0.5rem;
 
@@ -30,7 +46,7 @@
 }
 
 .pickers {
-  @include flexbox.flexbox(center, center);
+  @include flexbox.flexbox(center, start);
   flex-direction: column;
   padding: 0.5rem;
 
@@ -64,8 +80,16 @@
       stroke: colors.$WHITE;
     }
   }
+
+  input[type='text'] {
+    width: 7rem;
+  }
 }
 
 .buttons {
-  @include flexbox.flexbox(between, center);
+  @include flexbox.flexbox(center, center);
+
+  button:first-child {
+    margin-right: 1rem;
+  }
 }
