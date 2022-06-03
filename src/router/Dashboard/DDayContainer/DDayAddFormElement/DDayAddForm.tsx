@@ -71,15 +71,8 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
   return (
     <form onSubmit={handleFormSubmit} className={styles.ddayFormWrapper}>
       <div className={styles.inputs}>
-        <input
-          type='text'
-          required
-          maxLength={10}
-          value={title}
-          onChange={handleTitleChange}
-          placeholder='디데이 이름 (10자)'
-        />
-        <input type='text' maxLength={1} value={icon} onChange={handleIconChange} placeholder='식별 문자' />
+        <input type='text' required value={title} onChange={handleTitleChange} placeholder='디데이 이름' />
+        <input type='text' required value={icon} onChange={handleIconChange} placeholder='식별 문자' />
       </div>
       <div className={styles.pickers}>
         <div className={styles.paletteButton} ref={paletteRef}>
