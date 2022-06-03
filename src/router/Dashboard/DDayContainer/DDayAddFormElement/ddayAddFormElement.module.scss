@@ -1,24 +1,102 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/levels';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
 
 .ddayAddFormWrapper {
-  @include flexbox.flexbox(center, center);
-  width: 100%;
-  min-height: 3rem;
-  padding: 1rem;
-  margin-top: 1rem;
-  background-color: colors.$WHITE;
-  border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: 0 0 1rem -0.5rem colors.$DARK30;
+  form > div {
+    flex: 1;
+  }
+}
 
-  svg {
-    width: 2rem;
-    height: 2rem;
-    stroke: colors.$DARK;
+.inputs {
+  @include flexbox.flexbox(center, start);
+  flex-direction: column;
+  padding: 0.5rem;
+
+  & > input[type='text'] {
+    width: 4rem;
+
+    &:first-child {
+      width: 8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.pickers {
+  @include flexbox.flexbox(center, start);
+  flex-direction: column;
+  padding: 0.5rem;
+
+  .paletteButton {
+    @include position.relative((0));
+
+    & > button {
+      @include flexbox.flexbox(center, center);
+      flex-direction: row;
+      width: 6rem;
+      height: 2rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: white;
+      border-radius: sizes.$BORDER_RADIUS;
+    }
+
+    span {
+      color: colors.$WHITE;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      fill: colors.$WHITE;
+      stroke: colors.$WHITE;
+    }
   }
 
-  &.isForm {
-    justify-content: space-between;
+  input[type='text'] {
+    width: 7rem;
+  }
+}
+
+@include responsive.between(0, M) {
+  .pickers,
+  .inputs {
+    @include flexbox.flexbox(center, center);
+    flex-flow: column;
+
+    input[type='text'] {
+      width: 3rem;
+      max-width: 3rem;
+      text-align: center;
+
+      &:placeholder-shown {
+        text-overflow: ellipsis;
+      }
+    }
+
+    .paletteButton > button {
+      max-width: 2rem;
+      padding: 0;
+
+      & > svg {
+        margin: 0;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@include responsive.between(M, 480) {
+  .inputs > input[type='text'] {
+    width: 5rem;
+    max-width: 5rem;
   }
 }
