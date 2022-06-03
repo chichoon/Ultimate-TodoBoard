@@ -22,12 +22,7 @@
       flex: 1;
       max-width: 10rem;
     }
-
-    & > button {
-      width: 3rem;
-    }
   }
-
   @include responsive.between(0, M) {
     .settingList {
       padding: 0;
@@ -48,7 +43,11 @@
       padding: 0;
 
       & > input[type='text'] {
-        max-width: 7rem;
+        max-width: 6rem;
+      }
+
+      & > button {
+        width: 3rem;
       }
     }
   }
