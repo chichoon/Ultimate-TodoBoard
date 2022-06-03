@@ -7,6 +7,7 @@
   color: colors.$DARK;
   background-color: colors.$MIDDLE20;
   border-radius: sizes.$BORDER_RADIUS;
+  transition: 0.2s;
 
   &:hover {
     background-color: colors.$MIDDLE40;
