@@ -1,0 +1,13 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.buttonWrapper {
+  width: 4rem;
+  height: 3rem;
+  background-color: colors.$MIDDLE20;
+  border-radius: sizes.$BORDER_RADIUS;
+
+  &:hover {
+    background-color: colors.$MIDDLE40;
+  }
+}
