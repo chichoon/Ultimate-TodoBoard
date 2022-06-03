@@ -1,7 +1,6 @@
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
-@use 'styles/mixins/position';
 @use 'styles/mixins/responsive';
 
 .ddayElementWrapper {
@@ -27,9 +26,22 @@
     overflow: hidden;
 
     dt {
+      margin-bottom: 0.5rem;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    dd {
+      color: colors.$DARK50;
+    }
+  }
+
+  button > svg {
+    width: auto;
+
+    line {
+      color: colors.$DARK;
     }
   }
 
