@@ -14,10 +14,9 @@ interface IProps {
   index: number;
 }
 
-const today = dayjs();
-
 const DDayListElement = ({ item, index }: IProps) => {
-  const dday = dayjs(item.date);
+  const dday = dayjs(dayjs().format('YYYY-MM-DD')).diff(item.date, 'd');
+
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -35,11 +34,11 @@ const DDayListElement = ({ item, index }: IProps) => {
   };
 
   return (
-    <div className={styles.ddayElementWrapper}>
+    <div style={{ borderColor: item.color }} className={styles.ddayElementWrapper}>
       <p className={styles.ddayEmoji}>{item.icon}</p>
       <dl className={styles.ddayInfoContainer}>
         <dt>{item.title}</dt>
-        <dd>{dday.diff(today)}</dd>
+        <dd>{dday > 0 ? `+${dday + 1}일` : `${dday}일`}</dd>
       </dl>
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
