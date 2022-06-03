@@ -13,11 +13,12 @@
 
 .listContainerHeader,
 .listContainerAddHeader {
-  padding: 1rem 0;
+  padding: 1rem 0 1.5rem;
 
   h3 {
     overflow: hidden;
     font-size: 1.2rem;
+    font-weight: 500;
     color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
