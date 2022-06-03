@@ -37,7 +37,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
     <div className={styles.baekjoonAddFormWrapper}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.baekjoonInputWrapper}>
-          <input type='text' name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
+          <input type='text' required name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
           {isLimit && <span>문제는 20개까지 등록 가능합니다.</span>}
         </div>
         <Button type='submit'>추가</Button>

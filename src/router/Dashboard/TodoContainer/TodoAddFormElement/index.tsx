@@ -50,7 +50,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
     <div className={styles.todoAddFormWrapper}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.formLeft}>
-          <input type='text' value={title} onChange={handleTitleChange} placeholder='할 일 제목' />
+          <input type='text' required value={title} onChange={handleTitleChange} placeholder='할 일 제목' />
           <div className={styles.checkboxArea}>
             <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
             <label htmlFor='isDeadLine'>마감일 추가하기</label>
