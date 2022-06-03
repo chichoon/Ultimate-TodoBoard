@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'react';
+import cx from 'classnames';
 
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { getBaekjoonItems } from 'states/information';
@@ -34,7 +35,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
   };
 
   return (
-    <div className={styles.baekjoonAddFormWrapper}>
+    <div className={cx('listContainerAddForm')}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.baekjoonInputWrapper}>
           <input type='text' required name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />

@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent, useEffect, Dispatch, SetStateAction } from 'react';
 import dayjs from 'dayjs';
+import cx from 'classnames';
 
 import { addTodo } from 'states/todo';
 import { useAppDispatch } from 'hooks';
@@ -47,7 +48,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
   }, [isDeadLine]);
 
   return (
-    <div className={styles.todoAddFormWrapper}>
+    <div className={cx('listContainerAddForm')}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.formLeft}>
           <input type='text' required value={title} onChange={handleTitleChange} placeholder='할 일 제목' />

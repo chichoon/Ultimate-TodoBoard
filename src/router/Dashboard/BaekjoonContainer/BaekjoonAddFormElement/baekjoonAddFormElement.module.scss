@@ -1,17 +1,6 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/constants/colors';
 
-.baekjoonAddFormWrapper {
-  width: 100%;
-  padding: 1rem;
-  border-bottom: 2px solid colors.$DARK30;
-
-  form {
-    @include flexbox.flexbox(between, center);
-    flex-direction: row;
-  }
-}
-
 .baekjoonInputWrapper {
   @include flexbox.flexbox(start, start);
   flex-direction: column;

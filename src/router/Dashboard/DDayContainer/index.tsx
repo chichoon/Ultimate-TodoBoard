@@ -7,9 +7,11 @@ import DDayListElement from './DDayListElement';
 import DDayAddFormElement from './DDayAddFormElement';
 
 import styles from './ddayContainer.module.scss';
+import { PlusIcon } from 'assets/svgs';
 
 const DDayContainer = () => {
   const [isAddButtonShown, setIsAddButtonShown] = useState(true);
+  const [isAddFormShown, setIsAddFormShown] = useState(false);
   const ddays = useAppSelector(getDDays);
 
   useEffect(() => {
@@ -17,23 +19,30 @@ const DDayContainer = () => {
     else setIsAddButtonShown(false);
   }, [ddays]);
 
+  const handleAddButtonClick = () => {
+    setIsAddFormShown((prevState) => !prevState);
+  };
+
   return (
     <div className={cx(styles.ddayWrapper, 'listContainer')}>
-      <div className={cx('listContainerHeader')}>
+      <div className={cx({ listContainerAddHeader: isAddButtonShown, listContainerHeader: !isAddButtonShown })}>
         <h3>디데이 목록</h3>
+        <button type='button' onClick={handleAddButtonClick}>
+          <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
+        </button>
       </div>
       <div className={styles.ddayListWrapper}>
+        {isAddFormShown && <DDayAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {ddays.map((item, index) => {
             const key = `dday-index-${index}`;
             return (
-              <li key={key}>
+              <li key={key} className={styles.ddayList}>
                 <DDayListElement item={item} index={index} />
               </li>
             );
           })}
         </ul>
-        {isAddButtonShown && <DDayAddFormElement setIsAddButtonShown={setIsAddButtonShown} />}
       </div>
     </div>
   );

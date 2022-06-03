@@ -15,7 +15,7 @@
     height: 13rem;
     overflow: auto;
 
-    li {
+    .ddayList {
       width: 50%;
     }
   }
@@ -24,7 +24,7 @@
     & > ul {
       flex-flow: column;
 
-      li {
+      .ddayList {
         width: 100%;
         margin-bottom: 1rem;
 
