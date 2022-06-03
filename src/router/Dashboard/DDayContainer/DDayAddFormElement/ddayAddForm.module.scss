@@ -6,49 +6,53 @@
 
 .ddayFormWrapper {
   @include flexbox.flexbox(between, center);
-  flex-direction: row;
+  flex-flow: wrap;
+  width: 100%;
 
-  .formLeft {
-    @include flexbox.flexbox(center, start);
-    flex-direction: column;
+  & > div {
+    flex: 1;
+  }
+}
 
-    & > input[type='text'] {
-      width: 4rem;
+.inputs {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  padding: 0.5rem;
+
+  & > input[type='text'] {
+    width: 4rem;
+
+    &:first-child {
+      width: 8rem;
       margin-bottom: 0.5rem;
-
-      &:first-child {
-        width: 8rem;
-      }
     }
   }
+}
+
+.pickers {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  padding: 0.5rem;
 
   .paletteButton {
     @include position.relative((0));
-    @include flexbox.flexbox(start, start);
-    flex-direction: row;
-    width: 6rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    background-color: white;
-    border-radius: sizes.$BORDER_RADIUS;
+
+    & > button {
+      @include flexbox.flexbox(center, center);
+      flex-direction: row;
+      width: 6rem;
+      height: 2rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: white;
+      border-radius: sizes.$BORDER_RADIUS;
+    }
 
     span {
       color: colors.$WHITE;
 
       &.isFillWhite {
         color: colors.$DARK;
-      }
-    }
-
-    .paletteWrapper {
-      position: absolute;
-      top: 2.3rem;
-      left: 0;
-      z-index: levels.$PALETTE;
-
-      & > div {
-        justify-content: center;
-        max-width: 14.5rem;
       }
     }
 
@@ -60,4 +64,8 @@
       stroke: colors.$WHITE;
     }
   }
+}
+
+.buttons {
+  @include flexbox.flexbox(between, center);
 }
