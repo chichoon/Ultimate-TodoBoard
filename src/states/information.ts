@@ -7,6 +7,8 @@ import { ddaySort } from 'utils/infoUtils';
 import { RootState } from 'states';
 
 const INIT_INFO: IInformation = {
+  nickname: 'unknown',
+  theme: 'lightblue',
   baekjoon: [],
   weather: {
     locationName: '',
@@ -22,6 +24,22 @@ const informationSlice = createSlice({
   initialState: INIT_INFO,
   reducers: {
     setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
+    setNickname: (state: IInformation, action: PayloadAction<string>) => {
+      const newData = {
+        ...state,
+        nickname: action.payload,
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    setTheme: (state: IInformation, action: PayloadAction<'lightblue' | 'darkblue'>) => {
+      const newData = {
+        ...state,
+        theme: action.payload,
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
       const newData = {
         ...state,
@@ -57,10 +75,17 @@ const informationSlice = createSlice({
   },
 });
 
-export const { setInfo, addBaekjoon, deleteBaekjoon, addDDay, deleteDday } = informationSlice.actions;
+export const { setNickname, setTheme, setInfo, addBaekjoon, deleteBaekjoon, addDDay, deleteDday } =
+  informationSlice.actions;
 
 export default informationSlice.reducer;
+
+export const getInformations = (state: RootState): IInformation => state.information;
 
 export const getBaekjoonItems = (state: RootState): IBaekjoonItem[] => state.information.baekjoon;
 
 export const getDDays = (state: RootState): IDDay[] => state.information.dday;
+
+export const getNickname = (state: RootState): string => state.information.nickname;
+
+export const getTheme = (state: RootState): string => state.information.theme;

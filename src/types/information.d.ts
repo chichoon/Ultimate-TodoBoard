@@ -1,4 +1,6 @@
 export interface IInformation {
+  nickname: string;
+  theme: 'lightblue' | 'darkblue';
   baekjoon: IBaekjoonItem[];
   weather: IWeather;
   dday: IDDay[];
