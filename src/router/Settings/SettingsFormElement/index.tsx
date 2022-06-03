@@ -29,21 +29,21 @@ const SettingsFormElement = () => {
           <label htmlFor='nickname'>이름</label>
           <input type='text' name='nickname' value={nicknameValue} onChange={handleNicknameChange} />
           <Button type='button' onClick={handleNicknameClick}>
-            변경하기
+            변경
           </Button>
         </li>
         <li className={styles.settingList}>
           <span>테마</span>
           <SettingsFormDropdown value={themeValue} onDropdownSelect={handleThemeChange} />
           <Button type='button' onClick={handleThemeClick}>
-            변경하기
+            변경
           </Button>
         </li>
         <li className={styles.settingList}>
           <label htmlFor='githubID'>Github ID</label>
           <input type='text' name='githubID' value={githubIDValue} onChange={handleGithubChange} />
           <Button type='button' onClick={handleGithubClick}>
-            변경하기
+            변경
           </Button>
         </li>
       </ul>

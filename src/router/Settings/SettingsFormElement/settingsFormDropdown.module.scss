@@ -3,6 +3,7 @@
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
 
 .dropdownWrapper {
   @include position.relative((0));
@@ -11,7 +12,6 @@
   & > button {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
-    width: 8rem;
     height: 3rem;
     padding: 0.5rem 1rem;
     color: colors.$DARK;
@@ -19,12 +19,24 @@
     border-radius: sizes.$BORDER_RADIUS;
 
     p {
+      margin-right: 1rem;
       font-weight: 500;
     }
 
     svg {
       width: 1rem;
       fill: colors.$DARK;
+    }
+  }
+
+  @include responsive.between(0, M) {
+    & > button {
+      p {
+        max-width: 2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
   }
 }

@@ -1,0 +1,55 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+
+.settingsFormWrapper {
+  .settingList {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+
+    & > label,
+    & > span {
+      width: 4rem;
+      overflow: hidden;
+      color: colors.$DARK50;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & > input[type='text'] {
+      flex: 1;
+      max-width: 10rem;
+    }
+
+    & > button {
+      width: 3rem;
+    }
+  }
+
+  @include responsive.between(0, M) {
+    .settingList {
+      padding: 0;
+
+      & > label,
+      & > span {
+        width: 2.5rem;
+      }
+
+      & > input[type='text'] {
+        max-width: 6rem;
+      }
+    }
+  }
+
+  @include responsive.between(M, 480px) {
+    .settingList {
+      padding: 0;
+
+      & > input[type='text'] {
+        max-width: 7rem;
+      }
+    }
+  }
+}
