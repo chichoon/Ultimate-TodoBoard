@@ -61,7 +61,6 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
         date: dayjs(dday).format('YYYY-MM-DD'),
       })
     );
-    console.log(title);
     setIsAddButtonShown(false);
   };
 
@@ -102,7 +101,6 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
   );
 };
 
-// TODO: 색상버튼, 날짜버튼 우측으로 래핑
 // TODO: 커스텀훅?
 
 export default DDayAddForm;
