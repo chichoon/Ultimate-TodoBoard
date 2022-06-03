@@ -4,7 +4,7 @@
 @use 'styles/constants/colors';
 
 .layoutWrapper {
-  @include flexbox.flexbox(between, center);
+  @include flexbox.flexbox(start, center);
   @include position.relative((0));
   flex-direction: column;
   width: 100vw;
