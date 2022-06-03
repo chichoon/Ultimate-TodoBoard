@@ -13,7 +13,7 @@
 
 .listContainerHeader,
 .listContainerAddHeader {
-  padding: 1rem 0 1.5rem;
+  padding: 1rem 0;
 
   h3 {
     overflow: hidden;
@@ -36,6 +36,17 @@
     &.isRemoving {
       transform: rotate(45deg);
     }
+  }
+}
+
+.listContainerAddForm {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 2px solid colors.$DARK30;
+
+  form {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
   }
 }
 
