@@ -1,5 +1,9 @@
-import { FeatherIcon, HamburgerIcon } from 'assets/svgs';
 import { Dispatch, SetStateAction } from 'react';
+
+import { useAppSelector } from 'hooks';
+import { getNickname } from 'states/information';
+
+import { FeatherIcon, HamburgerIcon } from 'assets/svgs';
 import styles from './topNavigationBar.module.scss';
 
 interface IProps {
@@ -7,6 +11,8 @@ interface IProps {
 }
 
 const TopNavigationBar = ({ setIsBarHidden }: IProps) => {
+  const nickname = useAppSelector(getNickname);
+
   const handleHamburgerClick = () => {
     setIsBarHidden((prevState) => !prevState);
   };
@@ -18,12 +24,11 @@ const TopNavigationBar = ({ setIsBarHidden }: IProps) => {
       </div>
       <div className={styles.navigationBarRight}>
         <h3>
-          <b>chichoon</b>
+          <b>{nickname}</b>
         </h3>
         <button type='button' className={styles.hamburgerButton} onClick={handleHamburgerClick}>
           <HamburgerIcon />
         </button>
-        {/* TODO: 닉네임 교체 */}
       </div>
     </nav>
   );
