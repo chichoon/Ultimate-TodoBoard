@@ -14,7 +14,6 @@ export interface IBaekjoonItem {
 }
 
 export interface IWeather {
-  locationName: string;
   lat: number;
   lon: number;
 }

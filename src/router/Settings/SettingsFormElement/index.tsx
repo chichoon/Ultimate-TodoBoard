@@ -11,12 +11,17 @@ const SettingsFormElement = () => {
     nicknameValue,
     themeValue,
     githubIDValue,
+    latitude,
+    longitude,
     handleNicknameChange,
     handleNicknameSubmit,
     handleThemeChange,
     handleThemeClick,
     handleGithubChange,
     handleGithubSubmit,
+    handleLatitudeChange,
+    handleLongitudeChange,
+    handleWeatherSubmit,
   } = useSettingsForm();
 
   return (
@@ -26,13 +31,13 @@ const SettingsFormElement = () => {
       </div>
       <ul>
         <li>
-          <form className={styles.settingList} onSubmit={handleNicknameSubmit}>
+          <form className={styles.settingForm} onSubmit={handleNicknameSubmit}>
             <label htmlFor='nickname'>이름</label>
             <input type='text' name='nickname' value={nicknameValue} onChange={handleNicknameChange} />
             <Button type='submit'>변경</Button>
           </form>
         </li>
-        <li className={styles.settingList}>
+        <li className={styles.settingForm}>
           <span>테마</span>
           <SettingsFormDropdown value={themeValue} onDropdownSelect={handleThemeChange} />
           <Button type='button' onClick={handleThemeClick}>
@@ -40,9 +45,18 @@ const SettingsFormElement = () => {
           </Button>
         </li>
         <li>
-          <form className={styles.settingList} onSubmit={handleGithubSubmit}>
+          <form className={styles.settingForm} onSubmit={handleGithubSubmit}>
             <label htmlFor='githubID'>Github ID</label>
             <input type='text' name='githubID' value={githubIDValue} onChange={handleGithubChange} />
+            <Button type='submit'>변경</Button>
+          </form>
+        </li>
+        <li>
+          <form className={cx(styles.settingForm, styles.weatherForm)} onSubmit={handleWeatherSubmit}>
+            <label htmlFor='latitude'>위도</label>
+            <input type='text' name='latitude' value={latitude} onChange={handleLatitudeChange} />
+            <label htmlFor='longitude'>경도</label>
+            <input type='text' name='longitude' value={longitude} onChange={handleLongitudeChange} />
             <Button type='submit'>변경</Button>
           </form>
         </li>

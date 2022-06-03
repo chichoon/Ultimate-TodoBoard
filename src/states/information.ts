@@ -11,7 +11,6 @@ const INIT_INFO: IInformation = {
   theme: 'lightblue',
   baekjoon: [],
   weather: {
-    locationName: '',
     lat: 0,
     lon: 0,
   },

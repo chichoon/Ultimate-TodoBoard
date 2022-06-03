@@ -1,18 +1,22 @@
+import { getWeather } from '../states/information';
 import { useState, ChangeEvent, useEffect, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getGithubID, getTheme, setNickname, getNickname, setTheme, setGithubID } from 'states/information';
+import { getGithubID, getTheme, setNickname, getNickname, setTheme, setWeather, setGithubID } from 'states/information';
 import { useAppSelector } from 'hooks';
 
 export const useSettingsForm = () => {
   const [nicknameValue, setNicknameValue] = useState('');
   const [themeValue, setThemeValue] = useState<'lightblue' | 'darkblue'>('lightblue');
   const [githubIDValue, setGithubIDValue] = useState('');
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
   const dispatch = useDispatch();
 
   const initNickname = useAppSelector(getNickname);
   const initTheme = useAppSelector<'lightblue' | 'darkblue'>(getTheme);
   const initGithubID = useAppSelector(getGithubID);
+  const { lat: initLatitude, lon: initLongitude } = useAppSelector(getWeather);
 
   const handleNicknameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNicknameValue(e.currentTarget.value);
@@ -40,21 +44,46 @@ export const useSettingsForm = () => {
     dispatch(setGithubID(githubIDValue));
   };
 
+  const handleLatitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setLatitude(Number(e.currentTarget.value));
+  };
+
+  const handleLongitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setLongitude(Number(e.currentTarget.value));
+  };
+
+  const handleWeatherSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(
+      setWeather({
+        lat: latitude,
+        lon: longitude,
+      })
+    );
+  };
+
   useEffect(() => {
     setNicknameValue(initNickname);
     setThemeValue(initTheme);
     setGithubIDValue(initGithubID);
-  }, [initNickname, initTheme, initGithubID]);
+    setLatitude(initLatitude);
+    setLongitude(initLongitude);
+  }, [initNickname, initTheme, initGithubID, initLatitude, initLongitude]);
 
   return {
     nicknameValue,
     themeValue,
     githubIDValue,
+    latitude,
+    longitude,
     handleNicknameChange,
     handleNicknameSubmit,
     handleThemeChange,
     handleThemeClick,
     handleGithubChange,
     handleGithubSubmit,
+    handleLatitudeChange,
+    handleLongitudeChange,
+    handleWeatherSubmit,
   };
 };

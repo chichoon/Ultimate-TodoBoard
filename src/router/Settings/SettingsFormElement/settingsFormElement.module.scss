@@ -3,14 +3,14 @@
 @use 'styles/mixins/responsive';
 
 .settingsFormWrapper {
-  .settingList {
+  .settingForm {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
     padding: 0 2rem;
     margin-bottom: 1rem;
 
-    & > form > label,
-    & > form > span {
+    & > label,
+    & > span {
       width: 4rem;
       overflow: hidden;
       color: colors.$DARK50;
@@ -18,37 +18,58 @@
       white-space: nowrap;
     }
 
-    & > form > input[type='text'] {
+    & > input[type='text'] {
       flex: 1;
       max-width: 10rem;
     }
   }
+
+  .weatherForm > input[type='text'] {
+    width: 5rem;
+    max-width: 5rem;
+  }
+
   @include responsive.between(0, M) {
-    .settingList {
+    .settingForm {
       padding: 0;
 
-      & > form > label,
-      & > form > span {
+      & > label,
+      & > span {
         width: 2.5rem;
       }
 
-      & > form > input[type='text'] {
-        max-width: 6rem;
+      & > input[type='text'] {
+        width: 5rem;
+        max-width: 5rem;
       }
+
+      & > button {
+        width: 2rem;
+      }
+    }
+
+    .weatherForm > input[type='text'] {
+      width: 1.5rem;
+      max-width: 1.5rem;
     }
   }
 
   @include responsive.between(M, 480px) {
-    .settingList {
+    .settingForm {
       padding: 0;
 
-      & > form > input[type='text'] {
+      & > input[type='text'] {
         max-width: 6rem;
       }
 
-      & > form > button {
+      & > button {
         width: 3rem;
       }
+    }
+
+    .weatherForm > input[type='text'] {
+      width: 3rem;
+      max-width: 3rem;
     }
   }
 }
