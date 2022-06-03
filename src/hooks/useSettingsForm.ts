@@ -9,8 +9,8 @@ export const useSettingsForm = () => {
   const [nicknameValue, setNicknameValue] = useState('');
   const [themeValue, setThemeValue] = useState<'lightblue' | 'darkblue'>('lightblue');
   const [githubIDValue, setGithubIDValue] = useState('');
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
   const dispatch = useDispatch();
 
   const initNickname = useAppSelector(getNickname);
@@ -45,19 +45,19 @@ export const useSettingsForm = () => {
   };
 
   const handleLatitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLatitude(Number(e.currentTarget.value));
+    setLatitude(e.currentTarget.value);
   };
 
   const handleLongitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLongitude(Number(e.currentTarget.value));
+    setLongitude(e.currentTarget.value);
   };
 
   const handleWeatherSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
       setWeather({
-        lat: latitude,
-        lon: longitude,
+        lat: Number(latitude),
+        lon: Number(longitude),
       })
     );
   };
@@ -66,8 +66,8 @@ export const useSettingsForm = () => {
     setNicknameValue(initNickname);
     setThemeValue(initTheme);
     setGithubIDValue(initGithubID);
-    setLatitude(initLatitude);
-    setLongitude(initLongitude);
+    setLatitude(initLatitude.toString());
+    setLongitude(initLongitude.toString());
   }, [initNickname, initTheme, initGithubID, initLatitude, initLongitude]);
 
   return {
