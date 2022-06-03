@@ -1,3 +1,4 @@
+import { IDDay } from 'types/information.d';
 import { useClickAway } from 'react-use';
 import { useState, useRef, Dispatch, SetStateAction, ChangeEvent, FormEvent } from 'react';
 import dayjs from 'dayjs';
@@ -8,28 +9,32 @@ import { addDDay } from 'states/information';
 const today = new Date();
 
 export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>) => {
-  const [title, setTitle] = useState('');
-  const [dday, setDDay] = useState(today);
-  const [color, setColor] = useState('#EB9694');
-  const [icon, setIcon] = useState('');
+  const [dday, setDDay] = useState<IDDay>({
+    title: '',
+    date: '',
+    color: '#EB9694',
+    icon: '',
+  });
+  const [date, setDate] = useState(today);
   const [isColorPaletteShown, setIsColorPaletteShown] = useState(false);
   const paletteRef = useRef(null);
   const dispatch = useAppDispatch();
 
-  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.currentTarget.value);
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setDDay((prevState) => {
+      return { ...prevState, [name]: value };
+    });
   };
 
-  const handleIconChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setIcon(e.currentTarget.value);
-  };
-
-  const handleDDayChange = (date: Date) => {
-    setDDay(date);
+  const handleDDayChange = (newDate: Date) => {
+    setDate(newDate);
   };
 
   const handleColorSet = (newColor: string) => {
-    setColor(newColor);
+    setDDay((prevState) => {
+      return { ...prevState, color: newColor };
+    });
     setIsColorPaletteShown(false);
   };
 
@@ -41,10 +46,8 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
     e.preventDefault();
     dispatch(
       addDDay({
-        title,
-        icon,
-        color,
-        date: dayjs(dday).format('YYYY-MM-DD'),
+        ...dday,
+        date: dayjs(date).format('YYYY-MM-DD'),
       })
     );
     setIsAddFormShown(false);
@@ -56,13 +59,10 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
 
   return {
     paletteRef,
-    title,
     dday,
-    color,
-    icon,
+    date,
     isColorPaletteShown,
-    handleTitleChange,
-    handleIconChange,
+    handleInputChange,
     handleDDayChange,
     handleColorSet,
     handleColorButtonClick,

@@ -14,13 +14,10 @@ interface IProps {
 const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
   const {
     paletteRef,
-    title,
     dday,
-    color,
-    icon,
+    date,
     isColorPaletteShown,
-    handleTitleChange,
-    handleIconChange,
+    handleInputChange,
     handleDDayChange,
     handleColorSet,
     handleColorButtonClick,
@@ -31,18 +28,25 @@ const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
     <div className={cx(styles.ddayAddFormWrapper, 'listContainerAddForm')}>
       <form onSubmit={handleFormSubmit} className={styles.ddayFormWrapper}>
         <div className={styles.inputs}>
-          <input type='text' required value={title} onChange={handleTitleChange} placeholder='디데이 이름' />
-          <input type='text' required value={icon} onChange={handleIconChange} placeholder='식별 문자' />
+          <input type='text' name='title' required value={dday.title} onChange={handleInputChange} placeholder='제목' />
+          <input
+            type='text'
+            name='icon'
+            required
+            value={dday.icon}
+            onChange={handleInputChange}
+            placeholder='식별 문자'
+          />
         </div>
         <div className={styles.pickers}>
           <div className={styles.paletteButton} ref={paletteRef}>
-            <button type='button' style={{ backgroundColor: color }} onClick={handleColorButtonClick}>
+            <button type='button' style={{ backgroundColor: dday.color }} onClick={handleColorButtonClick}>
               <ColorFillIcon />
-              <span>{color}</span>
+              <span>{dday.color}</span>
             </button>
             {isColorPaletteShown && <ColorPalette onColorSet={handleColorSet} />}
           </div>
-          <CustomDatePicker selected={dday} onChange={handleDDayChange} />
+          <CustomDatePicker selected={date} onChange={handleDDayChange} />
         </div>
         <Button type='submit'>추가</Button>
       </form>
