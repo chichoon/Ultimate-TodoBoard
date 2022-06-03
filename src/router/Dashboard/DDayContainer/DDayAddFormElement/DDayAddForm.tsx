@@ -1,10 +1,9 @@
 import { useState, FormEvent, ChangeEvent, useRef, Dispatch, SetStateAction } from 'react';
 import { useClickAway } from 'react-use';
-import { ColorResult, GithubPicker } from 'react-color';
 import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
-import { CustomDatePicker } from 'components';
+import { ColorPalette, CustomDatePicker } from 'components';
 
 import { ColorFillIcon } from 'assets/svgs';
 import styles from './ddayAddForm.module.scss';
@@ -37,8 +36,8 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
     setDDay(date);
   };
 
-  const handleColorChange = (e: ColorResult) => {
-    setColor(e.hex);
+  const handleColorSet = (color: string) => {
+    setColor(color);
     setIsColorPaletteShown(false);
   };
 
@@ -74,11 +73,7 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
         >
           <ColorFillIcon />
           <span className={cx({ [styles.isFillWhite]: color === '#ffffff' })}>{color}</span>
-          {isColorPaletteShown && (
-            <div className={styles.paletteWrapper}>
-              <GithubPicker width='60vw' triangle='hide' color={color} onChangeComplete={handleColorChange} />
-            </div>
-          )}
+          {isColorPaletteShown && <ColorPalette onColorSet={handleColorSet} />}
         </button>
         <CustomDatePicker selected={dday} today={today} onChange={handleDDayChange} />
       </div>
@@ -91,5 +86,8 @@ const DDayAddForm = ({ setIsAddButtonShown, setIsFormShown }: IProps) => {
     </form>
   );
 };
+
+// TODO: 색상버튼, 날짜버튼 우측으로 래핑
+// TODO: 커스텀훅?
 
 export default DDayAddForm;
