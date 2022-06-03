@@ -1,0 +1,58 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+
+.dropdownWrapper {
+  @include position.relative((0));
+  width: fit-content;
+
+  & > button {
+    @include flexbox.flexbox(between, center);
+    flex-direction: row;
+    width: 8rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid colors.$DARK30;
+    border-radius: sizes.$BORDER_RADIUS;
+
+    p {
+      font-weight: 500;
+    }
+
+    svg {
+      width: 1rem;
+    }
+  }
+}
+
+.dropdownList {
+  @include position.absolute((3.3rem, _, _, 0));
+  @include flexbox.flexbox(center, start);
+  flex-direction: column;
+  width: 8rem;
+  background-color: colors.$WHITE;
+  border: 1px solid colors.$DARK30;
+  border-radius: sizes.$BORDER_RADIUS;
+
+  li {
+    width: 100%;
+    border-bottom: 1px solid colors.$DARK30;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    button {
+      @include flexbox.flexbox(start, center);
+      width: 100%;
+      height: 2rem;
+      padding: 0 1rem;
+
+      &:hover {
+        background-color: colors.$DARK10;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useClickAway } from 'react-use';
 
+import { DownArrowIcon } from 'assets/svgs';
 import styles from './settingsFormDropdown.module.scss';
 
 type Theme = 'lightblue' | 'darkblue';
@@ -31,7 +32,8 @@ const SettingsFormDropdown = ({ value, onDropdownSelect }: IProps) => {
   return (
     <div className={styles.dropdownWrapper} ref={dropdownRef}>
       <button type='button' onClick={handleDropdownOpenClick}>
-        {value}
+        <p>{value}</p>
+        <DownArrowIcon />
       </button>
       {isDropdownOpen && (
         <ul className={styles.dropdownList}>
