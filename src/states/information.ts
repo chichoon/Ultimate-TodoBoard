@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
-import { IDDay, IInformation, IBaekjoonItem } from 'types/information.d';
+import { IDDay, IInformation, IBaekjoonItem, IWeather } from 'types/information.d';
 import { ddaySort } from 'utils/infoUtils';
 
 import { RootState } from 'states';
@@ -24,6 +24,7 @@ const informationSlice = createSlice({
   initialState: INIT_INFO,
   reducers: {
     setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
+    resetInfo: () => INIT_INFO,
     setNickname: (state: IInformation, action: PayloadAction<string>) => {
       const newData = {
         ...state,
@@ -36,6 +37,22 @@ const informationSlice = createSlice({
       const newData = {
         ...state,
         theme: action.payload,
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    setGithubID: (state: IInformation, action: PayloadAction<string>) => {
+      const newData = {
+        ...state,
+        githubID: action.payload,
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    setWeather: (state: IInformation, action: PayloadAction<IWeather>) => {
+      const newData = {
+        ...state,
+        weather: action.payload,
       };
       store.set('infoData', newData);
       return newData;
@@ -75,8 +92,18 @@ const informationSlice = createSlice({
   },
 });
 
-export const { setNickname, setTheme, setInfo, addBaekjoon, deleteBaekjoon, addDDay, deleteDday } =
-  informationSlice.actions;
+export const {
+  setInfo,
+  resetInfo,
+  setNickname,
+  setTheme,
+  setGithubID,
+  setWeather,
+  addBaekjoon,
+  deleteBaekjoon,
+  addDDay,
+  deleteDday,
+} = informationSlice.actions;
 
 export default informationSlice.reducer;
 
@@ -89,3 +116,7 @@ export const getDDays = (state: RootState): IDDay[] => state.information.dday;
 export const getNickname = (state: RootState): string => state.information.nickname;
 
 export const getTheme = (state: RootState): string => state.information.theme;
+
+export const getWeather = (state: RootState): IWeather => state.information.weather;
+
+export const getGithubID = (state: RootState): string => state.information.githubID;
