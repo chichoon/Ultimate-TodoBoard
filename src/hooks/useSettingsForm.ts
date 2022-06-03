@@ -1,5 +1,4 @@
-import { useState, ChangeEvent } from 'react';
-import { useMount } from 'react-use';
+import { useState, ChangeEvent, useEffect, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { getGithubID, getTheme, setNickname, getNickname, setTheme, setGithubID } from 'states/information';
@@ -19,7 +18,8 @@ export const useSettingsForm = () => {
     setNicknameValue(e.currentTarget.value);
   };
 
-  const handleNicknameClick = () => {
+  const handleNicknameSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     dispatch(setNickname(nicknameValue));
   };
 
@@ -35,25 +35,26 @@ export const useSettingsForm = () => {
     setGithubIDValue(e.currentTarget.value);
   };
 
-  const handleGithubClick = () => {
+  const handleGithubSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     dispatch(setGithubID(githubIDValue));
   };
 
-  useMount(() => {
+  useEffect(() => {
     setNicknameValue(initNickname);
     setThemeValue(initTheme);
     setGithubIDValue(initGithubID);
-  });
+  }, [initNickname, initTheme, initGithubID]);
 
   return {
     nicknameValue,
     themeValue,
     githubIDValue,
     handleNicknameChange,
-    handleNicknameClick,
+    handleNicknameSubmit,
     handleThemeChange,
     handleThemeClick,
     handleGithubChange,
-    handleGithubClick,
+    handleGithubSubmit,
   };
 };

@@ -12,11 +12,11 @@ const SettingsFormElement = () => {
     themeValue,
     githubIDValue,
     handleNicknameChange,
-    handleNicknameClick,
+    handleNicknameSubmit,
     handleThemeChange,
     handleThemeClick,
     handleGithubChange,
-    handleGithubClick,
+    handleGithubSubmit,
   } = useSettingsForm();
 
   return (
@@ -25,12 +25,12 @@ const SettingsFormElement = () => {
         <h3>프로필 설정</h3>
       </div>
       <ul>
-        <li className={styles.settingList}>
-          <label htmlFor='nickname'>이름</label>
-          <input type='text' name='nickname' value={nicknameValue} onChange={handleNicknameChange} />
-          <Button type='button' onClick={handleNicknameClick}>
-            변경
-          </Button>
+        <li>
+          <form className={styles.settingList} onSubmit={handleNicknameSubmit}>
+            <label htmlFor='nickname'>이름</label>
+            <input type='text' name='nickname' value={nicknameValue} onChange={handleNicknameChange} />
+            <Button type='submit'>변경</Button>
+          </form>
         </li>
         <li className={styles.settingList}>
           <span>테마</span>
@@ -39,12 +39,12 @@ const SettingsFormElement = () => {
             변경
           </Button>
         </li>
-        <li className={styles.settingList}>
-          <label htmlFor='githubID'>Github ID</label>
-          <input type='text' name='githubID' value={githubIDValue} onChange={handleGithubChange} />
-          <Button type='button' onClick={handleGithubClick}>
-            변경
-          </Button>
+        <li>
+          <form className={styles.settingList} onSubmit={handleGithubSubmit}>
+            <label htmlFor='githubID'>Github ID</label>
+            <input type='text' name='githubID' value={githubIDValue} onChange={handleGithubChange} />
+            <Button type='submit'>변경</Button>
+          </form>
         </li>
       </ul>
     </div>

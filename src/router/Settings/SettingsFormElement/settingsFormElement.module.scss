@@ -9,8 +9,8 @@
     padding: 0 2rem;
     margin-bottom: 1rem;
 
-    & > label,
-    & > span {
+    & > form > label,
+    & > form > span {
       width: 4rem;
       overflow: hidden;
       color: colors.$DARK50;
@@ -18,7 +18,7 @@
       white-space: nowrap;
     }
 
-    & > input[type='text'] {
+    & > form > input[type='text'] {
       flex: 1;
       max-width: 10rem;
     }
@@ -27,12 +27,12 @@
     .settingList {
       padding: 0;
 
-      & > label,
-      & > span {
+      & > form > label,
+      & > form > span {
         width: 2.5rem;
       }
 
-      & > input[type='text'] {
+      & > form > input[type='text'] {
         max-width: 6rem;
       }
     }
@@ -42,11 +42,11 @@
     .settingList {
       padding: 0;
 
-      & > input[type='text'] {
+      & > form > input[type='text'] {
         max-width: 6rem;
       }
 
-      & > button {
+      & > form > button {
         width: 3rem;
       }
     }
