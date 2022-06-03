@@ -3,6 +3,7 @@ import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'reac
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { getBaekjoonItems } from 'states/information';
 import { setProblemID } from '../states/problemID';
+import { Button } from 'components';
 
 import styles from './baekjoonAddFormElement.module.scss';
 
@@ -39,7 +40,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
           <input type='text' name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
           {isLimit && <span>문제는 20개까지 등록 가능합니다.</span>}
         </div>
-        <button type='submit'>추가</button>
+        <Button type='submit'>추가</Button>
       </form>
     </div>
   );

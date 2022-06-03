@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import { addTodo } from 'states/todo';
 import { useAppDispatch } from 'hooks';
-import { CustomDatePicker } from 'components';
+import { Button, CustomDatePicker } from 'components';
 
 import styles from './todoAddFormElement.module.scss';
 
@@ -57,7 +57,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
           </div>
           {isDeadLine && <CustomDatePicker today={today} selected={deadLine} onChange={handleDeadlineChange} />}
         </div>
-        <button type='submit'>추가</button>
+        <Button type='submit'>추가</Button>
       </form>
     </div>
   );

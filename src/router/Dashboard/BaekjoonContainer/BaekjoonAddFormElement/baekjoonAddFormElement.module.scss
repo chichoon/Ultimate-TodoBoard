@@ -9,12 +9,6 @@
   form {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
-
-    button {
-      width: 2rem;
-      height: 3rem;
-      color: colors.$DARK;
-    }
   }
 }
 
