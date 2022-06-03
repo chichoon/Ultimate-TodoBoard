@@ -1,0 +1,40 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
+
+.ddayElementWrapper {
+  @include flexbox.flexbox(start, center);
+  width: calc(100% - 1rem);
+  min-width: 11rem;
+  height: 6rem;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  background-color: colors.$WHITE;
+  border: 0.3rem solid;
+  border-radius: sizes.$BORDER_RADIUS;
+
+  .ddayEmoji {
+    width: 3rem;
+    margin-right: 1rem;
+    overflow: hidden;
+    font-size: 3rem;
+  }
+
+  .ddayInfoContainer {
+    flex: 1;
+    overflow: hidden;
+
+    dt {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  @include responsive.between(0, 480px) {
+    width: 100%;
+    margin: 0;
+  }
+}

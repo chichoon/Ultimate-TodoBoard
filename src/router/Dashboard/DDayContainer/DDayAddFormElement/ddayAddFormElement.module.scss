@@ -9,7 +9,7 @@
   padding: 1rem;
   background-color: colors.$WHITE;
   border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
+  box-shadow: 0 0 1rem -0.5rem colors.$DARK30;
 
   svg {
     width: 2rem;

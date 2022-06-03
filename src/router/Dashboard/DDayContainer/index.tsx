@@ -32,8 +32,8 @@ const DDayContainer = () => {
               </li>
             );
           })}
-          {isAddButtonShown && <DDayAddFormElement setIsAddButtonShown={setIsAddButtonShown} />}
         </ul>
+        {isAddButtonShown && <DDayAddFormElement setIsAddButtonShown={setIsAddButtonShown} />}
       </div>
     </div>
   );

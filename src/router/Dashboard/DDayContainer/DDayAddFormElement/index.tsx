@@ -25,11 +25,7 @@ const DDayAddFormElement = ({ setIsAddButtonShown }: IProps) => {
     </button>
   );
 
-  return (
-    <li>
-      <div className={cx(styles.ddayAddFormWrapper, { [styles.isForm]: isFormShown })}>{elementContent}</div>
-    </li>
-  );
+  return <div className={cx(styles.ddayAddFormWrapper, { [styles.isForm]: isFormShown })}>{elementContent}</div>;
 };
 
 export default DDayAddFormElement;
