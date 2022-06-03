@@ -9,6 +9,7 @@ const Dashboard = () => {
         <DashboardItem type='todo' />
         <DashboardItem type='baekjoon' />
         <DashboardItem type='dday' />
+        <DashboardItem type='weather' />
         <li /> {/* TODO: 대시보드 아이템 추가하는 li 만들기 */}
       </ul>
     </main>
