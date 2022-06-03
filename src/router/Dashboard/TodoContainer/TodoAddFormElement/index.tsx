@@ -55,7 +55,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
             <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
             <label htmlFor='isDeadLine'>마감일 추가하기</label>
           </div>
-          {isDeadLine && <CustomDatePicker today={today} selected={deadLine} onChange={handleDeadlineChange} />}
+          {isDeadLine && <CustomDatePicker selected={deadLine} onChange={handleDeadlineChange} />}
         </div>
         <Button type='submit'>추가</Button>
       </form>

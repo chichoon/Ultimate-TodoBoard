@@ -6,16 +6,16 @@ import styles from './customDatePicker.module.scss';
 
 interface IProps {
   selected: Date;
-  today: Date;
+  minDate?: Date;
   onChange: (date: Date) => void;
 }
 
-const CustomDatePicker = ({ selected, today, onChange }: IProps) => {
+const CustomDatePicker = ({ selected, minDate, onChange }: IProps) => {
   return (
     <DatePicker
       className={styles.datePickerWrapper}
       locale={ko}
-      minDate={today}
+      minDate={minDate}
       selected={selected}
       onChange={onChange}
     />
