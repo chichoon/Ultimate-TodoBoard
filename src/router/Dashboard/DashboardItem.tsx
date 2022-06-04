@@ -5,7 +5,7 @@ import TodoContainer from './TodoContainer';
 import WeatherContainer from './WeatherContainer';
 
 interface IProps {
-  type: 'todo' | 'dday' | 'weather' | 'baekjoon';
+  type: 'todo' | 'dday' | 'weather' | 'baekjoon' | 'github';
 }
 
 const DashboardItem = ({ type }: IProps) => {
