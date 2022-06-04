@@ -11,6 +11,7 @@ const getWeatherInfo = (lat: number, lon: number) =>
         appid: process.env.REACT_APP_WEATHER_API_KEY,
         units: 'metric',
         cnt: 8,
+        lang: 'kr',
       },
     })
     .then(({ data }: { data: IWeatherResponse }) => {
@@ -27,6 +28,7 @@ const getWeatherInfo = (lat: number, lon: number) =>
             humidity: item.main.humidity,
             weather: item.weather[0].main,
             icon: item.weather[0].icon,
+            id: item.weather[0].id,
           };
         }),
       };

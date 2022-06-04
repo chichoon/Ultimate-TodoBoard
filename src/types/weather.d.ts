@@ -11,4 +11,5 @@ export interface IWeatherItem {
   humidity: number;
   weather: string;
   icon: string;
+  id: number;
 }
