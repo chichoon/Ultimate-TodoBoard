@@ -12,3 +12,7 @@
     transform: rotate(359deg);
   }
 }
+
+@mixin rotateAnimation($duration) {
+  animation: rotation $duration ease-in-out infinite;
+}

@@ -1,7 +1,14 @@
 import { useQuery } from 'react-query';
-import { getWeather } from '../states/information';
+
+import { IWeatherData } from 'types/weather.d';
+import { getWeather } from 'states/information';
 import { useAppSelector } from 'hooks';
 import { getWeatherInfo } from 'services';
+
+const INIT_DATA: IWeatherData = {
+  city: 'unknown',
+  weatherList: [],
+};
 
 export const useFetchWeather = () => {
   const { lat, lon } = useAppSelector(getWeather);
@@ -9,6 +16,7 @@ export const useFetchWeather = () => {
     refetchOnWindowFocus: false,
     refetchInterval: 600000, // 10분
     staleTime: 60000,
+    suspense: true,
     useErrorBoundary: true,
   });
 
