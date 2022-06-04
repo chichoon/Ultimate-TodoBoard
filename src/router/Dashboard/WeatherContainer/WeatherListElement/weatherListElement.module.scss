@@ -7,9 +7,11 @@
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
   border-left: 1rem solid;
   border-radius: sizes.$BORDER_RADIUS;
+  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
 
   img {
     height: 4rem;
@@ -60,7 +62,7 @@
   }
 }
 
-@include responsive.after(400px) {
+@include responsive.after(520px) {
   .weatherElementWrapper {
     flex-direction: row;
     height: 6rem;

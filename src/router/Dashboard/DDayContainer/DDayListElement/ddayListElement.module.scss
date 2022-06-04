@@ -13,6 +13,7 @@
   background-color: colors.$WHITE;
   border: 0.3rem solid;
   border-radius: sizes.$BORDER_RADIUS;
+  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
 
   .ddayEmoji {
     width: 3rem;
