@@ -69,18 +69,6 @@
   }
 }
 
-@include responsive.after(SD) {
-  .weatherElementWrapper {
-    flex-direction: row;
-    height: 6rem;
-    padding: 0 1rem;
-
-    img {
-      margin-right: 1rem;
-    }
-  }
-}
-
 .weatherThunderstorm {
   border-color: colors.$THUNDERSTORM;
 }
