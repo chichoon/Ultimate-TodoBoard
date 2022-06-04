@@ -45,6 +45,7 @@
     }
 
     .layoutOutlet {
+      width: calc(100vw - 5rem);
       height: calc(100vh - 4rem);
     }
   }
