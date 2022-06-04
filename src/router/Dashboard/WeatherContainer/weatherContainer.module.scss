@@ -10,8 +10,6 @@
     max-height: sizes.$LIST_CONTAINER;
 
     ul {
-      @include flexbox.flexbox(start, start);
-      flex-direction: column;
       width: 100%;
       overflow-y: scroll;
     }
@@ -23,8 +21,13 @@
     grid-row: 4;
     grid-column: 1 / 3;
 
-    .weatherListWrapper > ul {
-      flex-direction: row;
+    .weatherListWrapper {
+      overflow: scroll;
+
+      ul {
+        @include flexbox.flexbox(start, start);
+        flex-direction: row;
+      }
     }
   }
 }
@@ -35,7 +38,7 @@
     grid-column: 3;
 
     .weatherListWrapper > ul {
-      flex-direction: column;
+      display: block;
     }
   }
 }
