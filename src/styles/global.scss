@@ -87,7 +87,7 @@ input[type='text'] {
   }
 
   .listContainerAddForm {
-    @include position.absolute((4rem, 0, _, _));
+    @include position.absolute((3.5rem, 0, _, _));
     width: 100%;
     padding: 1rem 2rem;
     margin: 0;
