@@ -18,7 +18,7 @@ const TodoContainer = () => {
   };
 
   return (
-    <div className={cx(styles.todoWrapper, 'listContainer')}>
+    <li className={cx(styles.todoWrapper, 'listContainer')}>
       <div className={cx('listContainerAddHeader')}>
         <h3>오늘의 할 일</h3>
         <button type='button' onClick={handleAddButtonClick}>
@@ -38,7 +38,7 @@ const TodoContainer = () => {
           })}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };
 

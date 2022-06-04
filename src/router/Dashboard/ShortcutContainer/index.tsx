@@ -18,7 +18,7 @@ const ShortcutContainer = () => {
   };
 
   return (
-    <div className={cx(styles.shortcutWrapper, 'listContainer')}>
+    <li className={cx(styles.shortcutWrapper, 'listContainer')}>
       <div className={cx('listContainerAddHeader')}>
         <h3>바로가기</h3>
         <button type='button' onClick={handleAddButtonClick}>
@@ -34,7 +34,7 @@ const ShortcutContainer = () => {
           })}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };
 

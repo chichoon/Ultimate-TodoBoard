@@ -24,7 +24,7 @@ const DDayContainer = () => {
   };
 
   return (
-    <div className={cx(styles.ddayWrapper, 'listContainer')}>
+    <li className={cx(styles.ddayWrapper, 'listContainer')}>
       <div className={cx({ listContainerAddHeader: isAddButtonShown, listContainerHeader: !isAddButtonShown })}>
         <h3>디데이 목록</h3>
         <button type='button' onClick={handleAddButtonClick}>
@@ -40,7 +40,7 @@ const DDayContainer = () => {
           })}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };
 

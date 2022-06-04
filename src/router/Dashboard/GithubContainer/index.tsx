@@ -21,7 +21,7 @@ const GithubContainer = () => {
   };
 
   return (
-    <div className={cx(styles.githubWrapper, 'listContainer')}>
+    <li className={cx(styles.githubWrapper, 'listContainer')}>
       <div className={cx('listContainerHeader')}>
         <h3>{githubID}의 커밋 그래프</h3>
       </div>
@@ -42,7 +42,7 @@ const GithubContainer = () => {
           )}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

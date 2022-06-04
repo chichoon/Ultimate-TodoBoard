@@ -19,7 +19,7 @@ const BaekjoonContainer = () => {
   };
 
   return (
-    <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
+    <li className={cx(styles.baekjoonWrapper, 'listContainer')}>
       <div className={cx('listContainerAddHeader')}>
         <h3>밀린 백준 문제 목록</h3>
         <button type='button' onClick={handleAddButtonClick}>
@@ -35,7 +35,7 @@ const BaekjoonContainer = () => {
           })}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };
 

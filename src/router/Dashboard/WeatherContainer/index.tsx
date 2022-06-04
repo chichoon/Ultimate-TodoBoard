@@ -18,7 +18,7 @@ const WeatherContainer = () => {
   );
 
   return (
-    <div className={cx(styles.weatherWrapper, 'listContainer')}>
+    <li className={cx(styles.weatherWrapper, 'listContainer')}>
       <ErrorBoundary fallbackRender={handleErrorFallback}>
         <Suspense
           fallback={
@@ -33,7 +33,7 @@ const WeatherContainer = () => {
           <WeatherContainerInner />
         </Suspense>
       </ErrorBoundary>
-    </div>
+    </li>
   );
 };
 
