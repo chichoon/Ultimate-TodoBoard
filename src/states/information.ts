@@ -119,6 +119,8 @@ export const {
   deleteBaekjoon,
   addDDay,
   deleteDday,
+  addShortcut,
+  deleteShortcut,
 } = informationSlice.actions;
 
 export default informationSlice.reducer;
@@ -136,3 +138,5 @@ export const getTheme = (state: RootState): 'lightblue' | 'darkblue' => state.in
 export const getWeather = (state: RootState): IWeather => state.information.weather;
 
 export const getGithubID = (state: RootState): string => state.information.githubID;
+
+export const getShortcut = (state: RootState): IShortcut[] => state.information.shortcut;
