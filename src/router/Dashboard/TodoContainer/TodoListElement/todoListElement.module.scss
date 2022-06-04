@@ -1,6 +1,7 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/position';
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 
 .todoElementWrapper {
   @include flexbox.flexbox(between, center);
@@ -16,6 +17,7 @@
     flex: 1;
     margin-right: 1rem;
     overflow: hidden;
+    font-size: sizes.$FONT_ACCENT;
     color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
