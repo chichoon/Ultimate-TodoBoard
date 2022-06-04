@@ -17,12 +17,17 @@
 }
 
 .paletteList {
-  @include flexbox.flexbox(between, center);
+  @include flexbox.flexbox(center, center);
   flex-flow: wrap;
+  align-content: center;
   height: 4rem;
 
-  button {
-    width: 1.8rem;
+  li {
     height: 1.8rem;
+
+    button {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
   }
 }

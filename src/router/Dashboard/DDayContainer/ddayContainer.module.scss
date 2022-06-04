@@ -11,6 +11,7 @@
   & > ul {
     @include flexbox.flexbox(start, start);
     flex-flow: wrap;
+    align-content: center;
     width: 100%;
     overflow: auto;
   }
