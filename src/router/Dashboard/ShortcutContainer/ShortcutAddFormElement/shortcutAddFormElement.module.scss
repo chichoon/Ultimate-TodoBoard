@@ -1,0 +1,17 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.shortcutInputWrapper {
+  @include flexbox.flexbox(start, start);
+  flex-direction: column;
+
+  & > input[type='text'] {
+    margin-bottom: 0.8rem;
+  }
+
+  span {
+    font-size: sizes.$FONT_SMALL;
+    color: colors.$ALERT;
+  }
+}
