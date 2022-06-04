@@ -8,3 +8,7 @@ $FONT_TITLE: 1.5rem;
 $FONT_SUBTITLE: 1.3rem;
 $FONT_ACCENT: 1.1rem;
 $FONT_SMALL: 0.9rem;
+
+// Responsive - SD Outlet Size
+$OUTLET_WIDTH: calc(100vw - 5rem);
+$OUTLET_HEIGHT: calc(100vh - 4rem);
