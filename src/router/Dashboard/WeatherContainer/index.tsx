@@ -8,7 +8,7 @@ import styles from './weatherContainer.module.scss';
 
 const WeatherContainer = () => {
   return (
-    <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
+    <div className={cx(styles.weatherWrapper, 'listContainer')}>
       <Suspense
         fallback={
           <>
