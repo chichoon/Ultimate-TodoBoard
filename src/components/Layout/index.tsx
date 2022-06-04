@@ -14,6 +14,7 @@ const Layout = () => {
     '/': '대시보드',
     '/dashboard': '대시보드',
     '/settings': '설정',
+    '/statistics': '통계',
   }[pathname ?? '/'];
   const [isBarHidden, setIsBarHidden] = useState(true);
 
