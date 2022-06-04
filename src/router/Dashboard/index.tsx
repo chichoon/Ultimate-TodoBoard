@@ -6,13 +6,12 @@ const Dashboard = () => {
   return (
     <main className={styles.dashboardMain}>
       <ul className={styles.dashboardListWrapper}>
+        <DashboardItem type='dday' />
         <DashboardItem type='todo' />
         <DashboardItem type='baekjoon' />
-        <DashboardItem type='dday' />
         <DashboardItem type='weather' />
-        <DashboardItem type='github' />
         <DashboardItem type='shortcut' />
-        <li />
+        <DashboardItem type='github' />
       </ul>
     </main>
   );

@@ -18,7 +18,7 @@ const DashboardItem = ({ type }: IProps) => {
     github: <GithubContainer />,
     shortcut: <ShortcutContainer />,
   }[type];
-  return <li>{containerItem}</li>;
+  return containerItem;
 };
 
 export default DashboardItem;
