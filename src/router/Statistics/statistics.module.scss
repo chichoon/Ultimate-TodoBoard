@@ -1,8 +1,4 @@
-@use 'styles/constants/colors';
-@use 'styles/mixins/responsive';
-
 .statisticsMain {
-  flex: 1;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
 }
