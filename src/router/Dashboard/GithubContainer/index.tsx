@@ -23,7 +23,7 @@ const GithubContainer = () => {
   return (
     <div className={cx(styles.githubWrapper, 'listContainer')}>
       <div className={cx('listContainerHeader')}>
-        <h3>{githubID}의 Commit Graph</h3>
+        <h3>{githubID}의 커밋 그래프</h3>
       </div>
       <div className={styles.githubInfoWrapper}>
         <div className={styles.githubGraph}>
