@@ -1,0 +1,105 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+
+.weatherElementWrapper {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  border-left: 1rem solid;
+  border-radius: sizes.$BORDER_RADIUS;
+
+  img {
+    height: 4rem;
+  }
+}
+
+.weatherElementLeft {
+  flex: 1;
+  margin-bottom: 0.5rem;
+  color: colors.$DARK50;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.3rem;
+  }
+}
+
+.weatherElementImportant {
+  @include flexbox.flexbox(center, center);
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: colors.$DARK;
+
+  & > p:first-child {
+    margin-right: 0.3rem;
+  }
+}
+
+.weatherElementRight {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  color: colors.$DARK30;
+
+  .weatherElementTemperature {
+    @include flexbox.flexbox(center, center);
+    flex-direction: row;
+    margin-bottom: 0.3rem;
+
+    p {
+      margin-right: 0.3rem;
+      font-size: 0.9rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include responsive.after(400px) {
+  .weatherElementWrapper {
+    flex-direction: row;
+    height: 6rem;
+    padding: 0 1rem;
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.weatherThunderstorm {
+  border-color: colors.$THUNDERSTORM;
+}
+
+.weatherDrizzle {
+  border-color: colors.$DRIZZLE;
+}
+
+.weatherRain {
+  border-color: colors.$RAIN;
+}
+
+.weatherSnow {
+  border-color: colors.$SNOW;
+}
+
+.weatherFog {
+  border-color: colors.$FOG;
+}
+
+.weatherClearSky {
+  border-color: colors.$CLEARSKY;
+}
+
+.weatherCloud {
+  border-color: colors.$CLOUD;
+}
+
+.weatherDefault {
+  border-color: colors.$MIDDLE;
+}
