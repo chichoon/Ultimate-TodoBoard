@@ -1,0 +1,17 @@
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
+.weatherWrapper {
+  .weatherListWrapper {
+    @include flexbox.flexbox(start, start);
+    flex-direction: column;
+    width: 100%;
+    height: sizes.$LIST_CONTAINER;
+
+    ul {
+      flex: 1;
+      width: 100%;
+      overflow-y: scroll;
+    }
+  }
+}
