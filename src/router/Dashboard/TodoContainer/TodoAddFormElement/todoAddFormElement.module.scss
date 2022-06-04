@@ -1,5 +1,6 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 
 .todoInfo {
   @include flexbox.flexbox(center, center);
@@ -23,7 +24,7 @@
 
     label {
       margin-left: 0.5rem;
-      font-size: 0.8rem;
+      font-size: sizes.$FONT_SMALL;
       line-height: 1rem;
       color: colors.$DARK30;
     }

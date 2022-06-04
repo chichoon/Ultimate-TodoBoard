@@ -1,22 +1,23 @@
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/animation';
 
 .loadingWrapper {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
-  height: 600px;
+  height: 15rem;
 
-  .loadingIcon {
-    @include animation.rotateAnimation(0.5s);
-    width: 50px;
-    height: 50px;
-    margin-bottom: 30px;
+  svg {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
     fill: colors.$DARK50;
+    @include animation.rotateAnimation(0.5s);
   }
 
   h3 {
-    font-size: 20px;
+    font-size: sizes.$FONT_ACCENT;
     font-weight: 700;
     color: colors.$DARK;
   }

@@ -1,5 +1,6 @@
 @use 'styles/constants/colors';
 @use 'styles/constants/levels';
+@use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 
@@ -29,7 +30,7 @@
     padding: 0 1rem;
 
     h3 {
-      font-size: 1.1rem;
+      font-size: sizes.$FONT_ACCENT;
       font-weight: 500;
 
       b {

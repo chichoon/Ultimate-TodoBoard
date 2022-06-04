@@ -2,6 +2,7 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 
 .layoutWrapper {
   @include flexbox.flexbox(start, center);
@@ -27,7 +28,7 @@
       padding: 0 1rem;
 
       h1 {
-        font-size: 1.5rem;
+        font-size: sizes.$FONT_TITLE;
         font-weight: 700;
         line-height: 4rem;
         color: colors.$DARK;

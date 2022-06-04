@@ -1,5 +1,6 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 
 .baekjoonInputWrapper {
   @include flexbox.flexbox(start, start);
@@ -7,11 +8,5 @@
 
   input[type='text'] {
     margin: 0.8rem 0;
-  }
-
-  span {
-    margin: 0.2rem 0;
-    font-size: 0.8rem;
-    color: colors.$ALERT;
   }
 }

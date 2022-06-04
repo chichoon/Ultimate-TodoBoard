@@ -28,6 +28,8 @@
     dt {
       margin-bottom: 0.5rem;
       overflow: hidden;
+      font-size: sizes.$FONT_ACCENT;
+      color: colors.$DARK;
       text-overflow: ellipsis;
       white-space: nowrap;
     }

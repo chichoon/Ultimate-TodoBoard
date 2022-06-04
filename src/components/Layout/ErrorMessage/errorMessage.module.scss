@@ -2,6 +2,7 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
+@use 'styles/constants/sizes';
 @use 'styles/constants/levels';
 
 .errorMessageWrapper {
@@ -19,7 +20,7 @@
   .errorCode {
     @include flexbox.flexbox(center, center);
     width: 3rem;
-    font-size: 1.2rem;
+    font-size: sizes.$FONT_ACCENT;
     font-weight: 700;
     border-right: 2px solid colors.$WHITE;
   }
