@@ -11,6 +11,7 @@ export const useFetchWeather = () => {
     refetchInterval: 600000, // 10분
     staleTime: 60000,
     suspense: true,
+    retry: 1,
     useErrorBoundary: true,
   });
 
