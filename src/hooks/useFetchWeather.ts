@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query';
 
-import { IWeatherData } from 'types/weather.d';
 import { getWeather } from 'states/information';
 import { useAppSelector } from 'hooks';
 import { getWeatherInfo } from 'services';
