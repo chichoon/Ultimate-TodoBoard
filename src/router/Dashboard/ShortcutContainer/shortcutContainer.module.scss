@@ -1,0 +1,21 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.shortcutWrapper {
+  .shortcutItemsWrapper {
+    @include flexbox.flexbox(start, start);
+    flex-direction: column;
+    width: 100%;
+    max-height: sizes.$LIST_CONTAINER;
+
+    ul {
+      @include flexbox.flexbox(center, start);
+      flex: 1;
+      flex-flow: wrap;
+      align-content: flex-start;
+      width: 100%;
+      overflow-y: scroll;
+    }
+  }
+}

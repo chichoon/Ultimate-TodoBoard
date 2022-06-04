@@ -1,0 +1,45 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.shortcutElementWrapper {
+  @include flexbox.flexbox(between, center);
+  flex-direction: row;
+  width: 15rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: colors.$WHITE;
+  border-radius: sizes.$BORDER_RADIUS;
+  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
+
+  a {
+    flex: 1;
+  }
+}
+
+.shortcutLeft {
+  @include flexbox.flexbox(start, center);
+  flex-direction: row;
+  width: 100%;
+
+  .shortcutTitle {
+    width: 7rem;
+    overflow: hidden;
+    font-size: sizes.$FONT_ACCENT;
+    color: colors.$DARK;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+  }
+}
+
+.deleteButton line {
+  width: 2rem;
+  height: 2rem;
+  color: colors.$DARK;
+}

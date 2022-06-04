@@ -33,13 +33,15 @@ const ShortcutListElement = ({ item, index }: IProps) => {
 
   return (
     <li className={styles.shortcutElementWrapper}>
-      <div className={styles.shortcutTop}>
-        <img src={`https://api.statvoo.com/favicon/?url=${item.url}`} alt='domain favicon' />
-        <button type='button' className={styles.deleteButton} onClick={handleXButtonClick}>
-          <XIcon />
-        </button>
-      </div>
-      <p className={styles.shortcutBottom}>{item.title}</p>
+      <a href={`https://${item.url}`} target='_blank' rel='noreferrer'>
+        <div className={styles.shortcutLeft}>
+          <img src={`https://api.statvoo.com/favicon/?url=${item.url}`} alt='domain favicon' />
+          <p className={styles.shortcutTitle}>{item.title}</p>
+        </div>
+      </a>
+      <button type='button' className={styles.deleteButton} onClick={handleXButtonClick}>
+        <XIcon />
+      </button>
       {isDeleteModalOpen && (
         <DeleteConfirmModal title={item.title} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
