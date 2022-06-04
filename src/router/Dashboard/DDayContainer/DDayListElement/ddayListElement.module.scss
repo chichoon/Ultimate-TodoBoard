@@ -50,7 +50,8 @@
 
 @include responsive.after(SD) {
   .ddayElementWrapper {
-    width: 12rem;
+    flex-grow: 1;
+    min-width: 12rem;
     margin: 0;
     margin-right: 0.5rem;
 

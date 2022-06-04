@@ -7,7 +7,7 @@
   width: 100%;
 
   & > ul {
-    @include flexbox.flexbox(start, start);
+    @include flexbox.flexbox(start, center);
     flex-direction: column;
     width: 100%;
     overflow: auto;
@@ -28,5 +28,9 @@
 @include responsive.after(MD) {
   .ddayWrapper {
     grid-column: 1 / 5;
+
+    .ddayListWrapper > ul {
+      justify-content: center;
+    }
   }
 }
