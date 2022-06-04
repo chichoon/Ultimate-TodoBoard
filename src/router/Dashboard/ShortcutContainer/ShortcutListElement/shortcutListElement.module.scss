@@ -33,7 +33,6 @@
 
   img {
     width: 3rem;
-    height: 3rem;
     margin-right: 1rem;
   }
 }
@@ -44,8 +43,12 @@
   color: colors.$DARK;
 }
 
-@include responsive.after(MD) {
+@include responsive.after(SD) {
   .shortcutElementWrapper {
-    width: 15rem;
+    height: 4rem;
+
+    img {
+      width: 2rem;
+    }
   }
 }
