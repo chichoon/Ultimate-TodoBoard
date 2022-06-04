@@ -1,5 +1,4 @@
 @use 'styles/constants/colors';
-@use 'styles/constants/levels';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/position';
@@ -14,7 +13,6 @@
 .inputs {
   @include flexbox.flexbox(center, start);
   flex-direction: column;
-  padding: 0.5rem;
 
   & > input[type='text'] {
     width: 4rem;
@@ -29,7 +27,6 @@
 .pickers {
   @include flexbox.flexbox(center, start);
   flex-direction: column;
-  padding: 0.5rem;
 
   .paletteButton {
     @include position.relative((0));
@@ -70,8 +67,8 @@
     flex-flow: column;
 
     input[type='text'] {
-      width: 3rem;
-      max-width: 3rem;
+      width: 4rem;
+      max-width: 5rem;
       text-align: center;
 
       &:placeholder-shown {
@@ -100,3 +97,25 @@
     max-width: 5rem;
   }
 }
+
+@include responsive.after(SD) {
+  .inputs,
+  .pickers {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+// .inputs {
+//   @include flexbox.flexbox(center, start);
+//   flex-direction: column;
+//   padding: 0.5rem;
+
+//   & > input[type='text'] {
+//     width: 4rem;
+
+//     &:first-child {
+//       width: 8rem;
+//       margin-bottom: 0.5rem;
+//     }
+//   }
+// }

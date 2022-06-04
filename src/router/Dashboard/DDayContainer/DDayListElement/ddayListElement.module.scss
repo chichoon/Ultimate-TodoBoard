@@ -5,11 +5,10 @@
 
 .ddayElementWrapper {
   @include flexbox.flexbox(start, center);
-  width: calc(50% - 1rem);
-  min-width: 11rem;
+  width: 100%;
   height: 6rem;
   padding: 1rem;
-  margin: 0 0.5rem 1rem;
+  margin-bottom: 1rem;
   background-color: colors.$WHITE;
   border: 0.3rem solid;
   border-radius: sizes.$BORDER_RADIUS;
@@ -47,14 +46,16 @@
       color: colors.$DARK;
     }
   }
+}
 
-  @include responsive.between(0, 480px) {
-    width: 100%;
+@include responsive.after(SD) {
+  .ddayElementWrapper {
+    width: 12rem;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-right: 0.5rem;
 
     &:last-child {
-      margin-bottom: 0;
+      margin-right: 0;
     }
   }
 }

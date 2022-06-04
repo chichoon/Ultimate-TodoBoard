@@ -27,18 +27,11 @@
   .ddayWrapper {
     grid-row: 1;
     grid-column: 1 / 4;
-
-    .ddayListWrapper > ul {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 0.5rem;
-    }
   }
 }
 
 @include responsive.after(MD) {
   .ddayWrapper {
-    grid-column: 1/ 5;
+    grid-column: 1 / 3;
   }
 }
