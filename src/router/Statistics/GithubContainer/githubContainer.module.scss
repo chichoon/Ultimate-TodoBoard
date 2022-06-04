@@ -5,11 +5,9 @@
 
 .githubGraph {
   @include flexbox.flexbox(center, center);
-  height: calc(100% - 4rem);
-  overflow: auto;
 
   img {
-    height: 10rem;
+    width: 100%;
   }
 }
 
@@ -33,23 +31,5 @@
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-}
-
-@include responsive.after(SD) {
-  .githubWrapper {
-    grid-row: 4;
-    grid-column: 1 / 4;
-
-    .githubGraph > img {
-      height: 100%;
-    }
-  }
-}
-
-@include responsive.after(MD) {
-  .githubWrapper {
-    grid-row: 1;
-    grid-column: 3 / 5;
   }
 }

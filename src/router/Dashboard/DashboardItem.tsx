@@ -1,12 +1,11 @@
 import BaekjoonContainer from './BaekjoonContainer';
 import DDayContainer from './DDayContainer';
-import GithubContainer from './GithubContainer';
 import ShortcutContainer from './ShortcutContainer';
 import TodoContainer from './TodoContainer';
 import WeatherContainer from './WeatherContainer';
 
 interface IProps {
-  type: 'todo' | 'dday' | 'weather' | 'baekjoon' | 'github' | 'shortcut';
+  type: 'todo' | 'dday' | 'weather' | 'baekjoon' | 'shortcut';
 }
 
 const DashboardItem = ({ type }: IProps) => {
@@ -15,7 +14,6 @@ const DashboardItem = ({ type }: IProps) => {
     dday: <DDayContainer />,
     weather: <WeatherContainer />,
     baekjoon: <BaekjoonContainer />,
-    github: <GithubContainer />,
     shortcut: <ShortcutContainer />,
   }[type];
   return containerItem;
