@@ -1,0 +1,11 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+
+@include responsive.after(SD) {
+  .resetFormWrapper {
+    display: grid;
+    grid-row: 2;
+    grid-column: 1;
+  }
+}

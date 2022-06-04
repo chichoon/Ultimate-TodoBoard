@@ -73,3 +73,11 @@
     }
   }
 }
+
+@include responsive.after(SD) {
+  .settingsFormWrapper {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
