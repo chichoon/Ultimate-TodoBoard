@@ -42,3 +42,4 @@ export { ReactComponent as PlusIcon } from './plusIcon.svg';
 export { ReactComponent as ColorFillIcon } from './colorFillIcon.svg';
 export { ReactComponent as DownArrowIcon } from './downArrowIcon.svg';
 export { ReactComponent as LoadingIcon } from './loadingIcon.svg';
+export { ReactComponent as ErrorIcon } from './errorIcon.svg';
