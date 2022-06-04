@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
-import { DashboardIcon, SettingsIcon, StatsIcon } from 'assets/svgs';
+import { DashboardIcon, SettingsIcon } from 'assets/svgs';
 import styles from './sideNavigationBar.module.scss';
 
-const NAVLINK_DATA: string[] = ['dashboard', 'statistics', 'settings'];
+const NAVLINK_DATA: string[] = ['dashboard', 'settings'];
 
 interface IIconObj {
   [index: string]: JSX.Element;
@@ -17,7 +17,6 @@ interface IProps {
 const SideNavigationBar = ({ isBarHidden }: IProps) => {
   const navIcons: IIconObj = {
     dashboard: <DashboardIcon />,
-    statistics: <StatsIcon />,
     settings: <SettingsIcon />,
   };
 

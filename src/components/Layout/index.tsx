@@ -13,7 +13,6 @@ const Layout = () => {
   const titleString = {
     '/': '대시보드',
     '/dashboard': '대시보드',
-    '/statistics': '통계',
     '/settings': '설정',
   }[pathname ?? '/'];
   const [isBarHidden, setIsBarHidden] = useState(true);
