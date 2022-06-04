@@ -24,7 +24,7 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (baekjoonList.length > 20) {
+    if (baekjoonList.length >= 20) {
       setIsLimit(true);
       return;
     }
