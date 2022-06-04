@@ -1,4 +1,5 @@
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 
@@ -38,13 +39,13 @@
 
   .baekjoonID {
     width: 3rem;
-    margin: 0 1rem;
+    margin: 0 0.5rem 0 1rem;
     color: colors.$DARK50;
   }
 
   .baekjoonProblem {
     flex: 1;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     overflow: hidden;
     font-size: sizes.$FONT_ACCENT;
     color: colors.$DARK;
@@ -53,30 +54,8 @@
   }
 }
 
-.tier0 {
-  border-color: colors.$TIER_UNRATED;
-}
-
-.tier1 {
-  border-color: colors.$TIER_BRONZE;
-}
-
-.tier2 {
-  border-color: colors.$TIER_SILVER;
-}
-
-.tier3 {
-  border-color: colors.$TIER_GOLD;
-}
-
-.tier4 {
-  border-color: colors.$TIER_PLATINUM;
-}
-
-.tier5 {
-  border-color: colors.$TIER_DIAMOND;
-}
-
-.tier6 {
-  border-color: colors.$TIER_RUBY;
+@include responsive.after(SD) {
+  .baekjoonElementWrapper {
+    width: initial;
+  }
 }

@@ -7,10 +7,11 @@
     @include flexbox.flexbox(start, start);
     flex-direction: column;
     width: 100%;
-    height: sizes.$LIST_CONTAINER;
+    max-height: sizes.$LIST_CONTAINER;
 
     ul {
-      flex: 1;
+      @include flexbox.flexbox(start, start);
+      flex-direction: column;
       width: 100%;
       overflow-y: scroll;
     }
@@ -19,7 +20,22 @@
 
 @include responsive.after(SD) {
   .weatherWrapper {
+    grid-row: 4;
+    grid-column: 1 / 3;
+
+    .weatherListWrapper > ul {
+      flex-direction: row;
+    }
+  }
+}
+
+@include responsive.after(MD) {
+  .weatherWrapper {
     grid-row: 2 / 4;
     grid-column: 3;
+
+    .weatherListWrapper > ul {
+      flex-direction: column;
+    }
   }
 }

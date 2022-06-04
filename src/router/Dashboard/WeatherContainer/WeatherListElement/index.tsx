@@ -20,7 +20,7 @@ const WeatherListElement = ({ item }: IProps) => {
   };
 
   return (
-    <li className={cx(styles.weatherElementWrapper, styles[weatherClassname])}>
+    <li className={cx(styles.weatherElementWrapper, weatherClassname)}>
       <img
         src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
         alt={`${item.icon}.png`}

@@ -35,7 +35,7 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
   };
 
   return (
-    <li className={cx(styles.baekjoonElementWrapper, styles[tierClass])}>
+    <li className={cx(styles.baekjoonElementWrapper, tierClass)}>
       <a href={`https://www.acmicpc.net/problem/${item.id}`} target='_blank' rel='noreferrer'>
         <div className={styles.baekjoonElementLeft}>
           {solvedacIcon(item.tier)}
