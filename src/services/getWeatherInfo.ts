@@ -15,7 +15,6 @@ const getWeatherInfo = (lat: number, lon: number) =>
       },
     })
     .then(({ data }: { data: IWeatherResponse }) => {
-      console.log(data);
       const city = data.city.name === '' ? '선택한 도시' : data.city.name;
       const newArr: IWeatherData = {
         city,
