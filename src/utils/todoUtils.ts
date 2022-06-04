@@ -38,14 +38,6 @@ export const INIT_TODO: ITodo = {
     },
     {
       todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-30 11:33',
-    },
-    {
-      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
-      createDate: '2022-05-23 11:00',
-    },
-    {
-      todoTitle: '밥먹자밥먹자비둘기야구구구구구구구',
       createDate: '2022-05-23 12:04',
     },
     {
