@@ -1,5 +1,28 @@
+import { Suspense } from 'react';
+import cx from 'classnames';
+
+import WeatherContainerInner from './WeatherContainerInner';
+import { Loading } from 'components';
+
+import styles from './weatherContainer.module.scss';
+
 const WeatherContainer = () => {
-  return <div>날씨 컨테이너지롱</div>;
+  return (
+    <div className={cx(styles.baekjoonWrapper, 'listContainer')}>
+      <Suspense
+        fallback={
+          <>
+            <div className={cx('listContainerHeader')}>
+              <h3>날씨</h3>
+            </div>
+            <Loading />
+          </>
+        }
+      >
+        <WeatherContainerInner />
+      </Suspense>
+    </div>
+  );
 };
 
 export default WeatherContainer;
