@@ -1,11 +1,12 @@
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 
 .shortcutElementWrapper {
   @include flexbox.flexbox(between, center);
   flex-direction: row;
-  width: 15rem;
+  width: 100%;
   padding: 1rem;
   margin: 0.5rem;
   background-color: colors.$WHITE;
@@ -42,4 +43,10 @@
   width: 2rem;
   height: 2rem;
   color: colors.$DARK;
+}
+
+@include responsive.after(MD) {
+  .shortcutElementWrapper {
+    width: 15rem;
+  }
 }
