@@ -1,6 +1,7 @@
 @use 'styles/constants/sizes';
 @use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 
 .githubInfoWrapper {
   padding: 0 1rem;
@@ -34,5 +35,22 @@
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+@include responsive.after(SD) {
+  .githubWrapper {
+    grid-row: 3;
+    grid-column: 1 / 5;
+
+    .githubGraph > img {
+      height: auto;
+    }
+  }
+}
+
+@include responsive.after(MD) {
+  .githubWrapper {
+    grid-column: 1/ 5;
   }
 }

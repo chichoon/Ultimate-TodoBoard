@@ -1,5 +1,6 @@
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 
 .baekjoonWrapper {
   .baekjoonItemsWrapper {
@@ -13,5 +14,12 @@
       width: 100%;
       overflow-y: scroll;
     }
+  }
+}
+
+@include responsive.after(SD) {
+  .baekjoonWrapper {
+    grid-row: 2 / 4;
+    grid-column: 2;
   }
 }

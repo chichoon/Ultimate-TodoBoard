@@ -1,6 +1,7 @@
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
 
 .todoWrapper {
   .todoListWrapper {
@@ -18,5 +19,12 @@
     li {
       border-bottom: 1px solid colors.$DARK30;
     }
+  }
+}
+
+@include responsive.after(SD) {
+  .todoWrapper {
+    grid-row: 2 / 4;
+    grid-column: 1;
   }
 }
