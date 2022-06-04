@@ -5,6 +5,16 @@
     @return 600px;
   } @else if $media == SD {
     @return 768px;
+  } @else if $media == MD {
+    @return 1000px;
+  } @else if $media == LD {
+    @return 1200px;
+  } @else if $media == HD {
+    @return 1300px;
+  } @else if $media == SHD {
+    @return 1800px;
+  } @else if $media == QHD {
+    @return 2400px;
   } @else {
     @return $media;
   }
@@ -17,6 +27,16 @@
     @return 600px - 1px;
   } @else if $media == SD {
     @return 768px - 1px;
+  } @else if $media == MD {
+    @return 1000px - 1px;
+  } @else if $media == LD {
+    @return 1200px - 1px;
+  } @else if $media == HD {
+    @return 1300px - 1px;
+  } @else if $media == SHD {
+    @return 1800px - 1px;
+  } @else if $media == QHD {
+    @return 2400px - 1px;
   } @else {
     @return $media - 1px;
   }
@@ -39,6 +59,22 @@
     }
   } @else if $media == SD {
     @media only screen and (min-width: getMinBreakpoint(SD)) and (max-width: getMaxBreakpoint(MD)) {
+      @content;
+    }
+  } @else if $media == MD {
+    @media only screen and (min-width: getMinBreakpoint(MD)) and (max-width: getMaxBreakpoint(LD)) {
+      @content;
+    }
+  } @else if $media == LD {
+    @media only screen and (min-width: getMinBreakpoint(LD)) and (max-width: getMaxBreakpoint(HD)) {
+      @content;
+    }
+  } @else if $media == HD {
+    @media only screen and (min-width: getMinBreakpoint(HD)) and (max-width: getMaxBreakpoint(SHD)) {
+      @content;
+    }
+  } @else if $media == SHD {
+    @media only screen and (min-width: getMinBreakpoint(SHD)) and (max-width: getMaxBreakpoint(QHD)) {
       @content;
     }
   }
