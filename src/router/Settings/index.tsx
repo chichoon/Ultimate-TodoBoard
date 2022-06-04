@@ -1,8 +1,3 @@
-import cx from 'classnames';
-
-import { useAppSelector } from 'hooks';
-import { getInformations } from 'states/information';
-import { getTodo } from 'states/todo';
 import ResetAppElement from './ResetAppElement';
 
 import styles from './settings.module.scss';
