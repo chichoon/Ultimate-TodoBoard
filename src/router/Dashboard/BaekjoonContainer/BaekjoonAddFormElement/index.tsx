@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction } from 'react';
+import { useState, ChangeEvent, FormEvent, Dispatch, SetStateAction, useRef } from 'react';
+import { useMount } from 'react-use';
 import cx from 'classnames';
 
 import { useAppDispatch, useAppSelector } from 'hooks';
@@ -15,12 +16,17 @@ interface IProps {
 const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [value, setValue] = useState('');
   const [isLimit, setIsLimit] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const baekjoonList = useAppSelector(getBaekjoonItems);
   const dispatch = useAppDispatch();
 
   const handleIDChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.currentTarget.value);
   };
+
+  useMount(() => {
+    if (inputRef.current) inputRef.current.focus();
+  });
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,7 +44,15 @@ const BaekjoonAddFormElement = ({ setIsAddFormShown }: IProps) => {
     <div className={cx('listContainerAddForm')}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.baekjoonInputWrapper}>
-          <input type='text' required name='baekjoonID' value={value} onChange={handleIDChange} placeholder='문제 ID' />
+          <input
+            type='text'
+            required
+            name='baekjoonID'
+            value={value}
+            onChange={handleIDChange}
+            ref={inputRef}
+            placeholder='문제 ID'
+          />
           {isLimit && <span>문제는 20개까지 등록 가능합니다.</span>}
         </div>
         <Button type='submit'>추가</Button>

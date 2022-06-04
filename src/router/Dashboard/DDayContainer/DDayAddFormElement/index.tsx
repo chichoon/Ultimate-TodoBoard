@@ -14,6 +14,7 @@ interface IProps {
 const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
   const {
     paletteRef,
+    inputRef,
     dday,
     date,
     isColorPaletteShown,
@@ -28,7 +29,15 @@ const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
     <div className={cx(styles.ddayAddFormWrapper, 'listContainerAddForm')}>
       <form onSubmit={handleFormSubmit} className={styles.ddayFormWrapper}>
         <div className={styles.inputs}>
-          <input type='text' name='title' required value={dday.title} onChange={handleInputChange} placeholder='제목' />
+          <input
+            type='text'
+            name='title'
+            required
+            value={dday.title}
+            onChange={handleInputChange}
+            ref={inputRef}
+            placeholder='제목'
+          />
           <input
             type='text'
             name='icon'

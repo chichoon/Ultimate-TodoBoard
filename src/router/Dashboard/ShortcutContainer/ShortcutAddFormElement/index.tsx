@@ -1,4 +1,5 @@
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useRef, useState } from 'react';
+import { useMount } from 'react-use';
 import cx from 'classnames';
 
 import { Button } from 'components';
@@ -15,6 +16,7 @@ const ShortcutAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const [isLimit, setIsLimit] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const shortcutList = useAppSelector(getShortcut);
   const dispatch = useAppDispatch();
 
@@ -41,6 +43,10 @@ const ShortcutAddFormElement = ({ setIsAddFormShown }: IProps) => {
     setIsAddFormShown(false);
   };
 
+  useMount(() => {
+    if (inputRef.current) inputRef.current.focus();
+  });
+
   return (
     <div className={cx('listContainerAddForm')}>
       <form onSubmit={handleFormSubmit}>
@@ -51,6 +57,7 @@ const ShortcutAddFormElement = ({ setIsAddFormShown }: IProps) => {
             name='title'
             value={title}
             onChange={handleTitleChange}
+            ref={inputRef}
             placeholder='바로가기 이름'
           />
           <input type='text' required name='url' value={url} onChange={handleUrlChange} placeholder='바로가기 URL' />

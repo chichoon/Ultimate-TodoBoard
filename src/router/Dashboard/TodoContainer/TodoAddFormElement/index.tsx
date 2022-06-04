@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent, useEffect, Dispatch, SetStateAction } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect, Dispatch, SetStateAction, useRef } from 'react';
+import { useMount } from 'react-use';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
@@ -18,6 +19,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const [title, setTitle] = useState('');
   const [isDeadLine, setIsDeadline] = useState(false);
   const [deadLine, setDeadLine] = useState(today);
+  const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +33,10 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
   const handleDeadlineChange = (date: Date) => {
     setDeadLine(date);
   };
+
+  useMount(() => {
+    if (inputRef.current) inputRef.current.focus();
+  });
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,7 +57,14 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
     <div className={cx('listContainerAddForm')}>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.formLeft}>
-          <input type='text' required value={title} onChange={handleTitleChange} placeholder='할 일 제목' />
+          <input
+            type='text'
+            required
+            value={title}
+            onChange={handleTitleChange}
+            ref={inputRef}
+            placeholder='할 일 제목'
+          />
           <div className={styles.checkboxArea}>
             <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
             <label htmlFor='isDeadLine'>마감일 추가하기</label>

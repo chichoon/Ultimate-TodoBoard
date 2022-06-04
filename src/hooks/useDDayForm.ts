@@ -1,5 +1,5 @@
 import { IDDay } from 'types/information.d';
-import { useClickAway } from 'react-use';
+import { useClickAway, useMount } from 'react-use';
 import { useState, useRef, Dispatch, SetStateAction, ChangeEvent, FormEvent } from 'react';
 import dayjs from 'dayjs';
 
@@ -18,6 +18,7 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
   const [date, setDate] = useState(today);
   const [isColorPaletteShown, setIsColorPaletteShown] = useState(false);
   const paletteRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -57,8 +58,13 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
     setIsColorPaletteShown(false);
   });
 
+  useMount(() => {
+    if (inputRef.current) inputRef.current.focus();
+  });
+
   return {
     paletteRef,
+    inputRef,
     dday,
     date,
     isColorPaletteShown,
