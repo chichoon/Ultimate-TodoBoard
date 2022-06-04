@@ -22,18 +22,6 @@
   .layoutOutlet {
     width: 100%;
     overflow: auto;
-
-    .dashboardHeader {
-      height: 4rem;
-      padding: 0 1rem;
-
-      h1 {
-        font-size: sizes.$FONT_TITLE;
-        font-weight: 700;
-        line-height: 4rem;
-        color: colors.$DARK;
-      }
-    }
   }
 }
 
