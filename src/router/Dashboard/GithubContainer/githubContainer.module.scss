@@ -1,0 +1,13 @@
+.githubWrapper {
+  .githubInfoWrapper {
+    padding: 0 1rem;
+
+    .githubGraph {
+      overflow: auto;
+
+      img {
+        height: 10rem;
+      }
+    }
+  }
+}
