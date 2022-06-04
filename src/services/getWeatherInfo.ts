@@ -1,6 +1,7 @@
+import axios from 'axios';
+
 import { IWeatherData } from 'types/weather.d';
 import { IList, IWeatherResponse } from 'types/weatherResponse.d';
-import axios from 'axios';
 
 const getWeatherInfo = (lat: number, lon: number) =>
   axios

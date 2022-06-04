@@ -22,7 +22,6 @@ const GithubContainer = () => {
         <div className={styles.githubGraph}>
           <img src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`} alt={`${githubID}'s Github Graph`} />
         </div>
-        <div className={styles.githubTodayCommit}>오늘 커밋을 완료하였습니다</div>
       </div>
     </div>
   );
