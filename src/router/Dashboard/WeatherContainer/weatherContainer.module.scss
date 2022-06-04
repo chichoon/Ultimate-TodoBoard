@@ -36,7 +36,7 @@
 @include responsive.after(MD) {
   .weatherWrapper {
     grid-row: 2 / 4;
-    grid-column: 3;
+    grid-column: 3 / 5;
 
     .weatherListWrapper > ul {
       flex-direction: column;
