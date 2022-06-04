@@ -1,0 +1,22 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+@use 'styles/mixins/flexbox';
+
+.errorWrapper {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  height: 15rem;
+
+  svg {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    fill: colors.$DARK50;
+  }
+
+  h3 {
+    font-size: sizes.$FONT_ACCENT;
+    font-weight: 700;
+    color: colors.$DARK;
+  }
+}

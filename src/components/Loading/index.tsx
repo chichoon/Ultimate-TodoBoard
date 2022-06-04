@@ -4,7 +4,7 @@ import styles from './loading.module.scss';
 const Loading = () => {
   return (
     <div className={styles.loadingWrapper}>
-      <LoadingIcon className={styles.loadingIcon} />
+      <LoadingIcon />
       <h3>로딩중...</h3>
     </div>
   );
