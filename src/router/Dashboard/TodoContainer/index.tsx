@@ -30,19 +30,11 @@ const TodoContainer = () => {
         <ul>
           {todo.items.map((item, index) => {
             const key = `todo-index-${index}`;
-            return (
-              <li key={key}>
-                <TodoListElement item={item} index={index} isDone={false} />
-              </li>
-            );
+            return <TodoListElement key={key} item={item} index={index} isDone={false} />;
           })}
           {todo.itemsDone.map((item, index) => {
             const key = `todo-index-${index}-done`;
-            return (
-              <li key={key}>
-                <TodoListElement item={item} index={index} isDone />
-              </li>
-            );
+            return <TodoListElement key={key} item={item} index={index} isDone />;
           })}
         </ul>
       </div>

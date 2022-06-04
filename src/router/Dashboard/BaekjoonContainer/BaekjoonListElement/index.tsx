@@ -34,7 +34,7 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
   };
 
   return (
-    <div className={cx(styles.baekjoonElementWrapper, styles[tierClass])}>
+    <li className={cx(styles.baekjoonElementWrapper, styles[tierClass])}>
       <a href={`https://www.acmicpc.net/problem/${item.id}`} target='_blank' rel='noreferrer'>
         <div className={styles.baekjoonElementLeft}>
           {solvedacIcon(item.tier)}
@@ -57,7 +57,7 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
           </>
         </DeleteConfirmModal>
       )}
-    </div>
+    </li>
   );
 };
 

@@ -31,11 +31,7 @@ const BaekjoonContainer = () => {
         <ul>
           {baekjoonItems.map((item, index) => {
             const key = `baekjoon-index-${index}`;
-            return (
-              <li key={key}>
-                <BaekjoonListElement item={item} index={index} />
-              </li>
-            );
+            return <BaekjoonListElement key={key} item={item} index={index} />;
           })}
         </ul>
       </div>

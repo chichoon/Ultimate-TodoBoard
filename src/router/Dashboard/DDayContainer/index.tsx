@@ -36,11 +36,7 @@ const DDayContainer = () => {
         <ul>
           {ddays.map((item, index) => {
             const key = `dday-index-${index}`;
-            return (
-              <li key={key} className={styles.ddayList}>
-                <DDayListElement item={item} index={index} />
-              </li>
-            );
+            return <DDayListElement key={key} item={item} index={index} />;
           })}
         </ul>
       </div>

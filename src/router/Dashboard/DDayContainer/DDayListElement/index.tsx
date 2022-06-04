@@ -34,7 +34,7 @@ const DDayListElement = ({ item, index }: IProps) => {
   };
 
   return (
-    <div style={{ borderColor: item.color }} className={styles.ddayElementWrapper}>
+    <li style={{ borderColor: item.color }} className={styles.ddayElementWrapper}>
       <p className={styles.ddayEmoji}>{item.icon}</p>
       <dl className={styles.ddayInfoContainer}>
         <dt>{item.title}</dt>
@@ -55,7 +55,7 @@ const DDayListElement = ({ item, index }: IProps) => {
           </>
         </DeleteConfirmModal>
       )}
-    </div>
+    </li>
   );
 };
 

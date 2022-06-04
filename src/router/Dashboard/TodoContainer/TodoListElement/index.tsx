@@ -42,7 +42,7 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
   };
 
   return (
-    <div className={styles.todoElementWrapper}>
+    <li className={styles.todoElementWrapper}>
       <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
       <p className={cx(styles.todoTitle, { [styles.isTodoDone]: isDone })}>{item.todoTitle}</p>
       {item.deadLineDate && <p className={styles.todoDeadline}>D-{deadLine.diff(today, 'd')}</p>}
@@ -61,7 +61,7 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
           </>
         </DeleteConfirmModal>
       )}
-    </div>
+    </li>
   );
 };
 
