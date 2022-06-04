@@ -13,3 +13,5 @@ const Error = ({ error }: IProps) => {
     </div>
   );
 };
+
+export default Error;
