@@ -28,6 +28,10 @@
   }
 }
 
+.listContainerHeader > button {
+  display: none;
+}
+
 .listContainerAddHeader {
   @include flexbox.flexbox(between, center);
   flex-direction: row;
