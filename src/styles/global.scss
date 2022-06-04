@@ -1,6 +1,8 @@
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 @use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+@use 'styles/mixins/position';
 
 .listContainer {
   width: 100%;
@@ -42,7 +44,7 @@
 
 .listContainerAddForm {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   margin-bottom: 0.5rem;
   border-bottom: 2px solid colors.$DARK30;
 
@@ -70,5 +72,20 @@ input[type='text'] {
 
   &:placeholder {
     color: colors.$DARK10;
+  }
+}
+
+@include responsive.after(SD) {
+  .listContainer {
+    @include position.relative((0, 0));
+    width: 100%;
+  }
+
+  .listContainerAddForm {
+    @include position.absolute((4rem, 0, _, _));
+    width: 100%;
+    padding: 1rem 2rem;
+    margin: 0;
+    background-color: colors.$WHITE;
   }
 }
