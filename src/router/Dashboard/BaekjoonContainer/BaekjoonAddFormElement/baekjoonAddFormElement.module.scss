@@ -9,4 +9,9 @@
   input[type='text'] {
     margin: 0.8rem 0;
   }
+
+  span {
+    font-size: sizes.$FONT_SMALL;
+    color: colors.$ALERT;
+  }
 }
