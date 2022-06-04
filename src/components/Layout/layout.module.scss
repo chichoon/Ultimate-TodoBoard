@@ -35,11 +35,17 @@
       }
     }
   }
+}
 
-  @include responsive.after(SD) {
+@include responsive.after(SD) {
+  .layoutWrapper {
     .layoutBottom {
       @include flexbox.flexbox(between, center);
       flex-direction: row;
+    }
+
+    .layoutOutlet {
+      height: calc(100vh - 4rem);
     }
   }
 }
