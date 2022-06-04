@@ -4,7 +4,7 @@
 
 .weatherWrapper {
   .weatherListWrapper {
-    @include flexbox.flexbox(start, start);
+    @include flexbox.flexbox(center, start);
     flex-direction: column;
     width: 100%;
     max-height: sizes.$LIST_CONTAINER;
@@ -22,10 +22,11 @@
     grid-column: 1 / 3;
 
     .weatherListWrapper {
+      max-height: calc(100% - 4rem);
       overflow: scroll;
 
       ul {
-        @include flexbox.flexbox(start, start);
+        @include flexbox.flexbox(start, center);
         flex-direction: row;
       }
     }
@@ -38,7 +39,7 @@
     grid-column: 3;
 
     .weatherListWrapper > ul {
-      display: block;
+      flex-direction: column;
     }
   }
 }
