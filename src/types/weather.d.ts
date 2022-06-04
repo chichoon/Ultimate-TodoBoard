@@ -1,9 +1,9 @@
-interface IWeatherResponse {
+export interface IWeatherData {
   city: string;
-  weatherList: IWeatherData[];
+  weatherList: IWeatherItem[];
 }
 
-interface IWeatherData {
+export interface IWeatherItem {
   time: string;
   temp: number;
   temp_max: number;
