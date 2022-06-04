@@ -26,19 +26,16 @@ const WeatherListElement = ({ item }: IProps) => {
         alt={`${item.icon}.png`}
         onError={handleImgError}
       />
-      <div className={styles.weatherElementLeft}>
-        <p>{dayjsTime.format('YYYY년 MM월 DD일')}</p>
-        <p>{dayjsTime.format('HH시 mm분')}</p>
-        <div className={styles.weatherElementImportant}>
-          <p>{item.temp}ºC</p>
-          <p>{item.weather}</p>
-        </div>
+      <div className={styles.weatherElementTop}>
+        <p>{dayjsTime.format('YYYY년 MM월 DD일 HH시')}</p>
+        <p className={styles.weatherElementImportant}>
+          {item.temp}ºC {item.weather}
+        </p>
       </div>
-      <div className={styles.weatherElementRight}>
-        <div className={styles.weatherElementTemperature}>
-          <p>최저 {item.temp_min}ºC</p>
-          <p>최고 {item.temp_max}ºC</p>
-        </div>
+      <div className={styles.weatherElementBottom}>
+        <p className={styles.weatherTemperature}>
+          최저 {item.temp_min}ºC 최고 {item.temp_max}ºC
+        </p>
         <p>습도 {item.humidity}%</p>
       </div>
     </li>

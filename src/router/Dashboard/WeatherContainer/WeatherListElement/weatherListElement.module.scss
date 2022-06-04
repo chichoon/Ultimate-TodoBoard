@@ -9,6 +9,7 @@
   width: 100%;
   padding: 1rem 0;
   margin-bottom: 1rem;
+  overflow: hidden;
   border-left: 1rem solid;
   border-radius: sizes.$BORDER_RADIUS;
   box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
@@ -22,7 +23,7 @@
   }
 }
 
-.weatherElementLeft {
+.weatherElementTop {
   overflow: hidden;
   color: colors.$DARK50;
   text-align: center;
@@ -33,39 +34,24 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-}
 
-.weatherElementImportant {
-  @include flexbox.flexbox(center, center);
-  flex-direction: row;
-  margin: 0.7rem 0;
-  font-size: sizes.$FONT_ACCENT;
-  font-weight: 500;
-  color: colors.$DARK;
-
-  & > p:first-child {
-    margin-right: 0.3rem;
+  .weatherElementImportant {
+    margin: 0.7rem 0;
+    font-size: sizes.$FONT_ACCENT;
+    font-weight: 500;
+    color: colors.$DARK;
   }
 }
 
-.weatherElementRight {
+.weatherElementBottom {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   color: colors.$DARK30;
 
-  .weatherElementTemperature {
-    @include flexbox.flexbox(center, center);
-    flex-direction: row;
+  .weatherTemperature {
     margin-bottom: 0.3rem;
-
-    p {
-      margin-right: 0.3rem;
-      font-size: sizes.$FONT_SMALL;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
