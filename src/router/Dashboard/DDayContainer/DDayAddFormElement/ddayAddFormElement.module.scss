@@ -5,13 +5,15 @@
 @use 'styles/mixins/responsive';
 
 .ddayAddFormWrapper {
+  padding: 0;
+
   form > div {
-    flex: 1;
+    margin-right: 1rem;
   }
 }
 
 .inputs {
-  @include flexbox.flexbox(center, start);
+  @include flexbox.flexbox(center, center);
   flex-direction: column;
 
   & > input[type='text'] {
@@ -25,7 +27,7 @@
 }
 
 .pickers {
-  @include flexbox.flexbox(center, start);
+  @include flexbox.flexbox(center, center);
   flex-direction: column;
 
   .paletteButton {
@@ -57,6 +59,7 @@
 
   input[type='text'] {
     width: 7rem;
+    text-align: center;
   }
 }
 
@@ -99,23 +102,24 @@
 }
 
 @include responsive.after(SD) {
-  .inputs,
-  .pickers {
-    flex-direction: row;
-    justify-content: space-between;
+  .ddayAddFormWrapper {
+    .inputs,
+    .pickers {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-right: 0;
+
+      input[type='text'] {
+        margin: 0;
+        margin-right: 1rem;
+      }
+    }
+
+    .paletteButton {
+      button {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
   }
 }
-// .inputs {
-//   @include flexbox.flexbox(center, start);
-//   flex-direction: column;
-//   padding: 0.5rem;
-
-//   & > input[type='text'] {
-//     width: 4rem;
-
-//     &:first-child {
-//       width: 8rem;
-//       margin-bottom: 0.5rem;
-//     }
-//   }
-// }

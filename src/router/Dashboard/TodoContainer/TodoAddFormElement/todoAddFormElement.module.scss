@@ -13,7 +13,6 @@
 
 .formLeft {
   @include flexbox.flexbox(center, start);
-  flex: 1;
   flex-direction: column;
   margin-right: 1rem;
 

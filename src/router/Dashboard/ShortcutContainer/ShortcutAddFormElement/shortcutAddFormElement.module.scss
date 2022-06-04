@@ -5,6 +5,7 @@
 .shortcutInputWrapper {
   @include flexbox.flexbox(start, start);
   flex-direction: column;
+  margin-right: 1rem;
 
   & > input[type='text'] {
     margin-bottom: 0.8rem;
