@@ -4,7 +4,7 @@
 @use 'styles/mixins/responsive';
 
 .weatherElementWrapper {
-  @include flexbox.flexbox(center, center);
+  @include flexbox.flexbox(between, center);
   flex-direction: column;
   width: 100%;
   padding: 1rem 0;
@@ -16,22 +16,29 @@
   img {
     height: 4rem;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .weatherElementLeft {
-  flex: 1;
-  margin-bottom: 0.5rem;
+  overflow: hidden;
   color: colors.$DARK50;
   text-align: center;
 
-  p {
+  & > p {
     margin-bottom: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
 .weatherElementImportant {
   @include flexbox.flexbox(center, center);
   flex-direction: row;
+  margin: 0.7rem 0;
   font-size: sizes.$FONT_ACCENT;
   font-weight: 500;
   color: colors.$DARK;
@@ -62,7 +69,7 @@
   }
 }
 
-@include responsive.after(520px) {
+@include responsive.after(SD) {
   .weatherElementWrapper {
     flex-direction: row;
     height: 6rem;

@@ -10,7 +10,7 @@ const getWeatherInfo = (lat: number, lon: number) =>
         lon,
         appid: process.env.REACT_APP_WEATHER_API_KEY,
         units: 'metric',
-        cnt: 8,
+        cnt: 10,
         lang: 'kr',
       },
     })
@@ -18,14 +18,14 @@ const getWeatherInfo = (lat: number, lon: number) =>
       const city = data.city.name === '' ? '선택한 도시' : data.city.name;
       const newArr: IWeatherData = {
         city,
-        weatherList: data.list.map((item: IList) => {
+        weatherList: data.list.slice(2).map((item: IList) => {
           return {
             time: item.dt_txt,
             temp: item.main.temp,
             temp_min: item.main.temp_min,
             temp_max: item.main.temp_max,
             humidity: item.main.humidity,
-            weather: item.weather[0].main,
+            weather: item.weather[0].description,
             icon: item.weather[0].icon,
             id: item.weather[0].id,
           };
