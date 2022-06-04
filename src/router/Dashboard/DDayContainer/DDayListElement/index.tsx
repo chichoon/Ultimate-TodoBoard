@@ -5,6 +5,7 @@ import { useAppDispatch } from 'hooks';
 import { IDDay } from 'types/information';
 import { deleteDday } from 'states/information';
 import { DeleteConfirmModal } from 'router/Dashboard/_shared';
+import { Button } from 'components';
 
 import { XIcon } from 'assets/svgs';
 import styles from './ddayListElement.module.scss';
@@ -46,12 +47,12 @@ const DDayListElement = ({ item, index }: IProps) => {
       {isDeleteModalOpen && (
         <DeleteConfirmModal title={item.title} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
-            <button type='button' onClick={handleDeleteButtonClick}>
+            <Button type='button' onClick={handleDeleteButtonClick}>
               확인
-            </button>
-            <button type='button' onClick={handleCancelButtonClick}>
+            </Button>
+            <Button type='button' onClick={handleCancelButtonClick}>
               취소
-            </button>
+            </Button>
           </>
         </DeleteConfirmModal>
       )}

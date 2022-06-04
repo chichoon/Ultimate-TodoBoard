@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
+import { Button } from 'components';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
 import { DeleteConfirmModal } from 'router/Dashboard/_shared';
@@ -52,12 +53,12 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
       {isDeleteModalOpen && (
         <DeleteConfirmModal title={item.todoTitle} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
-            <button type='button' onClick={handleDeleteButtonClick}>
+            <Button type='button' onClick={handleDeleteButtonClick}>
               확인
-            </button>
-            <button type='button' onClick={handleCancelButtonClick}>
+            </Button>
+            <Button type='button' onClick={handleCancelButtonClick}>
               취소
-            </button>
+            </Button>
           </>
         </DeleteConfirmModal>
       )}

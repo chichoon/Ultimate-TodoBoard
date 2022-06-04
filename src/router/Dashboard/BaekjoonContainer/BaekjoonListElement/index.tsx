@@ -4,10 +4,11 @@ import cx from 'classnames';
 import { useAppDispatch } from 'hooks';
 import { IBaekjoonItem } from 'types/information';
 import { deleteBaekjoon } from 'states/information';
-import solvedacIcon from './solvedacIcon';
+import { Button } from 'components';
 import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import styles from './baekjoonListElement.module.scss';
+import solvedacIcon from './solvedacIcon';
 import { XIcon } from 'assets/svgs';
 
 interface IProps {
@@ -48,12 +49,12 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
       {isDeleteModalOpen && (
         <DeleteConfirmModal title={item.problem} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
-            <button type='button' onClick={handleDeleteButtonClick}>
+            <Button type='button' onClick={handleDeleteButtonClick}>
               확인
-            </button>
-            <button type='button' onClick={handleCancelButtonClick}>
+            </Button>
+            <Button type='button' onClick={handleCancelButtonClick}>
               취소
-            </button>
+            </Button>
           </>
         </DeleteConfirmModal>
       )}
