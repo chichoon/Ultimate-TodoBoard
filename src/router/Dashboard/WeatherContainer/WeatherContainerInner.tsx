@@ -11,7 +11,7 @@ const WeatherContainerInner = () => {
   return (
     <>
       <div className={cx('listContainerHeader')}>
-        <h3>{data.city}의 날씨</h3>
+        <h3>{data?.city ?? '선택한 도시'}의 날씨</h3>
       </div>
       <div className={styles.weatherItemsWrapper}>
         <ul>

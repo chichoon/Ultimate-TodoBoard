@@ -5,11 +5,6 @@ import { getWeather } from 'states/information';
 import { useAppSelector } from 'hooks';
 import { getWeatherInfo } from 'services';
 
-const INIT_DATA: IWeatherData = {
-  city: 'unknown',
-  weatherList: [],
-};
-
 export const useFetchWeather = () => {
   const { lat, lon } = useAppSelector(getWeather);
   const { data } = useQuery(['WeatherInfos', lat, lon], () => getWeatherInfo(lat, lon), {
