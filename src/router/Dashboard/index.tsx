@@ -11,6 +11,7 @@ const Dashboard = () => {
         <DashboardItem type='dday' />
         <DashboardItem type='weather' />
         <DashboardItem type='github' />
+        <DashboardItem type='shortcut' />
         <li />
       </ul>
     </main>
