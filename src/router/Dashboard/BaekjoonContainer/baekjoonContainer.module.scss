@@ -4,15 +4,14 @@
 
 .baekjoonWrapper {
   .baekjoonItemsWrapper {
-    @include flexbox.flexbox(start, start);
+    @include flexbox.flexbox(center, start);
     flex-direction: column;
     width: 100%;
     max-height: sizes.$LIST_CONTAINER;
 
     ul {
-      flex: 1;
       width: 100%;
-      overflow-y: scroll;
+      overflow: auto;
     }
   }
 }
@@ -21,5 +20,15 @@
   .baekjoonWrapper {
     grid-row: 2 / 4;
     grid-column: 2;
+  }
+
+  .baekjoonItemsWrapper {
+    max-height: calc(100% - 4rem);
+    overflow: auto;
+
+    ul {
+      @include flexbox.flexbox(start, center);
+      flex-direction: column;
+    }
   }
 }

@@ -53,9 +53,3 @@
     white-space: nowrap;
   }
 }
-
-@include responsive.after(SD) {
-  .baekjoonElementWrapper {
-    width: initial;
-  }
-}

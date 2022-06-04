@@ -11,7 +11,7 @@
 
     ul {
       width: 100%;
-      overflow-y: scroll;
+      overflow: auto;
     }
   }
 }
@@ -23,7 +23,7 @@
 
     .weatherListWrapper {
       max-height: calc(100% - 4rem);
-      overflow: scroll;
+      overflow: auto;
 
       ul {
         @include flexbox.flexbox(start, center);
