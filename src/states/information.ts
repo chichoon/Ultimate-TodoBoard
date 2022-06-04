@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
-import { IDDay, IInformation, IBaekjoonItem, IWeather } from 'types/information.d';
+import { IDDay, IInformation, IBaekjoonItem, IWeather, IShortcut } from 'types/information.d';
 import { ddaySort } from 'utils/infoUtils';
 
 import { RootState } from 'states';
@@ -15,6 +15,7 @@ const INIT_INFO: IInformation = {
     lon: 0,
   },
   dday: [],
+  shortcut: [],
   githubID: '',
 };
 
@@ -84,6 +85,22 @@ const informationSlice = createSlice({
       const newData = {
         ...state,
         dday: state.dday.filter((_, index) => index !== action.payload),
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    addShortcut: (state: IInformation, action: PayloadAction<IShortcut>) => {
+      const newData = {
+        ...state,
+        shortcut: [...state.shortcut, action.payload],
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    deleteShortcut: (state: IInformation, action: PayloadAction<number>) => {
+      const newData = {
+        ...state,
+        shortcut: state.shortcut.filter((_, index) => index !== action.payload),
       };
       store.set('infoData', newData);
       return newData;

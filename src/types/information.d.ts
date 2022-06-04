@@ -4,6 +4,7 @@ export interface IInformation {
   baekjoon: IBaekjoonItem[];
   weather: IWeather;
   dday: IDDay[];
+  shortcut: IShortcut[];
   githubID: string;
 }
 
@@ -28,4 +29,9 @@ export interface IDDay {
 export interface IError {
   status: number;
   data: string;
+}
+
+export interface IShortcut {
+  title: string;
+  url: string;
 }
