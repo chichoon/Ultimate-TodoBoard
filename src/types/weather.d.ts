@@ -10,4 +10,5 @@ export interface IWeatherItem {
   temp_min: number;
   humidity: number;
   weather: string;
+  icon: string;
 }
