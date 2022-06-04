@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { useAppSelector } from 'hooks';
 import { getShortcut } from 'states/information';
 import ShortcutAddFormElement from './ShortcutAddFormElement';
+import ShortcutListElement from './ShortcutListElement';
 
 import { PlusIcon } from 'assets/svgs';
 import styles from './shortcutContainer.module.scss';
@@ -27,10 +28,10 @@ const ShortcutContainer = () => {
       <div className={styles.shortcutItemsWrapper}>
         {isAddFormShown && <ShortcutAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
-          {/* {shortcutItems.map((item, index) => {
+          {shortcutItems.map((item, index) => {
             const key = `shortcut-index-${index}`;
             return <ShortcutListElement key={key} item={item} index={index} />;
-          })} */}
+          })}
         </ul>
       </div>
     </div>

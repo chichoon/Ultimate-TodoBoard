@@ -2,10 +2,10 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'reac
 import cx from 'classnames';
 
 import { Button } from 'components';
-
-import styles from './shortcutAddFormElement.module.scss';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { addShortcut, getShortcut } from 'states/information';
+
+import styles from './shortcutAddFormElement.module.scss';
 
 interface IProps {
   setIsAddFormShown: Dispatch<SetStateAction<boolean>>;
