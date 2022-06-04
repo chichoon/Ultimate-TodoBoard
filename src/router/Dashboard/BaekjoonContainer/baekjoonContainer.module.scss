@@ -2,11 +2,11 @@
 @use 'styles/mixins/flexbox';
 
 .baekjoonWrapper {
-  .baekjoonListWrapper {
+  .baekjoonItemsWrapper {
     @include flexbox.flexbox(start, start);
     flex-direction: column;
     width: 100%;
-    height: sizes.$LIST_CONTAINER;
+    max-height: sizes.$LIST_CONTAINER;
 
     ul {
       flex: 1;
