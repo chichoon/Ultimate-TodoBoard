@@ -41,3 +41,4 @@ export { ReactComponent as XIcon } from './xIcon.svg';
 export { ReactComponent as PlusIcon } from './plusIcon.svg';
 export { ReactComponent as ColorFillIcon } from './colorFillIcon.svg';
 export { ReactComponent as DownArrowIcon } from './downArrowIcon.svg';
+export { ReactComponent as QuestionIcon } from './questionIcon.svg';
