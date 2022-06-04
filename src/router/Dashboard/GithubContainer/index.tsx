@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import cx from 'classnames';
 
 import { useAppSelector } from 'hooks';
 import { getGithubID } from 'states/information';
 
 import styles from './githubContainer.module.scss';
+import { ErrorIcon } from 'assets/svgs';
 
 const THEME = {
   lightblue: '6089bf',
@@ -12,15 +14,32 @@ const THEME = {
 
 const GithubContainer = () => {
   const githubID = useAppSelector(getGithubID);
+  const [isNotAvailable, setIsNotAvailable] = useState(false);
+
+  const handleGraphError = () => {
+    setIsNotAvailable(true);
+  };
 
   return (
     <div className={cx(styles.githubWrapper, 'listContainer')}>
       <div className={cx('listContainerHeader')}>
-        <h3>{githubID}의 Github</h3>
+        <h3>{githubID}의 Commit Graph</h3>
       </div>
       <div className={styles.githubInfoWrapper}>
         <div className={styles.githubGraph}>
-          <img src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`} alt={`${githubID}'s Github Graph`} />
+          {!isNotAvailable && (
+            <img
+              src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`}
+              alt={`${githubID}'s Github Graph`}
+              onError={handleGraphError}
+            />
+          )}
+          {isNotAvailable && (
+            <div className={styles.githubNotAvailable}>
+              <ErrorIcon />
+              <span>{githubID}가 존재하지 않습니다</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

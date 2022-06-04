@@ -1,13 +1,38 @@
-.githubWrapper {
-  .githubInfoWrapper {
-    padding: 0 1rem;
+@use 'styles/constants/sizes';
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
 
-    .githubGraph {
-      overflow: auto;
+.githubInfoWrapper {
+  padding: 0 1rem;
 
-      img {
-        height: 10rem;
-      }
+  .githubGraph {
+    overflow: auto;
+
+    img {
+      height: 10rem;
     }
+  }
+}
+
+.githubNotAvailable {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  padding: 1rem 0;
+
+  svg {
+    width: 5rem;
+    margin-bottom: 0.5rem;
+    fill: colors.$DARK;
+  }
+
+  span {
+    width: 100%;
+    overflow: hidden;
+    font-size: sizes.$FONT_ACCENT;
+    line-height: sizes.$FONT_SUBTITLE;
+    color: colors.$DARK;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
