@@ -5,6 +5,7 @@
 
 .baekjoonElementWrapper {
   @include flexbox.flexbox(between, center);
+  flex-shrink: 0;
   width: 100%;
   padding-right: 1rem;
   border-top: 3px solid;
