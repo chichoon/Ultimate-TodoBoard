@@ -25,22 +25,20 @@ const GithubContainer = () => {
       <div className={cx('listContainerHeader')}>
         <h3>{githubID}의 커밋 그래프</h3>
       </div>
-      <div className={styles.githubInfoWrapper}>
-        <div className={styles.githubGraph}>
-          {!isNotAvailable && (
-            <img
-              src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`}
-              alt={`${githubID}'s Github Graph`}
-              onError={handleGraphError}
-            />
-          )}
-          {isNotAvailable && (
-            <div className={styles.githubNotAvailable}>
-              <ErrorIcon />
-              <span>{githubID}가 존재하지 않습니다</span>
-            </div>
-          )}
-        </div>
+      <div className={styles.githubGraph}>
+        {!isNotAvailable && (
+          <img
+            src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`}
+            alt={`${githubID}'s Github Graph`}
+            onError={handleGraphError}
+          />
+        )}
+        {isNotAvailable && (
+          <div className={styles.githubNotAvailable}>
+            <ErrorIcon />
+            <span>{githubID}가 존재하지 않습니다</span>
+          </div>
+        )}
       </div>
     </li>
   );

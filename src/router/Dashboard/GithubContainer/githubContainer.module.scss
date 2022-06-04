@@ -3,15 +3,13 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/responsive';
 
-.githubInfoWrapper {
-  padding: 0 1rem;
+.githubGraph {
+  @include flexbox.flexbox(center, center);
+  height: calc(100% - 4rem);
+  overflow: auto;
 
-  .githubGraph {
-    overflow: auto;
-
-    img {
-      height: 10rem;
-    }
+  img {
+    height: 10rem;
   }
 }
 
@@ -40,17 +38,18 @@
 
 @include responsive.after(SD) {
   .githubWrapper {
-    grid-row: 3;
-    grid-column: 1 / 5;
+    grid-row: 4;
+    grid-column: 1 / 4;
 
     .githubGraph > img {
-      height: auto;
+      height: 100%;
     }
   }
 }
 
 @include responsive.after(MD) {
   .githubWrapper {
-    grid-column: 1/ 5;
+    grid-row: 1;
+    grid-column: 3 / 5;
   }
 }
