@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
 import cx from 'classnames';
+import { ErrorBoundary } from 'react-error-boundary';
 
 import WeatherContainerInner from './WeatherContainerInner';
 import { Error, Loading } from 'components';
 
 import styles from './weatherContainer.module.scss';
-import { ErrorBoundary } from 'react-error-boundary';
 
 const WeatherContainer = () => {
   const handleErrorFallback = ({ error }: { error: Error }) => (
