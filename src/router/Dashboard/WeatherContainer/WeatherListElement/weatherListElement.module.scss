@@ -50,7 +50,9 @@
 .weatherElementBottom {
   @include flexbox.flexbox(center, center);
   flex-direction: row;
+  width: 100%;
   margin-bottom: 0.5rem;
+  overflow: hidden;
   color: colors.$DARK30;
 
   .weatherTemperature {
@@ -59,6 +61,7 @@
 
   p {
     overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
@@ -67,8 +70,8 @@
   .weatherElementWrapper {
     flex-shrink: 0;
     width: 20rem;
-    height: 7rem;
-    padding: 0;
+    height: 6rem;
+    padding: 0 1rem;
     margin: 0 0.5rem 0 0;
 
     &:last-child {
