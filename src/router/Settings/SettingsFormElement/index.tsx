@@ -21,7 +21,8 @@ const SettingsFormElement = () => {
     handleGithubSubmit,
     handleLatitudeChange,
     handleLongitudeChange,
-    handleWeatherSubmit,
+    handleLatitudeSubmit,
+    handleLongitudeSubmit,
   } = useSettingsForm();
 
   return (
@@ -52,9 +53,13 @@ const SettingsFormElement = () => {
           </form>
         </li>
         <li>
-          <form className={cx(styles.settingForm, styles.weatherForm)} onSubmit={handleWeatherSubmit}>
+          <form className={styles.settingForm} onSubmit={handleLatitudeSubmit}>
             <label htmlFor='latitude'>위도</label>
             <input type='text' name='latitude' value={latitude} onChange={handleLatitudeChange} />
+            <Button type='submit'>변경</Button>
+          </form>
+
+          <form className={styles.settingForm} onSubmit={handleLatitudeSubmit}>
             <label htmlFor='longitude'>경도</label>
             <input type='text' name='longitude' value={longitude} onChange={handleLongitudeChange} />
             <Button type='submit'>변경</Button>

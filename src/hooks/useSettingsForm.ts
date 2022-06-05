@@ -52,11 +52,21 @@ export const useSettingsForm = () => {
     setLongitude(e.currentTarget.value);
   };
 
-  const handleWeatherSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleLatitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
       setWeather({
         lat: Number(latitude),
+        lon: initLongitude,
+      })
+    );
+  };
+
+  const handleLongitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(
+      setWeather({
+        lat: initLatitude,
         lon: Number(longitude),
       })
     );
@@ -84,6 +94,7 @@ export const useSettingsForm = () => {
     handleGithubSubmit,
     handleLatitudeChange,
     handleLongitudeChange,
-    handleWeatherSubmit,
+    handleLatitudeSubmit,
+    handleLongitudeSubmit,
   };
 };
