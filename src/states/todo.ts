@@ -87,7 +87,7 @@ const todoSlice = createSlice({
       store.set('todoList', newTodo);
       return newTodo;
     },
-    resetTodo: (state: ITodo) => {
+    resetTodo: () => {
       const newTodo: ITodo = {
         type: 'todo',
         items: [],
