@@ -26,6 +26,7 @@ const informationSlice = createSlice({
         theme: action.payload,
       };
       store.set('infoData', newData);
+      document.documentElement.setAttribute('color-theme', action.payload);
       return newData;
     },
     setGithubID: (state: IInformation, action: PayloadAction<string>) => {
