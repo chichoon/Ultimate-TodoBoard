@@ -2,22 +2,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
 import { IDDay, IInformation, IBaekjoonItem, IWeather, IShortcut } from 'types/information.d';
-import { ddaySort } from 'utils/infoUtils';
+import { ddaySort, INIT_INFO } from 'utils/infoUtils';
 
 import { RootState } from 'states';
-
-const INIT_INFO: IInformation = {
-  nickname: 'unknown',
-  theme: 'lightblue',
-  baekjoon: [],
-  weather: {
-    lat: 0,
-    lon: 0,
-  },
-  dday: [],
-  shortcut: [],
-  githubID: '',
-};
 
 const informationSlice = createSlice({
   name: 'information',
