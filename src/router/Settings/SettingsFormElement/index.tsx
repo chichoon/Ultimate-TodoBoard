@@ -59,7 +59,7 @@ const SettingsFormElement = () => {
             <Button type='submit'>변경</Button>
           </form>
 
-          <form className={styles.settingForm} onSubmit={handleLatitudeSubmit}>
+          <form className={styles.settingForm} onSubmit={handleLongitudeSubmit}>
             <label htmlFor='longitude'>경도</label>
             <input type='text' name='longitude' value={longitude} onChange={handleLongitudeChange} />
             <Button type='submit'>변경</Button>
