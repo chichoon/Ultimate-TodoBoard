@@ -25,11 +25,6 @@ $> yarn
 $> yarn start
 ```
 
-### 폴더 구조
-```
-
-```
-
 ## 동작
 
 ### 대시보드
@@ -122,6 +117,8 @@ $> yarn start
 
 - 문제 정보를 최초로 1번 받아온 뒤에는, 등록한 문제 정보가 로컬 스토리지에 저장되므로 다시 받아오지 않습니다.
 
+![Jun-05-2022 16-06-39](https://user-images.githubusercontent.com/37893979/172039637-5b7826bf-529c-4821-b89e-8b6193932eb5.gif)
+
 - 존재하지 않는 문제번호를 입력했을 경우, 우상단에 '404 Not Found'가 출력되고 사라집니다.
 
 <img width="569" alt="image" src="https://user-images.githubusercontent.com/37893979/172039324-ab949905-4fbc-4341-b13c-fa897369a601.png">
@@ -208,7 +205,7 @@ $> yarn start
 
 - 전체 초기화를 통해 모든 데이터 (알고리즘 문항, 할 일 목록, 디데이 등) 를 초기화할 수 있습니다.
 
-## 구현할 
+## 구현할 예정인 기능들
 
 - `datepicker` 스타일링
 
@@ -216,15 +213,226 @@ $> yarn start
 
 - 드래그 앤 드롭으로 리스트 순서 변경
 
-- 유튜브 임베드,  깃허브 API 연동을 통한 커밋 현황 등 추가 리스트 컨테이너
+- 유튜브 임베드, 깃허브 API 연동을 통한 커밋 현황 등 추가 리스트 컨테이너
 
 - 통계 페이지에서 완료한 투두 및 알고리즘 문제 개수 등 일자별 그래프 모아보기
 
 - 투두리스트 날짜별 필터링
 
+- 디데이 개수 한도 및 알고리즘 문항 개수 한도 
+
 - 로컬 스토리지를 사용하지 않고 서버 연결하여 넉넉한 용량 즐기기
 
 - 캘린더에 할일 및 기념일 출력하기
+
+## 폴더 구조
+
+```
+.
+├── assets
+│   ├── images
+│   │   ├── dawn.webp
+│   │   ├── milkyway.webp
+│   │   └── seashore.webp
+│   └── svgs
+│       ├── colorFillIcon.svg
+│       ├── dashboardIcon.svg
+│       ├── downArrowIcon.svg
+│       ├── errorIcon.svg
+│       ├── featherIcon.svg
+│       ├── hamburgerIcon.svg
+│       ├── index.ts
+│       ├── loadingIcon.svg
+│       ├── plusIcon.svg
+│       ├── settingsIcon.svg
+│       ├── solvedac
+│       │   ├── 0.svg
+│       │   ├── 1.svg
+│       │   ├── 10.svg
+│       │   ├── 11.svg
+│       │   ├── 12.svg
+│       │   ├── 13.svg
+│       │   ├── 14.svg
+│       │   ├── 15.svg
+│       │   ├── 16.svg
+│       │   ├── 17.svg
+│       │   ├── 18.svg
+│       │   ├── 19.svg
+│       │   ├── 2.svg
+│       │   ├── 20.svg
+│       │   ├── 21.svg
+│       │   ├── 22.svg
+│       │   ├── 23.svg
+│       │   ├── 24.svg
+│       │   ├── 25.svg
+│       │   ├── 26.svg
+│       │   ├── 27.svg
+│       │   ├── 28.svg
+│       │   ├── 29.svg
+│       │   ├── 3.svg
+│       │   ├── 30.svg
+│       │   ├── 4.svg
+│       │   ├── 5.svg
+│       │   ├── 6.svg
+│       │   ├── 7.svg
+│       │   ├── 8.svg
+│       │   ├── 9.svg
+│       │   └── index.ts
+│       ├── statisticsIcon.svg
+│       └── xIcon.svg
+├── components
+│   ├── Button
+│   │   ├── button.module.scss
+│   │   └── index.tsx
+│   ├── ColorPalette
+│   │   ├── colorPalette.module.scss
+│   │   └── index.tsx
+│   ├── CustomDatePicker
+│   │   ├── customDatePicker.module.scss
+│   │   └── index.tsx
+│   ├── DeleteConfirmModal
+│   │   ├── deleteConfirmModal.module.scss
+│   │   ├── index.tsx
+│   │   └── modalPortal.ts
+│   ├── Error
+│   │   ├── error.module.scss
+│   │   └── index.tsx
+│   ├── Layout
+│   │   ├── ErrorMessage
+│   │   │   ├── errorMessage.module.scss
+│   │   │   └── index.tsx
+│   │   ├── SideNavigationBar
+│   │   │   ├── index.tsx
+│   │   │   └── sideNavigationBar.module.scss
+│   │   ├── TopNavigationBar
+│   │   │   ├── index.tsx
+│   │   │   └── topNavigationBar.module.scss
+│   │   ├── index.tsx
+│   │   └── layout.module.scss
+│   ├── Loading
+│   │   ├── index.tsx
+│   │   └── loading.module.scss
+│   └── index.ts
+├── global.d.ts
+├── hooks
+│   ├── index.ts
+│   ├── useAppDispatch.ts
+│   ├── useAppSelector.ts
+│   ├── useDDayForm.ts
+│   ├── useFetchBaekjoon.ts
+│   ├── useFetchWeather.ts
+│   └── useSettingsForm.ts
+├── index.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── router
+│   ├── Dashboard
+│   │   ├── BaekjoonContainer
+│   │   │   ├── BaekjoonAddFormElement
+│   │   │   │   ├── baekjoonAddFormElement.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── BaekjoonListElement
+│   │   │   │   ├── baekjoonListElement.module.scss
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── solvedacIcon.tsx
+│   │   │   ├── baekjoonContainer.module.scss
+│   │   │   ├── index.tsx
+│   │   │   └── states
+│   │   │       └── problemID.ts
+│   │   ├── DDayContainer
+│   │   │   ├── DDayAddFormElement
+│   │   │   │   ├── ddayAddFormElement.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── DDayListElement
+│   │   │   │   ├── ddayListElement.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── ddayContainer.module.scss
+│   │   │   └── index.tsx
+│   │   ├── DashboardItem.tsx
+│   │   ├── ShortcutContainer
+│   │   │   ├── ShortcutAddFormElement
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── shortcutAddFormElement.module.scss
+│   │   │   ├── ShortcutListElement
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── shortcutListElement.module.scss
+│   │   │   ├── index.tsx
+│   │   │   └── shortcutContainer.module.scss
+│   │   ├── TodoContainer
+│   │   │   ├── TodoAddFormElement
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── todoAddFormElement.module.scss
+│   │   │   ├── TodoListElement
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── todoListElement.module.scss
+│   │   │   ├── index.tsx
+│   │   │   └── todoContainer.module.scss
+│   │   ├── WeatherContainer
+│   │   │   ├── WeatherContainerInner.tsx
+│   │   │   ├── WeatherListElement
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── weatherListElement.module.scss
+│   │   │   ├── index.tsx
+│   │   │   └── weatherContainer.module.scss
+│   │   ├── dashboard.module.scss
+│   │   └── index.tsx
+│   ├── Settings
+│   │   ├── ResetAppElement
+│   │   │   ├── ResetAppListElement.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── resetAppElement.module.scss
+│   │   ├── SettingsFormElement
+│   │   │   ├── SettingsFormDropdown.tsx
+│   │   │   ├── index.tsx
+│   │   │   ├── settingsFormDropdown.module.scss
+│   │   │   └── settingsFormElement.module.scss
+│   │   ├── index.tsx
+│   │   └── settings.module.scss
+│   ├── Statistics
+│   │   ├── GithubContainer
+│   │   │   ├── githubContainer.module.scss
+│   │   │   └── index.tsx
+│   │   ├── index.tsx
+│   │   └── statistics.module.scss
+│   └── index.tsx
+├── services
+│   ├── getBaekjoonProblem.ts
+│   ├── getWeatherInfo.ts
+│   └── index.ts
+├── setupTests.ts
+├── states
+│   ├── error.ts
+│   ├── index.ts
+│   ├── information.ts
+│   └── todo.ts
+├── styles
+│   ├── base
+│   │   ├── _fonts.scss
+│   │   ├── _more.scss
+│   │   └── _reset.scss
+│   ├── colorSetting.scss
+│   ├── constants
+│   │   ├── _colors.scss
+│   │   ├── _levels.scss
+│   │   └── _sizes.scss
+│   ├── global.scss
+│   ├── icons.scss
+│   ├── index.scss
+│   └── mixins
+│       ├── _animation.scss
+│       ├── _flexbox.scss
+│       ├── _position.scss
+│       └── _responsive.scss
+├── types
+│   ├── information.d.ts
+│   ├── todo.d.ts
+│   ├── weather.d.ts
+│   └── weatherResponse.d.ts
+└── utils
+    ├── infoUtils.ts
+    ├── todoUtils.ts
+    └── weatherUtils.ts
+```
 
 ## 만든 사람
 
