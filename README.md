@@ -6,9 +6,10 @@
 <h2 align="center"><a href="https://ultimate-todoboard.netlify.app">배포 페이지</a></h2>
 
 <br />
-<br />
 
 ## 프로젝트 설명
+
+부제: 슈퍼슈프림 익스트림스페셜 파워풀대시보드
 
 알고리즘 문제 풀이도 밀리고 할일도 밀리고 디데이도 자꾸 잊어버려서 제가 쓰려고 만들었습니다
 
