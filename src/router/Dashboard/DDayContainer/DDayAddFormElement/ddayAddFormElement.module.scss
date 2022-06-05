@@ -115,11 +115,9 @@
       }
     }
 
-    .paletteButton {
-      button {
-        margin-right: 1rem;
-        margin-bottom: 0;
-      }
+    .paletteButton > button {
+      margin-right: 1rem;
+      margin-bottom: 0;
     }
   }
 }
