@@ -3,10 +3,9 @@ import dayjs from 'dayjs';
 import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
-import { Button } from 'components';
+import { Button, DeleteConfirmModal } from 'components';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
-import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import { XIcon } from 'assets/svgs';
 import styles from './todoListElement.module.scss';

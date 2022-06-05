@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 import { IShortcut } from 'types/information';
-import { Button } from 'components';
+import { Button, DeleteConfirmModal } from 'components';
 import { useAppDispatch } from 'hooks';
 import { deleteShortcut } from 'states/information';
-import { DeleteConfirmModal } from 'router/Dashboard/_shared';
 
 import { XIcon } from 'assets/svgs';
 import styles from './shortcutListElement.module.scss';

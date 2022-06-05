@@ -4,5 +4,6 @@ import ColorPalette from './ColorPalette';
 import Button from './Button';
 import Loading from './Loading';
 import Error from './Error';
+import DeleteConfirmModal from './DeleteConfirmModal';
 
-export { Layout, CustomDatePicker, ColorPalette, Button, Loading, Error };
+export { Layout, CustomDatePicker, ColorPalette, Button, Loading, Error, DeleteConfirmModal };

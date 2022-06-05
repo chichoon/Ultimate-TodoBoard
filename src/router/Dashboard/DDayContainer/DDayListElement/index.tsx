@@ -4,8 +4,7 @@ import dayjs from 'dayjs';
 import { useAppDispatch } from 'hooks';
 import { IDDay } from 'types/information';
 import { deleteDday } from 'states/information';
-import { DeleteConfirmModal } from 'router/Dashboard/_shared';
-import { Button } from 'components';
+import { DeleteConfirmModal, Button } from 'components';
 
 import { XIcon } from 'assets/svgs';
 import styles from './ddayListElement.module.scss';

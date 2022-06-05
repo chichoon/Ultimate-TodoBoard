@@ -4,8 +4,7 @@ import cx from 'classnames';
 import { useAppDispatch } from 'hooks';
 import { IBaekjoonItem } from 'types/information';
 import { deleteBaekjoon } from 'states/information';
-import { Button } from 'components';
-import { DeleteConfirmModal } from 'router/Dashboard/_shared';
+import { Button, DeleteConfirmModal } from 'components';
 
 import styles from './baekjoonListElement.module.scss';
 import solvedacIcon from './solvedacIcon';
