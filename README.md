@@ -34,7 +34,7 @@ $> yarn start
 
 ### 대시보드
 
-{ 대시보드 페이지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039139-8d65e5dd-5296-43e4-a0e5-d3e285cc43ce.png">
 
 - 대시보드는 디데이, 할 일, 알고리즘 문제, 날씨, 바로가기 리스트 총 5개의 컨테이너로 구성되어 있습니다.
 
@@ -44,13 +44,13 @@ $> yarn start
 
 - 상단 닉네임은 사용자가 입력한 닉네임이 출력됩니다.
 
-{ 태블릿 사이즈 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039091-3b4d14bb-7e25-4d34-a233-e3f627cf879f.png">
 
 - 태블릿 (SD) 사이즈 가로폭에서는 그리드의 열의 개수가 줄어듭니다.
 
 - 바로가기는 숨김 처리됩니다.
 
-{ 모바일 페이지 }
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/37893979/172039082-82ca3547-91e1-483e-8a2d-45890cf807a0.png">
 
 - 모바일에서는 그리드 없이 세로로 길게 렌더링됩니다.
 
@@ -58,18 +58,19 @@ $> yarn start
 
 ### 공통 사항
 
-{ 로컬 스토리지 이미지 }
+<img width="515" alt="image" src="https://user-images.githubusercontent.com/37893979/172039156-7f66a153-7a2a-4816-91e1-ec1b41a71d1a.png">
+
 - 데이터를 추가하면 자동으로 로컬 스토리지에 저장되므로, 새로고침을 하거나 창을 닫아 세션이 만료되어도 데이터가 사라지지 않습니다.
 
-{ 모달 출력 이미지 }
+<img width="717" alt="image" src="https://user-images.githubusercontent.com/37893979/172039167-c2259c43-e6c2-4379-ad0a-064063960459.png">
 
 - X 버튼을 누르면 삭제 확인 모달이 렌더링되며, 한번 더 확인 버튼을 누르면 삭제됩니다.
 
 ### 디데이 목록
 
-{ 디데이 목록 추가 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039201-b4d7f97d-14cc-4d31-b86c-0d7a8e1fd239.png">
 
-{ 디데이 목록 추가 이미지 모바일 }
+<img width="528" alt="image" src="https://user-images.githubusercontent.com/37893979/172039212-9571102e-03ee-4021-8fbe-aca084d43392.png">
 
 - 디데이 목록에 항목을 추가할 수 있습니다.
 
@@ -79,9 +80,11 @@ $> yarn start
 
 - 이모지나 문자를 넣어 디데이를 꾸며줄 수 있습니다.
 
-{ 추가한 디데이 목록 }
+- 현재 디데이가 4개 등록되었다면, 추가로 등록할 수 없습니다.
 
-{ 추가한 디데이 목록 모바일 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039230-2c2962f4-71f7-44b1-8649-b446f5562ae3.png">
+
+<img width="548" alt="image" src="https://user-images.githubusercontent.com/37893979/172039233-ba6f1605-c5df-4ea4-93ef-7e6239be95fa.png">
 
 - 디데이를 추가하면 이와 같이 렌더링됩니다.
 
@@ -89,17 +92,19 @@ $> yarn start
 
 - 디데이가 큰 순서대로 (양수 => 음수) 정렬되어 렌더링됩니다.
 
+- PC 화면에서는 좌우 너비에 따라 디데이 블록 길이가 다르게 렌더링됩니다.
+
 - X 버튼을 누르면 삭제할 수 있습니다.
 
 ### 할 일 목록
 
-{ 할 일 목록 추가 이미지 }
+<img width="565" alt="image" src="https://user-images.githubusercontent.com/37893979/172039243-cccbee3b-c654-48f5-821b-b679c831bf7b.png">
 
 - 할 일 목록에 항목을 추가할 수 있습니다.
 
 - 마감일이 있는 항목이라면, 마감일 체크박스를 클릭한 후 `datepicker`로 날짜를 선택합니다.
 
-{ 할 일 리스트 }
+![Jun-05-2022 15-55-23](https://user-images.githubusercontent.com/37893979/172039279-85f3b7c7-f422-44bc-8dfe-4149c3eeadeb.gif)
 
 - 할 일 목록은 세로로 스크롤되는 형태로 보여집니다.
 
@@ -109,7 +114,7 @@ $> yarn start
 
 ### 알고리즘 문제 리스트 (Solved.ac)
 
-{ 알고리즘 문제 추가 이미지 }
+![Jun-05-2022 15-56-31](https://user-images.githubusercontent.com/37893979/172039316-77d69b0a-af15-4479-9247-09f815cb3f79.gif)
 
 - 풀 예정인 [Baekjoon](https://www.acmicpc.net) 문제를 추가할 수 있습니다.
 
@@ -119,7 +124,7 @@ $> yarn start
 
 - 존재하지 않는 문제번호를 입력했을 경우, 우상단에 '404 Not Found'가 출력되고 사라집니다.
 
-{ 알고리즘 문제 목록 이미지 }
+<img width="569" alt="image" src="https://user-images.githubusercontent.com/37893979/172039324-ab949905-4fbc-4341-b13c-fa897369a601.png">
 
 - 등록한 문제는 [Solved.ac](https://solved.ac/problems/level) 에서 분류된 티어표에 의해 테두리 색상과 좌측 이미지가 결정됩니다.
 
