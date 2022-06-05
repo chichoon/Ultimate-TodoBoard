@@ -136,7 +136,7 @@ $> yarn start
 
 ### 날씨 목록
 
-{ 날씨 컴포넌트 이미지 }
+![Jun-05-2022 15-56-31](https://user-images.githubusercontent.com/37893979/172039369-17952b53-6953-4aa5-90f3-81d9e37fb6da.gif)
 
 - 설정 페이지에서 등록한 위도와 경도에 따라 지금 시점부터 3시간 간격으로 24시간동안의 날씨를 보여줍니다.
 
@@ -146,19 +146,25 @@ $> yarn start
 
 - 날씨에 따라 날씨와 어울리는 색상의 테두리가 좌측에 함께 출력됩니다.
 
+- 가로 너비에 따라 반응형으로 가로스크롤로 출력되거나, 세로스크롤로 출력됩니다.
+
+- 지역이 어딘지에 따라 상단 텍스트가 다르게 출력됩니다.
+
 - 잘못된 위도 / 경도이거나, 날씨를 불러오지 못했을 경우 Error Boundary에 의해 설정된 Fallback 컴포넌트가 출력됩니다.
+
+![Jun-05-2022 15-59-47](https://user-images.githubusercontent.com/37893979/172039424-e29a3ab9-8011-472a-a294-6d7aa98e6627.gif)
 
 - 날씨 데이터를 받아오는 동안 로딩 스피너가 돌아갈 수 있도록 React-query와 Suspense를 통해 구현하였습니다.
 
 ### 바로가기
 
-{ 바로가기 추가 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039434-b56fcb81-1dc3-4650-baf3-c3e1ab25576f.png">
 
 - 바로가기 이름과 URL을 입력하면 파비콘과 함께 바로가기 블록이 렌더링됩니다.
 
-{ 바로가기 컴포넌트 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039442-8fe6babd-5d51-4888-a73d-9a115380d925.png">
 
-{ 바로가기 컴포넌트 이미지 모바일 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039445-09ccf34d-1438-4593-9686-8cc4bfc59276.png">
 
 - 블록을 클릭하면 각 페이지로 이동합니다.
 
@@ -168,7 +174,7 @@ $> yarn start
 
 ### 통계 페이지
 
-{ 통계 페이지 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039456-775d8c27-5c05-4a53-921c-e9c05956e1c8.png">
 
 - 설정 페이지에서 입력한 깃허브 아이디에 대하여 최근 1년간의 커밋 그래프를 출력합니다.
 
@@ -180,9 +186,9 @@ $> yarn start
 
 ### 설정 페이지
 
-{ 설정 페이지 이미지 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039465-f34a2983-6f4f-4203-97e1-f69678847103.png">
 
-{ 설정 페이지 이미지 모바일 }
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/37893979/172039481-f6534bd1-ad13-48be-8a5b-d846b6ed7623.png">
 
 - 설정 페이지는 대시보드에서 사용하는 값들을 설정할 수 있는 '프로필 설정' 섹션과, 데이터를 초기화할 수 있는 '데이터 초기화' 총 두 섹션으로 나누어져 있습니다.
 
@@ -196,14 +202,13 @@ $> yarn start
 
   - 위도와 경도는 각각 날씨 데이터를 받아오는 데에 사용됩니다.
 
-{ 데이터 초기화 섹션 }
+![Jun-05-2022 16-03-37](https://user-images.githubusercontent.com/37893979/172039527-c05a4aaa-5605-44d2-ae5f-265bdf846956.gif)
 
 - 데이터 초기화 섹션의 각 버튼을 클릭하면 확인 모달이 출력되며, 다시 한번 체크하면 해당 데이터가 전부 지워집니다.
 
 - 전체 초기화를 통해 모든 데이터 (알고리즘 문항, 할 일 목록, 디데이 등) 를 초기화할 수 있습니다.
 
-## 사용한 기술
-## 더 구현하고 싶은 것
+## 구현할 
 
 - `datepicker` 스타일링
 
