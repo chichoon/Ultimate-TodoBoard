@@ -87,10 +87,20 @@ const todoSlice = createSlice({
       store.set('todoList', newTodo);
       return newTodo;
     },
+    resetTodo: (state: ITodo) => {
+      const newTodo: ITodo = {
+        type: 'todo',
+        items: [],
+        itemsDone: [],
+      };
+      store.set('todoList', newTodo);
+      return newTodo;
+    },
   },
 });
 
-export const { setTodo, addTodo, setTodoFinished, setTodoActive, deleteTodo, deleteFinishedTodo } = todoSlice.actions;
+export const { setTodo, addTodo, setTodoFinished, setTodoActive, deleteTodo, deleteFinishedTodo, resetTodo } =
+  todoSlice.actions;
 
 export default todoSlice.reducer;
 

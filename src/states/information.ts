@@ -105,6 +105,30 @@ const informationSlice = createSlice({
       store.set('infoData', newData);
       return newData;
     },
+    resetBaekjoon: (state: IInformation) => {
+      const newData = {
+        ...state,
+        baekjoon: [],
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    resetDDay: (state: IInformation) => {
+      const newData = {
+        ...state,
+        dday: [],
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
+    resetShortcut: (state: IInformation) => {
+      const newData = {
+        ...state,
+        shortcut: [],
+      };
+      store.set('infoData', newData);
+      return newData;
+    },
   },
 });
 
@@ -121,6 +145,9 @@ export const {
   deleteDday,
   addShortcut,
   deleteShortcut,
+  resetBaekjoon,
+  resetDDay,
+  resetShortcut,
 } = informationSlice.actions;
 
 export default informationSlice.reducer;
