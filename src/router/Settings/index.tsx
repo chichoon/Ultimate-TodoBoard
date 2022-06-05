@@ -7,12 +7,8 @@ const Settings = () => {
   return (
     <main className={styles.settingsMain}>
       <ul className={styles.settingsListWrapper}>
-        <li>
-          <SettingsFormElement />
-        </li>
-        <li>
-          <ResetAppElement />
-        </li>
+        <SettingsFormElement />
+        <ResetAppElement />
       </ul>
     </main>
   );

@@ -7,7 +7,7 @@ const TYPE_ARR: ('todo' | 'baekjoon' | 'dday' | 'shortcut' | 'all')[] = ['todo',
 
 const ResetAppElement = () => {
   return (
-    <div className={cx(styles.resetFormWrapper, 'listContainer')}>
+    <li className={cx(styles.resetFormWrapper, 'listContainer')}>
       <div className={cx('listContainerHeader')}>
         <h3>데이터 초기화</h3>
       </div>
@@ -16,7 +16,7 @@ const ResetAppElement = () => {
           <ResetAppListElement key={`reset-list-${type}`} type={type} />
         ))}
       </ul>
-    </div>
+    </li>
   );
 };
 

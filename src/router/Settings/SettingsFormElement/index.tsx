@@ -25,7 +25,7 @@ const SettingsFormElement = () => {
   } = useSettingsForm();
 
   return (
-    <div className={cx(styles.settingsFormWrapper, 'listContainer')}>
+    <li className={cx(styles.settingsFormWrapper, 'listContainer')}>
       <div className={cx('listContainerHeader')}>
         <h3>프로필 설정</h3>
       </div>
@@ -61,7 +61,7 @@ const SettingsFormElement = () => {
           </form>
         </li>
       </ul>
-    </div>
+    </li>
   );
 };
 
