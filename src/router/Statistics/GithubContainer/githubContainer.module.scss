@@ -5,6 +5,7 @@
 
 .githubGraph {
   @include flexbox.flexbox(start, center);
+  width: 100%;
   overflow: auto;
 
   img {
@@ -15,6 +16,7 @@
 .githubNotAvailable {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
+  width: 100%;
   padding: 1rem 0;
 
   svg {
