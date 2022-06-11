@@ -1,10 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
-import { IDDay, IInformation, IBaekjoonItem, IWeather, IShortcut } from 'types/information.d';
-import { ddaySort, INIT_INFO } from 'utils/infoUtils';
+import { IDDay, IInformation, IBaekjoonItem, IShortcut } from 'types/information.d';
+import { ddaySort } from 'utils/infoUtils';
 
 import { RootState } from 'states';
+
+export const INIT_INFO: IInformation = {
+  baekjoon: [],
+  dday: [],
+  shortcut: [],
+};
 
 const informationSlice = createSlice({
   name: 'information',
@@ -12,27 +18,6 @@ const informationSlice = createSlice({
   reducers: {
     setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
     resetInfo: () => INIT_INFO,
-    setNickname: (state: IInformation, action: PayloadAction<string>) => {
-      state.nickname = action.payload;
-      store.set('infoData', state);
-    },
-    setTheme: (state: IInformation, action: PayloadAction<'lightblue' | 'darkblue'>) => {
-      state.theme = action.payload;
-      store.set('infoData', state);
-      document.documentElement.setAttribute('color-theme', action.payload);
-    },
-    setGithubID: (state: IInformation, action: PayloadAction<string>) => {
-      state.githubID = action.payload;
-      store.set('infoData', state);
-    },
-    setLatitude: (state: IInformation, action: PayloadAction<number>) => {
-      state.weather.lat = action.payload;
-      store.set('infoData', state);
-    },
-    setLongitude: (state: IInformation, action: PayloadAction<number>) => {
-      state.weather.lon = action.payload;
-      store.set('infoData', state);
-    },
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
       state.baekjoon = [...state.baekjoon, action.payload].sort((a, b) => a.tier - b.tier);
       store.set('infoData', state);
@@ -75,11 +60,6 @@ const informationSlice = createSlice({
 export const {
   setInfo,
   resetInfo,
-  setNickname,
-  setTheme,
-  setGithubID,
-  setLatitude,
-  setLongitude,
   addBaekjoon,
   deleteBaekjoon,
   addDDay,
@@ -98,13 +78,5 @@ export const getInformations = (state: RootState): IInformation => state.informa
 export const getBaekjoonItems = (state: RootState): IBaekjoonItem[] => state.information.baekjoon;
 
 export const getDDays = (state: RootState): IDDay[] => state.information.dday;
-
-export const getNickname = (state: RootState): string => state.information.nickname;
-
-export const getTheme = (state: RootState): 'lightblue' | 'darkblue' => state.information.theme;
-
-export const getWeather = (state: RootState): IWeather => state.information.weather;
-
-export const getGithubID = (state: RootState): string => state.information.githubID;
 
 export const getShortcut = (state: RootState): IShortcut[] => state.information.shortcut;

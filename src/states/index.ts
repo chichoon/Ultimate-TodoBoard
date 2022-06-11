@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import todo from './todo';
 import information from './information';
 import error from './error';
+import settings from './settings';
 import problemID from 'router/Dashboard/BaekjoonContainer/states/problemID';
 
 export const store = configureStore({
   reducer: {
     todo,
     information,
+    settings,
     problemID,
     error,
   },
