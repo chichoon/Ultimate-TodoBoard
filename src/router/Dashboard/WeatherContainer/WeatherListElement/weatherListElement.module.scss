@@ -8,6 +8,7 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 1rem;
+  overflow: hidden;
   border-left: 1rem solid;
   border-radius: sizes.$BORDER_RADIUS;
   box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
