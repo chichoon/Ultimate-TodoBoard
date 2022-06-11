@@ -2,7 +2,7 @@ import { useState } from 'react';
 import cx from 'classnames';
 
 import { useAppSelector } from 'hooks';
-import { getGithubID } from 'states/information';
+import { getGithubID } from 'states/settings';
 
 import styles from './githubContainer.module.scss';
 import { ErrorIcon } from 'assets/svgs';
@@ -45,5 +45,3 @@ const GithubContainer = () => {
 };
 
 export default GithubContainer;
-
-// TODO: github container 완성
