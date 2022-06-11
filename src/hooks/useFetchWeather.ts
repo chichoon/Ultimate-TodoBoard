@@ -6,7 +6,7 @@ import { getWeatherInfo } from 'services';
 
 export const useFetchWeather = () => {
   const { lat, lon } = useAppSelector(getWeather);
-  const { data } = useQuery(['WeatherInfos', lat, lon], () => getWeatherInfo(lat, lon), {
+  const { data } = useQuery(['weatherInfos', lat, lon], () => getWeatherInfo(lat, lon), {
     refetchOnWindowFocus: false,
     refetchInterval: 600000, // 10분
     staleTime: 60000,
