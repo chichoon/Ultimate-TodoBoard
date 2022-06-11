@@ -25,8 +25,12 @@ const informationSlice = createSlice({
       state.githubID = action.payload;
       store.set('infoData', state);
     },
-    setWeather: (state: IInformation, action: PayloadAction<IWeather>) => {
-      state.weather = action.payload;
+    setLatitude: (state: IInformation, action: PayloadAction<number>) => {
+      state.weather.lat = action.payload;
+      store.set('infoData', state);
+    },
+    setLongitude: (state: IInformation, action: PayloadAction<number>) => {
+      state.weather.lon = action.payload;
       store.set('infoData', state);
     },
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
@@ -74,7 +78,8 @@ export const {
   setNickname,
   setTheme,
   setGithubID,
-  setWeather,
+  setLatitude,
+  setLongitude,
   addBaekjoon,
   deleteBaekjoon,
   addDDay,
