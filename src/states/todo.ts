@@ -16,84 +16,44 @@ const todoSlice = createSlice({
   reducers: {
     setTodo: (state: ITodo, action: PayloadAction<ITodo>) => action.payload,
     addTodo: (state: ITodo, action: PayloadAction<ICreateNewTodo>) => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: [
-          ...state.items,
-          { todoTitle: action.payload.title, createDate: today, deadLineDate: action.payload.deadLineDate },
-        ]
-          .sort(createDateSort)
-          .sort(deadlineDateSort),
-        itemsDone: state.itemsDone,
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+      state.items = [
+        ...state.items,
+        { todoTitle: action.payload.title, createDate: today, deadLineDate: action.payload.deadLineDate },
+      ]
+        .sort(createDateSort)
+        .sort(deadlineDateSort);
+      store.set('todoList', state);
     },
     setTodoFinished: (state: ITodo, action: PayloadAction<number>) => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: state.items.filter((_, index) => index !== action.payload),
-        itemsDone: [
-          ...state.itemsDone,
-          {
-            todoTitle: state.items[action.payload].todoTitle,
-            createDate: state.items[action.payload].createDate,
-            ...(state.items[action.payload].deadLineDate && { deadLineDate: state.items[action.payload].deadLineDate }),
-            finishedDate: today,
-          },
-        ]
-          .sort(createDateSort)
-          .sort(deadlineDateSort),
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+      state.itemsDone = [
+        ...state.itemsDone,
+        {
+          ...state.items[action.payload],
+          finishedDate: today,
+        },
+      ]
+        .sort(createDateSort)
+        .sort(deadlineDateSort);
+      state.items = state.items.filter((_, index) => index !== action.payload);
+      store.set('todoList', state);
     },
     setTodoActive: (state: ITodo, action: PayloadAction<number>) => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: [
-          ...state.items,
-          {
-            todoTitle: state.itemsDone[action.payload].todoTitle,
-            createDate: state.itemsDone[action.payload].createDate,
-            ...(state.itemsDone[action.payload].deadLineDate && {
-              deadLineDate: state.itemsDone[action.payload].deadLineDate,
-            }),
-          },
-        ]
-          .sort(createDateSort)
-          .sort(deadlineDateSort),
-        itemsDone: state.itemsDone.filter((_, index) => index !== action.payload),
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+      state.items = [...state.items, state.itemsDone[action.payload]].sort(createDateSort).sort(deadlineDateSort);
+      state.itemsDone = state.itemsDone.filter((_, index) => index !== action.payload);
+      store.set('todoList', state);
     },
     deleteTodo: (state: ITodo, action: PayloadAction<number>) => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: state.items.filter((_, index) => index !== action.payload),
-        itemsDone: state.itemsDone,
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+      state.items = state.items.filter((_, index) => index !== action.payload);
+      store.set('todoList', state);
     },
     deleteFinishedTodo: (state: ITodo, action: PayloadAction<number>) => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: state.items,
-        itemsDone: state.itemsDone.filter((_, index) => index !== action.payload),
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+      state.itemsDone = state.itemsDone.filter((_, index) => index !== action.payload);
+      store.set('todoList', state);
     },
-    resetTodo: () => {
-      const newTodo: ITodo = {
-        type: 'todo',
-        items: [],
-        itemsDone: [],
-      };
-      store.set('todoList', newTodo);
-      return newTodo;
+    resetTodo: (state: ITodo) => {
+      state.items = [];
+      state.itemsDone = [];
+      store.set('todoList', state);
     },
   },
 });
