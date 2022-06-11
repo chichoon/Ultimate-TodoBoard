@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import store from 'store';
 
 import { RootState } from 'states';
 import { IWeather, ISettingsInformation } from 'types/settings.d';
@@ -47,7 +48,7 @@ const settingsSlice = createSlice({
   },
 });
 
-export const { setNickname, setTheme, setGithubID, setLatitude, setLongitude } = settingsSlice.actions;
+export const { setNickname, setTheme, setGithubID, setLatitude, setLongitude, setSolvedacID } = settingsSlice.actions;
 
 export default settingsSlice.reducer;
 
@@ -58,3 +59,5 @@ export const getTheme = (state: RootState): 'lightblue' | 'darkblue' => state.se
 export const getWeather = (state: RootState): IWeather => state.settings.weather;
 
 export const getGithubID = (state: RootState): string => state.settings.githubID;
+
+export const getSolvedacID = (state: RootState): string => state.settings.solvedacID;
