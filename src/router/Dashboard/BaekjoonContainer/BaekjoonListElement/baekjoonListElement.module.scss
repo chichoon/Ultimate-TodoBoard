@@ -5,11 +5,17 @@
 
 .baekjoonElementWrapper {
   @include flexbox.flexbox(between, center);
-  flex-shrink: 0;
   width: 100%;
   padding-right: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
   border-top: 3px solid;
   border-right: 3px solid;
+  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   a {
     width: calc(100% - 3rem);

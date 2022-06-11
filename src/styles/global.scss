@@ -5,6 +5,8 @@
 @use 'styles/mixins/position';
 
 .listContainer {
+  @include flexbox.flexbox(start, between);
+  flex-direction: column;
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
