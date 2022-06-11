@@ -2,17 +2,20 @@ import cx from 'classnames';
 
 import { Button } from 'components';
 import { useSettingsForm } from 'hooks';
+import { ISettingsFormProps } from 'types/settings';
 import SettingsFormDropdown from './SettingsFormDropdown';
 
 import styles from './settingsFormElement.module.scss';
+import SettingsFormListElement from './SettingsFormListElement';
 
 const SettingsFormElement = () => {
   const {
     nicknameValue,
     themeValue,
     githubIDValue,
-    latitude,
-    longitude,
+    latitudeValue,
+    longitudeValue,
+    solvedacIDValue,
     handleNicknameChange,
     handleNicknameSubmit,
     handleThemeChange,
@@ -23,7 +26,47 @@ const SettingsFormElement = () => {
     handleLongitudeChange,
     handleLatitudeSubmit,
     handleLongitudeSubmit,
+    handleSolvedacChange,
+    handleSolvedacSubmit,
   } = useSettingsForm();
+
+  const settingsFormListArray: ISettingsFormProps[] = [
+    {
+      name: 'nickname',
+      value: nicknameValue,
+      label: '이름',
+      onSubmit: handleNicknameSubmit,
+      onChange: handleNicknameChange,
+    },
+    {
+      name: 'githubID',
+      value: githubIDValue,
+      label: 'Github ID',
+      onSubmit: handleGithubSubmit,
+      onChange: handleGithubChange,
+    },
+    {
+      name: 'latitude',
+      value: latitudeValue,
+      label: '위도',
+      onSubmit: handleLatitudeSubmit,
+      onChange: handleLatitudeChange,
+    },
+    {
+      name: 'longitude',
+      value: longitudeValue,
+      label: '경도',
+      onSubmit: handleLongitudeSubmit,
+      onChange: handleLongitudeChange,
+    },
+    {
+      name: 'solvedacID',
+      value: solvedacIDValue,
+      label: 'Solved.ac ID',
+      onSubmit: handleSolvedacSubmit,
+      onChange: handleSolvedacChange,
+    },
+  ];
 
   return (
     <li className={cx(styles.settingsFormWrapper, 'listContainer')}>
@@ -31,13 +74,6 @@ const SettingsFormElement = () => {
         <h3>프로필 설정</h3>
       </div>
       <ul>
-        <li>
-          <form className={styles.settingForm} onSubmit={handleNicknameSubmit}>
-            <label htmlFor='nickname'>이름</label>
-            <input type='text' name='nickname' value={nicknameValue} onChange={handleNicknameChange} />
-            <Button type='submit'>변경</Button>
-          </form>
-        </li>
         <li className={styles.settingForm}>
           <span>테마</span>
           <SettingsFormDropdown value={themeValue} onDropdownSelect={handleThemeChange} />
@@ -45,26 +81,9 @@ const SettingsFormElement = () => {
             변경
           </Button>
         </li>
-        <li>
-          <form className={styles.settingForm} onSubmit={handleGithubSubmit}>
-            <label htmlFor='githubID'>Github ID</label>
-            <input type='text' name='githubID' value={githubIDValue} onChange={handleGithubChange} />
-            <Button type='submit'>변경</Button>
-          </form>
-        </li>
-        <li>
-          <form className={styles.settingForm} onSubmit={handleLatitudeSubmit}>
-            <label htmlFor='latitude'>위도</label>
-            <input type='text' name='latitude' value={latitude} onChange={handleLatitudeChange} />
-            <Button type='submit'>변경</Button>
-          </form>
-
-          <form className={styles.settingForm} onSubmit={handleLongitudeSubmit}>
-            <label htmlFor='longitude'>경도</label>
-            <input type='text' name='longitude' value={longitude} onChange={handleLongitudeChange} />
-            <Button type='submit'>변경</Button>
-          </form>
-        </li>
+        {settingsFormListArray.map((formProps: ISettingsFormProps) => (
+          <SettingsFormListElement key={`settings-list-${formProps.name}`} formProps={formProps} />
+        ))}
       </ul>
     </li>
   );

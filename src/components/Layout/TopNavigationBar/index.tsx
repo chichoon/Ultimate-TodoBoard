@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 import { useAppSelector } from 'hooks';
-import { getNickname } from 'states/information';
+import { getNickname } from 'states/settings';
 
 import { FeatherIcon, HamburgerIcon } from 'assets/svgs';
 import styles from './topNavigationBar.module.scss';

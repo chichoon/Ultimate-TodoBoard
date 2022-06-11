@@ -1,91 +1,92 @@
-import { getWeather } from '../states/information';
-import { useState, ChangeEvent, useEffect, FormEvent } from 'react';
+import { useMount } from 'react-use';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getGithubID, getTheme, setNickname, getNickname, setTheme, setWeather, setGithubID } from 'states/information';
 import { useAppSelector } from 'hooks';
+import {
+  getWeather,
+  getGithubID,
+  getTheme,
+  getNickname,
+  getSolvedacID,
+  setNickname,
+  setTheme,
+  setLatitude,
+  setLongitude,
+  setGithubID,
+  setSolvedacID,
+} from 'states/settings';
 
 export const useSettingsForm = () => {
   const [nicknameValue, setNicknameValue] = useState('');
   const [themeValue, setThemeValue] = useState<'lightblue' | 'darkblue'>('lightblue');
   const [githubIDValue, setGithubIDValue] = useState('');
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
+  const [latitudeValue, setLatitudeValue] = useState('');
+  const [longitudeValue, setLongitudeValue] = useState('');
+  const [solvedacIDValue, setSolvedacIDValue] = useState('');
   const dispatch = useDispatch();
 
   const initNickname = useAppSelector(getNickname);
   const initTheme = useAppSelector<'lightblue' | 'darkblue'>(getTheme);
   const initGithubID = useAppSelector(getGithubID);
   const { lat: initLatitude, lon: initLongitude } = useAppSelector(getWeather);
+  const initSolvedacID = useAppSelector(getSolvedacID);
 
-  const handleNicknameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setNicknameValue(e.currentTarget.value);
-  };
+  const handleNicknameChange = (e: ChangeEvent<HTMLInputElement>) => setNicknameValue(e.currentTarget.value);
+
+  const handleThemeChange = (theme: 'lightblue' | 'darkblue') => setThemeValue(theme);
+
+  const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => setGithubIDValue(e.currentTarget.value);
+
+  const handleLatitudeChange = (e: ChangeEvent<HTMLInputElement>) => setLatitudeValue(e.currentTarget.value);
+
+  const handleLongitudeChange = (e: ChangeEvent<HTMLInputElement>) => setLongitudeValue(e.currentTarget.value);
+
+  const handleSolvedacChange = (e: ChangeEvent<HTMLInputElement>) => setSolvedacIDValue(e.currentTarget.value);
 
   const handleNicknameSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setNickname(nicknameValue));
   };
 
-  const handleThemeChange = (theme: 'lightblue' | 'darkblue') => {
-    setThemeValue(theme);
-  };
-
-  const handleThemeClick = () => {
-    dispatch(setTheme(themeValue));
-  };
-
-  const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setGithubIDValue(e.currentTarget.value);
-  };
+  const handleThemeClick = () => dispatch(setTheme(themeValue));
 
   const handleGithubSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setGithubID(githubIDValue));
   };
 
-  const handleLatitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLatitude(e.currentTarget.value);
-  };
-
-  const handleLongitudeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLongitude(e.currentTarget.value);
-  };
-
   const handleLatitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(
-      setWeather({
-        lat: Number(latitude),
-        lon: initLongitude,
-      })
-    );
+    dispatch(setLatitude(Number(latitudeValue)));
   };
 
   const handleLongitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(
-      setWeather({
-        lat: initLatitude,
-        lon: Number(longitude),
-      })
-    );
+    dispatch(setLongitude(Number(longitudeValue)));
   };
 
-  useEffect(() => {
+  const handleSolvedacSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(setSolvedacID(solvedacIDValue));
+  };
+
+  useMount(() => {
     setNicknameValue(initNickname);
     setThemeValue(initTheme);
     setGithubIDValue(initGithubID);
-    setLatitude(initLatitude.toString());
-    setLongitude(initLongitude.toString());
-  }, [initNickname, initTheme, initGithubID, initLatitude, initLongitude]);
+    setLatitudeValue(initLatitude.toString());
+    setLongitudeValue(initLongitude.toString());
+    setSolvedacIDValue(initSolvedacID);
+  });
 
   return {
     nicknameValue,
     themeValue,
     githubIDValue,
-    latitude,
-    longitude,
+    latitudeValue,
+    longitudeValue,
+    solvedacIDValue,
     handleNicknameChange,
     handleNicknameSubmit,
     handleThemeChange,
@@ -93,8 +94,10 @@ export const useSettingsForm = () => {
     handleGithubChange,
     handleGithubSubmit,
     handleLatitudeChange,
-    handleLongitudeChange,
     handleLatitudeSubmit,
+    handleLongitudeChange,
     handleLongitudeSubmit,
+    handleSolvedacChange,
+    handleSolvedacSubmit,
   };
 };

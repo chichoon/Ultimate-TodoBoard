@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 
-import { getWeather } from 'states/information';
+import { getWeather } from 'states/settings';
 import { useAppSelector } from 'hooks';
 import { getWeatherInfo } from 'services';
 
