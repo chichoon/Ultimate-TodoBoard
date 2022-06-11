@@ -6,7 +6,7 @@ const problemIDSlice = createSlice({
   name: 'problemID',
   initialState: 0,
   reducers: {
-    setProblemID: (state: number, action: PayloadAction<number>) => action.payload,
+    setProblemID: (_, action: PayloadAction<number>) => action.payload,
   },
 });
 

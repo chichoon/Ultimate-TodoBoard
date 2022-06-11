@@ -12,7 +12,7 @@ const errorSlice = createSlice({
   name: 'error',
   initialState: INIT_ERROR,
   reducers: {
-    setError: (state: IError, action: PayloadAction<IError>) => action.payload,
+    setError: (_, action: PayloadAction<IError>) => action.payload,
   },
 });
 
