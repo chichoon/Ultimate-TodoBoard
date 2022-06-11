@@ -9,6 +9,7 @@ import { ITodoItem } from 'types/todo';
 
 import { XIcon } from 'assets/svgs';
 import styles from './todoListElement.module.scss';
+import { getTodoDDayString } from 'utils/todoUtils';
 
 interface IProps {
   item: ITodoItem;
@@ -17,8 +18,7 @@ interface IProps {
 }
 
 const TodoListElement = ({ item, index, isDone }: IProps) => {
-  const today = dayjs().format('YYYY-MM-DD');
-  const deadLine = dayjs(item.deadLineDate);
+  const deadLineString = getTodoDDayString(item.deadLineDate);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -45,7 +45,7 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
     <li className={styles.todoElementWrapper}>
       <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
       <p className={cx(styles.todoTitle, { [styles.isTodoDone]: isDone })}>{item.todoTitle}</p>
-      {item.deadLineDate && <p className={styles.todoDeadline}>D-{deadLine.diff(today, 'd')}</p>}
+      {item.deadLineDate && <p className={styles.todoDeadline}>{deadLineString}</p>}
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
       </button>
