@@ -9,6 +9,7 @@ import Statistics from './Statistics';
 import { setTodo } from 'states/todo';
 import { setInfo } from 'states/information';
 import { useAppDispatch } from 'hooks';
+import { setSettings } from 'states/settings';
 
 const Router = () => {
   const dispatch = useAppDispatch();
@@ -16,8 +17,10 @@ const Router = () => {
   useMount(() => {
     const storeTodoData = store.get('todoList');
     const storeInfoData = store.get('infoData');
+    const storeSettingsData = store.get('settingsData');
     if (storeTodoData) dispatch(setTodo(storeTodoData));
     if (storeInfoData) dispatch(setInfo(storeInfoData));
+    if (storeSettingsData) dispatch(setSettings(storeSettingsData));
   });
 
   return (

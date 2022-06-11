@@ -15,7 +15,7 @@ const informationSlice = createSlice({
   name: 'information',
   initialState: INIT_INFO,
   reducers: {
-    setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
+    setInfo: (_, action: PayloadAction<IInformation>) => action.payload,
     resetInfo: () => INIT_INFO,
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
       state.baekjoon = [...state.baekjoon, action.payload].sort((a, b) => a.tier - b.tier);

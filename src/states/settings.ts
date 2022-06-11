@@ -19,6 +19,7 @@ const settingsSlice = createSlice({
   name: 'settings',
   initialState: INIT_SETTINGS,
   reducers: {
+    setSettings: (_, action: PayloadAction<ISettingsInformation>) => action.payload,
     resetSettings: () => INIT_SETTINGS,
     setNickname: (state: ISettingsInformation, action: PayloadAction<string>) => {
       state.nickname = action.payload;
@@ -48,7 +49,16 @@ const settingsSlice = createSlice({
   },
 });
 
-export const { setNickname, setTheme, setGithubID, setLatitude, setLongitude, setSolvedacID } = settingsSlice.actions;
+export const {
+  setSettings,
+  resetSettings,
+  setNickname,
+  setTheme,
+  setGithubID,
+  setLatitude,
+  setLongitude,
+  setSolvedacID,
+} = settingsSlice.actions;
 
 export default settingsSlice.reducer;
 

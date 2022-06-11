@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import dayjs from 'dayjs';
 import cx from 'classnames';
 
 import { useAppDispatch } from 'hooks';
 import { Button, DeleteConfirmModal } from 'components';
 import { deleteFinishedTodo, deleteTodo, setTodoActive, setTodoFinished } from 'states/todo';
 import { ITodoItem } from 'types/todo';
+import { getTodoDDayString } from 'utils/todoUtils';
 
 import { XIcon } from 'assets/svgs';
 import styles from './todoListElement.module.scss';
-import { getTodoDDayString } from 'utils/todoUtils';
 
 interface IProps {
   item: ITodoItem;

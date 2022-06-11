@@ -1,5 +1,4 @@
-import { useMount } from 'react-use';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useAppSelector } from 'hooks';
@@ -71,14 +70,14 @@ export const useSettingsForm = () => {
     dispatch(setSolvedacID(solvedacIDValue));
   };
 
-  useMount(() => {
+  useEffect(() => {
     setNicknameValue(initNickname);
     setThemeValue(initTheme);
     setGithubIDValue(initGithubID);
     setLatitudeValue(initLatitude.toString());
     setLongitudeValue(initLongitude.toString());
     setSolvedacIDValue(initSolvedacID);
-  });
+  }, [initNickname, initTheme, initGithubID, initLatitude, initLongitude, initSolvedacID]);
 
   return {
     nicknameValue,
