@@ -13,109 +13,57 @@ const informationSlice = createSlice({
     setInfo: (state: IInformation, action: PayloadAction<IInformation>) => action.payload,
     resetInfo: () => INIT_INFO,
     setNickname: (state: IInformation, action: PayloadAction<string>) => {
-      const newData = {
-        ...state,
-        nickname: action.payload,
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.nickname = action.payload;
+      store.set('infoData', state);
     },
     setTheme: (state: IInformation, action: PayloadAction<'lightblue' | 'darkblue'>) => {
-      const newData = {
-        ...state,
-        theme: action.payload,
-      };
-      store.set('infoData', newData);
+      state.theme = action.payload;
+      store.set('infoData', state);
       document.documentElement.setAttribute('color-theme', action.payload);
-      return newData;
     },
     setGithubID: (state: IInformation, action: PayloadAction<string>) => {
-      const newData = {
-        ...state,
-        githubID: action.payload,
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.githubID = action.payload;
+      store.set('infoData', state);
     },
     setWeather: (state: IInformation, action: PayloadAction<IWeather>) => {
-      const newData = {
-        ...state,
-        weather: action.payload,
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.weather = action.payload;
+      store.set('infoData', state);
     },
     addBaekjoon: (state: IInformation, action: PayloadAction<IBaekjoonItem>) => {
-      const newData = {
-        ...state,
-        baekjoon: [...state.baekjoon, action.payload].sort((a, b) => a.tier - b.tier),
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.baekjoon = [...state.baekjoon, action.payload].sort((a, b) => a.tier - b.tier);
+      store.set('infoData', state);
     },
     deleteBaekjoon: (state: IInformation, action: PayloadAction<number>) => {
-      const newData = {
-        ...state,
-        baekjoon: state.baekjoon.filter((_, index) => index !== action.payload),
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.baekjoon = state.baekjoon.filter((_, index) => index !== action.payload);
+      store.set('infoData', state);
     },
     addDDay: (state: IInformation, action: PayloadAction<IDDay>) => {
-      const newData = {
-        ...state,
-        dday: [...state.dday, action.payload].sort(ddaySort),
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.dday = [...state.dday, action.payload].sort(ddaySort);
+      store.set('infoData', state);
     },
     deleteDday: (state: IInformation, action: PayloadAction<number>) => {
-      const newData = {
-        ...state,
-        dday: state.dday.filter((_, index) => index !== action.payload),
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.dday = state.dday.filter((_, index) => index !== action.payload);
+      store.set('infoData', state);
     },
     addShortcut: (state: IInformation, action: PayloadAction<IShortcut>) => {
-      const newData = {
-        ...state,
-        shortcut: [...state.shortcut, action.payload],
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.shortcut = [...state.shortcut, action.payload];
+      store.set('infoData', state);
     },
     deleteShortcut: (state: IInformation, action: PayloadAction<number>) => {
-      const newData = {
-        ...state,
-        shortcut: state.shortcut.filter((_, index) => index !== action.payload),
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.shortcut = state.shortcut.filter((_, index) => index !== action.payload);
+      store.set('infoData', state);
     },
     resetBaekjoon: (state: IInformation) => {
-      const newData = {
-        ...state,
-        baekjoon: [],
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.baekjoon = [];
+      store.set('infoData', state);
     },
     resetDDay: (state: IInformation) => {
-      const newData = {
-        ...state,
-        dday: [],
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.dday = [];
+      store.set('infoData', state);
     },
     resetShortcut: (state: IInformation) => {
-      const newData = {
-        ...state,
-        shortcut: [],
-      };
-      store.set('infoData', newData);
-      return newData;
+      state.shortcut = [];
+      store.set('infoData', state);
     },
   },
 });
