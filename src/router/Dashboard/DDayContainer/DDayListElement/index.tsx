@@ -38,7 +38,7 @@ const DDayListElement = ({ item, index }: IProps) => {
       <p className={styles.ddayEmoji}>{item.icon}</p>
       <dl className={styles.ddayInfoContainer}>
         <dt>{item.title}</dt>
-        <dd>{dday > 0 ? `+${dday + 1}일` : `${dday}일`}</dd>
+        <dd>{dday > 0 ? `+${dday}일` : `${dday}일`}</dd>
       </dl>
       <button type='button' onClick={handleXButtonClick}>
         <XIcon />
