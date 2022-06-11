@@ -1,11 +1,11 @@
 import { AxiosError } from 'axios';
 import { useQuery } from 'react-query';
 
-import { getProblemID } from 'router/Dashboard/BaekjoonContainer/states/problemID';
-import { useAppSelector, useAppDispatch } from 'hooks';
-import { getBaekjoonProblem } from 'services';
+import { getProblemID } from 'states/problemID';
 import { addBaekjoon, getBaekjoonItems } from 'states/information';
 import { setError } from 'states/error';
+import { useAppSelector, useAppDispatch } from 'hooks';
+import { getBaekjoonProblem } from 'services';
 
 export const useFetchBaekjoon = () => {
   const dispatch = useAppDispatch();

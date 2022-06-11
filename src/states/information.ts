@@ -1,10 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import store from 'store';
 
+import { RootState } from 'states';
 import { IDDay, IInformation, IBaekjoonItem, IShortcut } from 'types/information.d';
 import { ddaySort } from 'utils/infoUtils';
-
-import { RootState } from 'states';
 
 export const INIT_INFO: IInformation = {
   baekjoon: [],

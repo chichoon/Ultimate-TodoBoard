@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { getBaekjoonItems } from 'states/information';
-import { setProblemID } from '../states/problemID';
+import { setProblemID } from 'states/problemID';
 import { Button } from 'components';
 
 import styles from './baekjoonAddFormElement.module.scss';

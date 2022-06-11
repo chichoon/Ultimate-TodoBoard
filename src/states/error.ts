@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from 'states';
-
 import { IError } from 'types/information';
 
 const INIT_ERROR: IError = {

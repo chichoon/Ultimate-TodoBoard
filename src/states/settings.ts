@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IWeather, ISettingsInformation } from 'types/settings.d';
+
 import { RootState } from 'states';
+import { IWeather, ISettingsInformation } from 'types/settings.d';
 
 export const INIT_SETTINGS: ISettingsInformation = {
   nickname: 'unknown',

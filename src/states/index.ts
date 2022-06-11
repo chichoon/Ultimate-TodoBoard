@@ -4,7 +4,7 @@ import todo from './todo';
 import information from './information';
 import error from './error';
 import settings from './settings';
-import problemID from 'router/Dashboard/BaekjoonContainer/states/problemID';
+import problemID from './problemID';
 
 export const store = configureStore({
   reducer: {
