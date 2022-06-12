@@ -1,17 +1,22 @@
+import { Suspense } from 'react';
 import cx from 'classnames';
+import { ErrorBoundary } from 'react-error-boundary';
 
-import { useAppSelector } from 'hooks';
-import { getSolvedacID } from 'states/settings';
+import { Error, Loading } from 'components';
+import SolvedacContainerInner from './SolvedacContainerInner';
 
 import styles from './solvedacContainer.module.scss';
 
 const SolvedacContainer = () => {
-  const solvedacID = useAppSelector(getSolvedacID);
+  const handleErrorFallback = ({ error }: { error: Error }) => <Error headerTitle='Solved.ac 현황' error={error} />;
+
   return (
     <li className={cx(styles.solvedacWrapper, 'listContainer')}>
-      <div className={cx('listContainerHeader')}>
-        <h3>{solvedacID}의 Solved.ac 현황</h3>
-      </div>
+      <ErrorBoundary fallbackRender={handleErrorFallback}>
+        <Suspense fallback={<Loading headerTitle='Solved.ac 현황' />}>
+          <SolvedacContainerInner />
+        </Suspense>
+      </ErrorBoundary>
     </li>
   );
 };

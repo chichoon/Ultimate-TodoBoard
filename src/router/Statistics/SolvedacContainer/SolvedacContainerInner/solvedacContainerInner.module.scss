@@ -1,0 +1,27 @@
+@use 'styles/constants/colors';
+@use 'styles/constants/levels';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/position';
+
+.solvedacContainerInnerWrapper {
+}
+
+.solvedacProfileImage {
+  @include position.relative((0));
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 2px solid;
+  border-radius: 50%;
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+
+  svg {
+    @include position.absolute((-1px, calc(50% - 15px)));
+    width: 30px;
+    height: 30px;
+  }
+}
