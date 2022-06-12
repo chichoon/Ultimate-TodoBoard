@@ -5,7 +5,7 @@
 .errorWrapper {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
-  height: 240px;
+  height: 50%;
 
   svg {
     width: 80px;
