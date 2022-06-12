@@ -1,14 +1,21 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/mixins/position';
+@use 'styles/mixins/responsive';
 @use 'styles/constants/colors';
 @use 'styles/constants/sizes';
 
 .todoElementWrapper {
   @include flexbox.flexbox(between, center);
-  flex-shrink: 0;
   width: 100%;
   padding: 0 16px;
+  overflow: hidden;
   border-bottom: 3px solid colors.$DARK30;
+}
+
+.todoElementLeft {
+  @include flexbox.flexbox(start, center);
+  flex-direction: row;
+  width: 70%;
 
   input[type='checkbox'] {
     margin-right: 32px;
@@ -17,7 +24,6 @@
   .todoTitle {
     flex: 1;
     height: 64px;
-    margin-right: 16px;
     overflow: hidden;
     line-height: 64px;
     color: colors.$DARK;
@@ -28,6 +34,11 @@
       text-decoration: line-through;
     }
   }
+}
+
+.todoElementRight {
+  @include flexbox.flexbox(center, center);
+  flex-direction: row;
 
   .todoDeadline {
     margin-right: 16px;
@@ -36,5 +47,13 @@
 
   svg > line {
     color: colors.$DARK;
+  }
+}
+
+@include responsive.after(SD) {
+  .todoElementWrapper {
+    .todoTitle {
+      width: 50%;
+    }
   }
 }

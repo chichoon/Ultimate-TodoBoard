@@ -42,12 +42,16 @@ const TodoListElement = ({ item, index, isDone }: IProps) => {
 
   return (
     <li className={styles.todoElementWrapper}>
-      <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
-      <p className={cx(styles.todoTitle, { [styles.isTodoDone]: isDone })}>{item.todoTitle}</p>
-      {item.deadLineDate && <p className={styles.todoDeadline}>{deadLineString}</p>}
-      <button type='button' onClick={handleXButtonClick}>
-        <XIcon />
-      </button>
+      <div className={styles.todoElementLeft}>
+        <input type='checkbox' checked={isDone} onChange={handleCheckboxChange} />
+        <p className={cx(styles.todoTitle, { [styles.isTodoDone]: isDone })}>{item.todoTitle}</p>
+      </div>
+      <div className={styles.todoElementRight}>
+        {item.deadLineDate && <p className={styles.todoDeadline}>{deadLineString}</p>}
+        <button type='button' onClick={handleXButtonClick}>
+          <XIcon />
+        </button>
+      </div>
       {isDeleteModalOpen && (
         <DeleteConfirmModal title={item.todoTitle} setIsDeleteModalOpen={setIsDeleteModalOpen}>
           <>
