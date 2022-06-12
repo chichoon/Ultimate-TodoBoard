@@ -4,8 +4,8 @@
 
 .resetAppListWrapper {
   @include flexbox.flexbox(between, center);
-  padding: 0 2rem;
-  margin-bottom: 1rem;
+  padding: 0 32px;
+  margin-bottom: 16px;
 
   p {
     color: colors.$DARK50;

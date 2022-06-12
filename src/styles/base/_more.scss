@@ -8,8 +8,8 @@
   outline: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  -ms-overflow-style: none; // IE and Edge
-  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   &::before,
   &::after {
@@ -17,7 +17,7 @@
   }
 
   &::-webkit-scrollbar {
-    display: none; // Chrome
+    display: none; /* Chrome */
   }
 }
 
@@ -32,8 +32,8 @@ a {
 select,
 input,
 textarea {
-  // @miriya (2022-03-03): 사파리에서 줌 시작되지 않는 최소 사이즈
-  // https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone
+  /* @miriya (2022-03-03): 사파리에서 줌 시작되지 않는 최소 사이즈
+   https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone */
   font-size: 16px;
 }
 
@@ -43,7 +43,7 @@ button {
 }
 
 input::-webkit-contacts-auto-fill-button {
-  // @miriya (2019-06-17): 사파리에서 자동완성 사람 아이콘 없앰
+  /* @miriya (2019-06-17): 사파리에서 자동완성 사람 아이콘 없앰 */
   position: absolute;
   right: 0;
   display: none !important;
@@ -72,4 +72,4 @@ input:is([type='button'], [type='submit'], [type='reset']),
 input[type='file']::file-selector-button,
 button {
   color: initial;
-} // override safari default blue
+} /* override safari default blue */

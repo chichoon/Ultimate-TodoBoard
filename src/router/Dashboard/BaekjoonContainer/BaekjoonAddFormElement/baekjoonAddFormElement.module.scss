@@ -8,8 +8,7 @@
   flex-direction: column;
 
   input[type='text'] {
-    margin: 0.8rem 0;
-    margin-right: 1rem;
+    margin-right: 16px;
   }
 
   span {
@@ -20,7 +19,7 @@
 
 @include responsive.after(SD) {
   .baekjoonInputWrapper > input[type='text'] {
-    width: 10rem;
-    margin-right: 1rem;
+    width: 160px;
+    margin-right: 16px;
   }
 }

@@ -6,12 +6,12 @@
 .loadingWrapper {
   @include flexbox.flexbox(center, center);
   flex-direction: column;
-  height: 15rem;
+  height: 240px;
 
   svg {
-    width: 5rem;
-    height: 5rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
     fill: colors.$DARK50;
     @include animation.rotateAnimation(0.5s);
   }

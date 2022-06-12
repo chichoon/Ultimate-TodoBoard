@@ -6,23 +6,23 @@
 .baekjoonElementWrapper {
   @include flexbox.flexbox(between, center);
   width: 100%;
-  padding-right: 1rem;
-  margin-bottom: 1rem;
+  padding-right: 16px;
+  margin-bottom: 16px;
   overflow: hidden;
   border-top: 3px solid;
   border-right: 3px solid;
-  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   a {
-    width: calc(100% - 3rem);
+    width: calc(100% - 48px);
   }
 
   svg {
-    width: 2rem;
+    width: 32px;
   }
 
   button > svg {
@@ -40,19 +40,19 @@
   overflow: hidden;
 
   p {
-    height: 4rem;
-    line-height: 4rem;
+    height: 64px;
+    line-height: 64px;
   }
 
   .baekjoonID {
-    width: 3rem;
-    margin: 0 0.5rem 0 1rem;
+    width: 48px;
+    margin: 0 8px 0 16px;
     color: colors.$DARK50;
   }
 
   .baekjoonProblem {
     flex: 1;
-    margin-right: 0.5rem;
+    margin-right: 8px;
     overflow: hidden;
     color: colors.$DARK;
     text-overflow: ellipsis;

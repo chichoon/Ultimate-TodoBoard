@@ -23,7 +23,7 @@
     grid-column: 1;
 
     .todoListWrapper {
-      max-height: calc(100% - 4rem);
+      max-height: calc(100% - 64px);
       overflow: auto;
     }
   }

@@ -6,28 +6,28 @@
 @use 'styles/constants/levels';
 
 .errorMessageWrapper {
-  @include position.absolute((4rem, 0, 0, calc(100% - 10rem)));
+  @include position.absolute((64px, 0, 0, calc(100% - 160px)));
   @include flexbox.flexbox(start, center);
   z-index: levels.$ERROR_MESSAGE;
-  width: 10rem;
+  width: 160px;
   height: 0;
   overflow: hidden;
-  line-height: 2rem;
+  line-height: 32px;
   color: colors.$WHITE;
   background-color: colors.$PRIMARY;
   transition: 0.2s;
 
   .errorCode {
     @include flexbox.flexbox(center, center);
-    width: 3rem;
+    width: 48px;
     font-size: sizes.$FONT_ACCENT;
     font-weight: 700;
     border-right: 2px solid colors.$WHITE;
   }
 
   .errorData {
-    width: 7rem;
-    padding: 0 0.5rem;
+    width: 112px;
+    padding: 0 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -41,11 +41,11 @@
     }
 
     20% {
-      height: 2rem;
+      height: 32px;
     }
 
     80% {
-      height: 2rem;
+      height: 32px;
     }
 
     100% {

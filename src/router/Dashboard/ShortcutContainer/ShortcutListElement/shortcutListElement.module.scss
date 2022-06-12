@@ -7,11 +7,11 @@
   @include flexbox.flexbox(between, center);
   flex-direction: row;
   width: 100%;
-  padding: 1rem;
-  margin: 0.5rem;
+  padding: 16px;
+  margin: 8px;
   background-color: colors.$WHITE;
   border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
 
   a {
     flex: 1;
@@ -24,7 +24,7 @@
   width: 100%;
 
   .shortcutTitle {
-    width: 7rem;
+    width: 112px;
     overflow: hidden;
     color: colors.$DARK;
     text-overflow: ellipsis;
@@ -32,23 +32,23 @@
   }
 
   img {
-    width: 3rem;
-    margin-right: 1rem;
+    width: 48px;
+    margin-right: 16px;
   }
 }
 
 .deleteButton line {
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   color: colors.$DARK;
 }
 
 @include responsive.after(SD) {
   .shortcutElementWrapper {
-    height: 4rem;
+    height: 64px;
 
     img {
-      width: 2rem;
+      width: 32px;
     }
   }
 }

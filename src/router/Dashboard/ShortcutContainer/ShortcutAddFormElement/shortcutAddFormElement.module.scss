@@ -6,10 +6,10 @@
 .shortcutInputWrapper {
   @include flexbox.flexbox(start, start);
   flex-direction: column;
-  margin-right: 1rem;
+  margin-right: 16px;
 
   & > input[type='text'] {
-    margin-bottom: 0.8rem;
+    margin-bottom: 16px;
   }
 
   span {
@@ -20,7 +20,7 @@
 
 @include responsive.after(SD) {
   .shortcutInputWrapper > input[type='text'] {
-    width: 20rem;
-    margin-right: 1rem;
+    width: 300px;
+    margin-right: 16px;
   }
 }

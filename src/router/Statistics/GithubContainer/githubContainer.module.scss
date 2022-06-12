@@ -12,11 +12,11 @@
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   width: 100%;
-  padding: 1rem 0;
+  padding: 16px 0;
 
   svg {
-    width: 5rem;
-    margin-bottom: 0.5rem;
+    width: 80px;
+    margin-bottom: 8px;
     fill: colors.$DARK;
   }
 

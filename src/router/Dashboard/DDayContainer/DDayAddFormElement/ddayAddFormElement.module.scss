@@ -8,7 +8,7 @@
   padding: 0;
 
   form > div {
-    margin-right: 1rem;
+    margin-right: 16px;
   }
 }
 
@@ -17,11 +17,11 @@
   flex-direction: column;
 
   & > input[type='text'] {
-    width: 4rem;
+    width: 64px;
 
     &:first-child {
-      width: 8rem;
-      margin-bottom: 0.5rem;
+      width: 128px;
+      margin-bottom: 8px;
     }
   }
 }
@@ -36,10 +36,10 @@
     & > button {
       @include flexbox.flexbox(center, center);
       flex-direction: row;
-      width: 6rem;
-      height: 2rem;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
+      width: 96px;
+      height: 32px;
+      padding: 8px;
+      margin-bottom: 8px;
       background-color: white;
       border-radius: sizes.$BORDER_RADIUS;
     }
@@ -49,16 +49,16 @@
     }
 
     svg {
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.5rem;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
       fill: colors.$WHITE;
       stroke: colors.$WHITE;
     }
   }
 
   input[type='text'] {
-    width: 7rem;
+    width: 112px;
     text-align: center;
   }
 }
@@ -70,8 +70,8 @@
     flex-flow: column;
 
     input[type='text'] {
-      width: 4rem;
-      max-width: 5rem;
+      width: 64px;
+      max-width: 80px;
       text-align: center;
 
       &:placeholder-shown {
@@ -80,7 +80,7 @@
     }
 
     .paletteButton > button {
-      max-width: 2rem;
+      max-width: 32px;
       padding: 0;
 
       & > svg {
@@ -96,8 +96,8 @@
 
 @include responsive.between(M, 480) {
   .inputs > input[type='text'] {
-    width: 5rem;
-    max-width: 5rem;
+    width: 80px;
+    max-width: 80px;
   }
 }
 
@@ -111,12 +111,12 @@
 
       input[type='text'] {
         margin: 0;
-        margin-right: 1rem;
+        margin-right: 16px;
       }
     }
 
     .paletteButton > button {
-      margin-right: 1rem;
+      margin-right: 16px;
       margin-bottom: 0;
     }
   }

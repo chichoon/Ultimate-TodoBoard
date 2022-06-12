@@ -15,17 +15,17 @@
 .formLeft {
   @include flexbox.flexbox(center, start);
   flex-direction: column;
-  margin-right: 1rem;
+  margin-right: 16px;
 
   .checkboxArea {
     @include flexbox.flexbox(center, start);
     flex-direction: row;
-    margin: 0.8rem 0;
+    margin: 16px 0;
 
     label {
-      margin-left: 0.5rem;
+      margin-left: 8px;
       font-size: sizes.$FONT_SMALL;
-      line-height: 1rem;
+      line-height: 16px;
       color: colors.$DARK30;
     }
   }
@@ -33,6 +33,6 @@
 
 @include responsive.after(SD) {
   .formLeft > input[type='text'] {
-    width: 10rem;
+    width: 160px;
   }
 }

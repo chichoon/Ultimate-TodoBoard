@@ -7,19 +7,19 @@
   @include flexbox.flexbox(between, center);
   flex-shrink: 0;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 16px;
   border-bottom: 3px solid colors.$DARK30;
 
   input[type='checkbox'] {
-    margin-right: 2rem;
+    margin-right: 32px;
   }
 
   .todoTitle {
     flex: 1;
-    height: 4rem;
-    margin-right: 1rem;
+    height: 64px;
+    margin-right: 16px;
     overflow: hidden;
-    line-height: 4rem;
+    line-height: 64px;
     color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -30,7 +30,7 @@
   }
 
   .todoDeadline {
-    margin-right: 1rem;
+    margin-right: 16px;
     color: colors.$DARK50;
   }
 

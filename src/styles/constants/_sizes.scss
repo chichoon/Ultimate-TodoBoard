@@ -1,14 +1,13 @@
-$LIST_CONTAINER: 20rem;
-$BORDER_RADIUS: 0.5rem;
-$CONTAINER_SHADOW: 0 0 1rem 0.05rem;
-$ELEMENT_SHADOW: 0 0 0.5rem 0.02rem;
+$LIST_CONTAINER: 320px;
+$BORDER_RADIUS: 8px;
+$CONTAINER_SHADOW: 0 0 4px 1px;
 
-// font sizes
-$FONT_TITLE: 1.5rem;
-$FONT_SUBTITLE: 1.3rem;
-$FONT_ACCENT: 1.1rem;
-$FONT_SMALL: 0.9rem;
+/* font sizes */
+$FONT_TITLE: 30px;
+$FONT_SUBTITLE: 24px;
+$FONT_ACCENT: 20px;
+$FONT_SMALL: 13px;
 
-// Responsive - SD Outlet Size
-$OUTLET_WIDTH: calc(100vw - 5rem);
-$OUTLET_HEIGHT: calc(100vh - 4rem);
+/* Responsive - SD Outlet Size */
+$OUTLET_WIDTH: calc(100vw - 80px);
+$OUTLET_HEIGHT: calc(100vh - 64px);

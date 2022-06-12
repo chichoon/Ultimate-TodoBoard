@@ -6,12 +6,12 @@
   .settingForm {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
-    padding: 0 2rem;
-    margin-bottom: 1rem;
+    padding: 0 32px;
+    margin-bottom: 16px;
 
     & > label,
     & > span {
-      width: 4rem;
+      width: 64px;
       overflow: hidden;
       color: colors.$DARK50;
       text-overflow: ellipsis;
@@ -20,7 +20,7 @@
 
     & > input[type='text'] {
       flex: 1;
-      max-width: 8rem;
+      max-width: 128px;
     }
   }
 
@@ -30,15 +30,15 @@
 
       & > label,
       & > span {
-        max-width: 4rem;
+        max-width: 64px;
       }
 
       input[type='text'] {
-        max-width: 6rem;
+        max-width: 96px;
       }
 
       & > button {
-        width: 3rem;
+        width: 48px;
       }
     }
   }

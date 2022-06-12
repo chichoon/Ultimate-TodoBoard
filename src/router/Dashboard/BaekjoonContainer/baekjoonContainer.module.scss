@@ -22,7 +22,7 @@
     grid-column: 2;
 
     .baekjoonItemsWrapper {
-      max-height: calc(100% - 4rem);
+      max-height: calc(100% - 64px);
       overflow: auto;
     }
   }

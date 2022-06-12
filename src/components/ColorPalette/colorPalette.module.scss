@@ -6,11 +6,11 @@
 
 .paletteWrapper {
   @include flexbox.flexbox(center, center);
-  @include position.absolute((2.3rem, 0, 0, 0));
+  @include position.absolute((36px, 0, 0, 0));
   z-index: levels.$DROPDOWN;
-  width: 10rem;
+  width: 160px;
   height: fit-content;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   background-color: colors.$WHITE;
   border: 1px solid colors.$DARK30;
   border-radius: sizes.$BORDER_RADIUS;
@@ -20,14 +20,14 @@
   @include flexbox.flexbox(center, center);
   flex-flow: wrap;
   align-content: center;
-  height: 4rem;
+  height: 64px;
 
   li {
-    height: 1.8rem;
+    height: 30px;
 
     button {
-      width: 1.8rem;
-      height: 1.8rem;
+      width: 30px;
+      height: 30px;
     }
   }
 }

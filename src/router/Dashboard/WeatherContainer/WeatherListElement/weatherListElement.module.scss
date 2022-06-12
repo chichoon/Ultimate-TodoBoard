@@ -7,11 +7,11 @@
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   overflow: hidden;
-  border-left: 1rem solid;
+  border-left: 16px solid;
   border-radius: sizes.$BORDER_RADIUS;
-  box-shadow: sizes.$ELEMENT_SHADOW colors.$DARK10;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
 
   &:last-child {
     margin-bottom: 0;
@@ -23,8 +23,8 @@
   flex-direction: row;
 
   img {
-    height: 4rem;
-    margin-right: 1rem;
+    height: 64px;
+    margin-right: 16px;
   }
 
   .weatherElementInfo {
@@ -41,7 +41,7 @@
     }
 
     .weatherElementImportant {
-      margin-top: 0.5rem;
+      margin-top: 8px;
       font-weight: 500;
       color: colors.$DARK;
     }
@@ -52,12 +52,12 @@
   @include flexbox.flexbox(center, center);
   flex-direction: row;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   overflow: hidden;
   color: colors.$DARK30;
 
   .weatherTemperature {
-    margin: 0 0.3rem 0 0;
+    margin: 0 10px 0 0;
   }
 
   p {
@@ -70,10 +70,9 @@
 @include responsive.after(SD) {
   .weatherElementWrapper {
     flex-shrink: 0;
-    width: 20rem;
-    height: 6rem;
-    padding: 0 1rem;
-    margin: 0 0.5rem 0 0;
+    height: 96px;
+    padding: 0 16px;
+    margin: 0 8px 0 0;
 
     &:last-child {
       margin: 0;
@@ -90,6 +89,6 @@
   .weatherElementWrapper {
     width: 100%;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 }

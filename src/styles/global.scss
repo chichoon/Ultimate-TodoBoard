@@ -5,11 +5,9 @@
 @use 'styles/mixins/position';
 
 .listContainer {
-  @include flexbox.flexbox(start, between);
-  flex-direction: column;
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 16px;
+  margin-bottom: 16px;
   background-color: colors.$WHITE;
   border-radius: sizes.$BORDER_RADIUS;
   box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
@@ -17,13 +15,13 @@
 
 .listContainerHeader,
 .listContainerAddHeader {
-  padding-bottom: 1rem;
+  padding-bottom: 16px;
 
   h3 {
     overflow: hidden;
     font-size: sizes.$FONT_ACCENT;
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 24px;
     color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -50,8 +48,8 @@
 
 .listContainerAddForm {
   width: 100%;
-  padding: 0.5rem 0 1rem;
-  margin-bottom: 0.5rem;
+  padding: 8px 0 16px;
+  margin-bottom: 8px;
   border-bottom: 2px solid colors.$DARK30;
 
   form {
@@ -61,8 +59,8 @@
 }
 
 input[type='checkbox'] {
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   border: 1px solid colors.$DARK30;
 
   &:checked {
@@ -89,9 +87,9 @@ input[type='text'] {
   }
 
   .listContainerAddForm {
-    @include position.absolute((3.5rem, 0, _, _));
+    @include position.absolute((50px, 0, _, _));
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 16px 32px;
     margin: 0;
     background-color: colors.$WHITE;
   }

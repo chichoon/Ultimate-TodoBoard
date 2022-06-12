@@ -8,15 +8,15 @@
   @include flexbox.flexbox(start, center);
   z-index: levels.$TOPNAV;
   width: 100vw;
-  height: 4rem;
+  height: 64px;
   color: colors.$DARK;
   background-color: colors.$WHITE;
 
   .navigationBarIcon {
     @include flexbox.flexbox(center, center);
-    width: 5rem;
-    min-width: 5rem;
-    height: 4rem;
+    width: 80px;
+    min-width: 80px;
+    height: 64px;
     background: linear-gradient(colors.$PRIMARY, colors.$ICON_GRADIENT);
 
     svg {
@@ -27,7 +27,7 @@
   .navigationBarRight {
     @include flexbox.flexbox(between, center);
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 16px;
 
     h3 {
       font-size: sizes.$FONT_ACCENT;
@@ -39,12 +39,12 @@
     }
 
     .hamburgerButton {
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
 
       svg {
-        width: 2rem;
-        height: 2rem;
+        width: 32px;
+        height: 32px;
 
         path {
           fill: colors.$DARK50;
