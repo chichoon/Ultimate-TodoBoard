@@ -38,19 +38,18 @@
     grid-column: 1 / 3;
   }
 
+  .githubGraph {
+    width: 100%;
+    height: 80%;
+  }
+
   .githubGraph > img {
     height: 100%;
   }
 }
 
-@include responsive.after(810px) {
+@include responsive.after(1024px) {
   .githubGraph {
-    @include flexbox.flexbox(center, center);
-  }
-}
-
-@include responsive.after(HD) {
-  .githubWrapper {
-    grid-column: 1;
+    justify-content: center;
   }
 }
