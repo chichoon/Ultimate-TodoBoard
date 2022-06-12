@@ -1,16 +1,24 @@
+import cx from 'classnames';
+
 import { ErrorIcon } from 'assets/svgs';
 import styles from './error.module.scss';
 
 interface IProps {
+  headerTitle: string;
   error: Error;
 }
 
-const Error = ({ error }: IProps) => {
+const Error = ({ headerTitle, error }: IProps) => {
   return (
-    <div className={styles.errorWrapper}>
-      <ErrorIcon />
-      <h3>{error.message}</h3>
-    </div>
+    <>
+      <div className={cx('listContainerHeader')}>
+        <h3>{headerTitle}</h3>
+      </div>
+      <div className={styles.errorWrapper}>
+        <ErrorIcon />
+        <h3>{error.message}</h3>
+      </div>
+    </>
   );
 };
 
