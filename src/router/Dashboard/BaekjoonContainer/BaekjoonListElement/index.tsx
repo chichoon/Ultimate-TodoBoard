@@ -4,10 +4,9 @@ import cx from 'classnames';
 import { useAppDispatch } from 'hooks';
 import { IBaekjoonItem } from 'types/information';
 import { deleteBaekjoon } from 'states/information';
-import { Button, DeleteConfirmModal } from 'components';
+import { SolvedacIcon, Button, DeleteConfirmModal } from 'components';
 
 import styles from './baekjoonListElement.module.scss';
-import solvedacIcon from './solvedacIcon';
 import { XIcon } from 'assets/svgs';
 
 interface IProps {
@@ -37,7 +36,7 @@ const BaekjoonListElement = ({ item, index }: IProps) => {
     <li className={cx(styles.baekjoonElementWrapper, tierClass)}>
       <a href={`https://www.acmicpc.net/problem/${item.id}`} target='_blank' rel='noreferrer'>
         <div className={styles.baekjoonElementLeft}>
-          {solvedacIcon(item.tier)}
+          <SolvedacIcon tier={item.tier} />
           <p className={styles.baekjoonID}>{item.id}</p>
           <p className={styles.baekjoonProblem}>{item.problem}</p>
         </div>
