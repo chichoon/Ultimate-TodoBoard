@@ -1,0 +1,30 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+
+.calendarInner {
+  @include flexbox.flexbox(center, start);
+  height: 80%;
+  overflow: auto;
+
+  .calendar {
+    width: 100%;
+    border: none;
+  }
+}
+
+@include responsive.after(SD) {
+  .calendarWrapper {
+    grid-row: 2 / 5;
+    grid-column: 1;
+  }
+
+  .githubGraph > img {
+    height: 100%;
+  }
+}
+
+@include responsive.after(810px) {
+  .githubGraph {
+    @include flexbox.flexbox(center, center);
+  }
+}

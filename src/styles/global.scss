@@ -94,3 +94,8 @@ input[type='text'] {
     background-color: colors.$WHITE;
   }
 }
+
+/* stylelint-disable-next-line selector-class-pattern */
+.react-calendar__tile {
+  height: 80px;
+}
