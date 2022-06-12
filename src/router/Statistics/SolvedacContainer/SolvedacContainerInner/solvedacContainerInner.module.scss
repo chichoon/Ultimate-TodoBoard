@@ -4,14 +4,18 @@
 @use 'styles/mixins/position';
 
 .solvedacContainerInnerWrapper {
+  @include flexbox.flexbox(start, center);
+  flex-direction: column;
+  width: 100%;
 }
 
 .solvedacProfileImage {
   @include position.relative((0));
   width: 100px;
   height: 100px;
+  margin-bottom: 10px;
   overflow: hidden;
-  border: 2px solid;
+  border: 3px solid;
   border-radius: 50%;
 
   img {
@@ -23,5 +27,55 @@
     @include position.absolute((-1px, calc(50% - 15px)));
     width: 30px;
     height: 30px;
+  }
+}
+
+.solvedacContainerProfile {
+  @include flexbox.flexbox(center, center);
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  dl {
+    width: 120px;
+    margin-right: 20px;
+    color: colors.$DARK;
+
+    dt {
+      margin-bottom: 5px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    dd {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.solvedacRankings {
+  @include flexbox.flexbox(center, center);
+  flex-direction: row;
+
+  dl {
+    @include flexbox.flexbox(center, center);
+    flex-direction: row;
+    font-size: 14px;
+    color: colors.$DARK;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    dt {
+      margin-right: 5px;
+      color: colors.$DARK50;
+    }
   }
 }

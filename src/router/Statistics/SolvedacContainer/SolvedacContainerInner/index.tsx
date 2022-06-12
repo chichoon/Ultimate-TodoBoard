@@ -19,15 +19,23 @@ const SolvedacContainerInner = () => {
           <img src={data?.profileImageUrl} alt='solvedac-profile' />
           <SolvedacIcon tier={data?.tier ?? 0} />
         </div>
-
         <div className={styles.solvedacContainerProfile}>
           <dl>
-            <dt>{data?.handle}</dt>
-            <dd>{data?.bio}</dd>
+            <dt>{data?.handle ?? ''}</dt>
+            <dd>{data?.bio ?? ''}</dd>
           </dl>
           <img src={data?.badge.badgeImageUrl} alt='solvedac-profile-badge' />
         </div>
-        <div className={styles.solvedacRankings}>aaa</div>
+        <div className={styles.solvedacRankings}>
+          <dl>
+            <dt>푼 문제 수</dt>
+            <dd>{data?.solvedCount ?? 0}</dd>
+          </dl>
+          <dl>
+            <dt>순위</dt>
+            <dd>{data?.rank ?? 0}</dd>
+          </dl>
+        </div>
       </div>
     </>
   );
