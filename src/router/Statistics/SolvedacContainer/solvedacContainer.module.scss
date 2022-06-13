@@ -3,7 +3,7 @@
 @include responsive.after(SD) {
   .solvedacWrapper {
     flex: 1;
-    grid-row: 2;
+    grid-row: 2 / 4;
     grid-column: 2;
   }
 }
