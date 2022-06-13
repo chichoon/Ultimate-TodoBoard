@@ -40,12 +40,10 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(deadLine);
-    console.log(isDeadLine);
     dispatch(
       addTodo({
         title,
-        ...(isDeadLine && { deadlineDate: deadLine }),
+        ...(isDeadLine && { deadLineDate: deadLine }),
       })
     );
     setIsAddFormShown(false);

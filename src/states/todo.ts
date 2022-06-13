@@ -38,7 +38,16 @@ const todoSlice = createSlice({
       store.set('todoList', state);
     },
     setTodoActive: (state: ITodo, action: PayloadAction<number>) => {
-      state.items = [...state.items, state.itemsDone[action.payload]].sort(createDateSort).sort(deadlineDateSort);
+      state.items = [
+        ...state.items,
+        {
+          todoTitle: state.itemsDone[action.payload].todoTitle,
+          createDate: state.itemsDone[action.payload].createDate,
+          deadLineDate: state.itemsDone[action.payload].deadLineDate,
+        },
+      ]
+        .sort(createDateSort)
+        .sort(deadlineDateSort);
       state.itemsDone = state.itemsDone.filter((_, index) => index !== action.payload);
       store.set('todoList', state);
     },
