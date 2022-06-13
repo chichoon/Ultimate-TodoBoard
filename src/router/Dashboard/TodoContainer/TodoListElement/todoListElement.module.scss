@@ -8,8 +8,13 @@
   @include flexbox.flexbox(between, center);
   width: 100%;
   padding: 0 16px;
+  margin-bottom: 16px;
   overflow: hidden;
-  border-bottom: 3px solid colors.$DARK30;
+  box-shadow: sizes.$CONTAINER_SHADOW colors.$DARK10;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .todoElementLeft {
