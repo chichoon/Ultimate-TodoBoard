@@ -15,7 +15,7 @@ const DDayContainer = () => {
   const ddays = useAppSelector(getDDays);
 
   useEffect(() => {
-    if (ddays.length < 4) setIsAddButtonShown(true);
+    if (ddays.length < 10) setIsAddButtonShown(true);
     else setIsAddButtonShown(false);
   }, [ddays]);
 
