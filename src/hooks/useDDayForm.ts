@@ -1,12 +1,12 @@
-import { IDDay } from 'types/information.d';
-import { useClickAway, useMount } from 'react-use';
 import { useState, useRef, Dispatch, SetStateAction, ChangeEvent, FormEvent } from 'react';
+import { useClickAway, useMount } from 'react-use';
 import dayjs from 'dayjs';
 
-import { useAppDispatch } from 'hooks';
+import { IDDay } from 'types/information.d';
 import { addDDay } from 'states/information';
+import { useAppDispatch } from 'hooks';
 
-const today = new Date();
+const today = dayjs().format('YYYY-MM-DD');
 
 export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>) => {
   const [dday, setDDay] = useState<IDDay>({
@@ -28,8 +28,8 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
     });
   };
 
-  const handleDDayChange = (newDate: Date) => {
-    setDate(newDate);
+  const handleDDayChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setDate(e.currentTarget.value);
   };
 
   const handleColorSet = (newColor: string) => {
@@ -45,12 +45,7 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(
-      addDDay({
-        ...dday,
-        date: dayjs(date).format('YYYY-MM-DD'),
-      })
-    );
+    dispatch(addDDay({ ...dday, date }));
     setIsAddFormShown(false);
   };
 

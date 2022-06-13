@@ -5,11 +5,11 @@ import cx from 'classnames';
 
 import { addTodo } from 'states/todo';
 import { useAppDispatch } from 'hooks';
-import { Button, CustomDatePicker } from 'components';
+import { Button } from 'components';
 
 import styles from './todoAddFormElement.module.scss';
 
-const today = new Date();
+const today = dayjs().format('YYYY-MM-DD');
 
 interface IProps {
   setIsAddFormShown: Dispatch<SetStateAction<boolean>>;
@@ -30,8 +30,8 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
     setIsDeadline((prevState) => !prevState);
   };
 
-  const handleDeadlineChange = (date: Date) => {
-    setDeadLine(date);
+  const handleDeadlineChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setDeadLine(e.currentTarget.value);
   };
 
   useMount(() => {
@@ -40,10 +40,12 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(deadLine);
+    console.log(isDeadLine);
     dispatch(
       addTodo({
         title,
-        ...(isDeadLine && { deadLineDate: dayjs(deadLine).format('YYYY-MM-DD') }),
+        ...(isDeadLine && { deadlineDate: deadLine }),
       })
     );
     setIsAddFormShown(false);
@@ -69,7 +71,7 @@ const TodoAddFormElement = ({ setIsAddFormShown }: IProps) => {
             <input type='checkbox' name='isDeadLine' checked={isDeadLine} onChange={handleCheckboxChange} />
             <label htmlFor='isDeadLine'>마감일 추가하기</label>
           </div>
-          {isDeadLine && <CustomDatePicker selected={deadLine} onChange={handleDeadlineChange} />}
+          {isDeadLine && <input type='date' value={deadLine} min={today} onChange={handleDeadlineChange} />}
         </div>
         <Button type='submit'>추가</Button>
       </form>

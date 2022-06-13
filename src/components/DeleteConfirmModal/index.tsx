@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useRef } from 'react';
 import { useClickAway } from 'react-use';
 
-import ModalPortal from './modalPortal';
+import ModalPortal from 'components/modalPortal';
 
 import styles from './deleteConfirmModal.module.scss';
 

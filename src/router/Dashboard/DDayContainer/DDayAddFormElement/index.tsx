@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import cx from 'classnames';
 
 import { useDDayForm } from 'hooks';
-import { Button, ColorPalette, CustomDatePicker } from 'components';
+import { Button, ColorPalette } from 'components';
 
 import { ColorFillIcon } from 'assets/svgs';
 import styles from './ddayAddFormElement.module.scss';
@@ -55,7 +55,7 @@ const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
             </button>
             {isColorPaletteShown && <ColorPalette onColorSet={handleColorSet} />}
           </div>
-          <CustomDatePicker selected={date} onChange={handleDDayChange} />
+          <input type='date' value={date} onChange={handleDDayChange} />
         </div>
         <Button type='submit'>추가</Button>
       </form>
