@@ -94,6 +94,11 @@ input[type='text'] {
     margin: 0;
     background-color: colors.$WHITE;
   }
+
+  .listContainerHeader,
+  .listContainerAddHeader {
+    padding-bottom: 10px;
+  }
 }
 
 /* stylelint-disable-next-line selector-class-pattern */

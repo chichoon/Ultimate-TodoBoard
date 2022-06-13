@@ -4,11 +4,13 @@
 @use 'styles/mixins/responsive';
 
 .ddayListWrapper {
-  flex: 1;
+  @include flexbox.flexbox(start, start);
+  flex-direction: column;
   width: 100%;
+  max-height: sizes.$LIST_CONTAINER;
 
   & > ul {
-    @include flexbox.flexbox(start, start);
+    @include flexbox.flexbox(start, center);
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -21,8 +23,12 @@
     grid-row: 1;
     grid-column: 1 / 3;
 
-    .ddayListWrapper > ul {
-      flex-direction: row;
+    .ddayListWrapper {
+      height: 60%;
+
+      & > ul {
+        flex-direction: row;
+      }
     }
   }
 }

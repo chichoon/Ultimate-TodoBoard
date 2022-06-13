@@ -6,6 +6,7 @@
 .shortcutElementWrapper {
   @include flexbox.flexbox(between, center);
   flex-direction: row;
+  flex-shrink: 0;
   width: 100%;
   padding: 16px;
   margin-bottom: 16px;
@@ -30,6 +31,7 @@
   .shortcutTitle {
     width: calc(100% - 48px);
     overflow: hidden;
+    line-height: 20px;
     color: colors.$DARK;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -50,8 +52,10 @@
 @include responsive.after(SD) {
   .shortcutElementWrapper {
     width: 240px;
-    height: 64px;
+    height: 100%;
+    max-height: 64px;
     margin-top: 0;
+    margin-right: 8px;
     margin-bottom: 0;
 
     img {
