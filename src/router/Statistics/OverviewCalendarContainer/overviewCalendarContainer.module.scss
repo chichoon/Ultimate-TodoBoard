@@ -14,7 +14,7 @@
 
 @include responsive.after(SD) {
   .calendarWrapper {
-    grid-row: 2 / 6;
+    grid-row: 1 / 5;
     grid-column: 1;
   }
 
