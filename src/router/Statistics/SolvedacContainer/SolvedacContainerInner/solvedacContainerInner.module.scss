@@ -93,14 +93,14 @@
 @include responsive.after(SD) {
   .solvedacProfileImage {
     flex-shrink: 0;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
 
     svg {
-      @include position.absolute((-1px, calc(50% - 20px)));
-      width: 40px;
-      height: 40px;
+      @include position.absolute((-1px, calc(50% - 15px)));
+      width: 30px;
+      height: 30px;
     }
   }
 }
