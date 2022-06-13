@@ -16,10 +16,8 @@ const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
     paletteRef,
     inputRef,
     dday,
-    date,
     isColorPaletteShown,
     handleInputChange,
-    handleDDayChange,
     handleColorSet,
     handleColorButtonClick,
     handleFormSubmit,
@@ -55,7 +53,7 @@ const DDayAddForm = ({ setIsAddFormShown }: IProps) => {
             </button>
             {isColorPaletteShown && <ColorPalette onColorSet={handleColorSet} />}
           </div>
-          <input type='date' value={date} onChange={handleDDayChange} />
+          <input type='date' name='date' value={dday.date} onChange={handleInputChange} />
         </div>
         <Button type='submit'>추가</Button>
       </form>

@@ -11,11 +11,10 @@ const today = dayjs().format('YYYY-MM-DD');
 export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>) => {
   const [dday, setDDay] = useState<IDDay>({
     title: '',
-    date: '',
+    date: today,
     color: '#EB9694',
     icon: '',
   });
-  const [date, setDate] = useState(today);
   const [isColorPaletteShown, setIsColorPaletteShown] = useState(false);
   const paletteRef = useRef(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -26,10 +25,6 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
     setDDay((prevState) => {
       return { ...prevState, [name]: value };
     });
-  };
-
-  const handleDDayChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setDate(e.currentTarget.value);
   };
 
   const handleColorSet = (newColor: string) => {
@@ -45,7 +40,7 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addDDay({ ...dday, date }));
+    dispatch(addDDay(dday));
     setIsAddFormShown(false);
   };
 
@@ -61,10 +56,8 @@ export const useDDayForm = (setIsAddFormShown: Dispatch<SetStateAction<boolean>>
     paletteRef,
     inputRef,
     dday,
-    date,
     isColorPaletteShown,
     handleInputChange,
-    handleDDayChange,
     handleColorSet,
     handleColorButtonClick,
     handleFormSubmit,
