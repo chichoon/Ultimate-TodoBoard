@@ -6,7 +6,7 @@
   .settingForm {
     @include flexbox.flexbox(between, center);
     flex-direction: row;
-    padding: 0 32px;
+    padding: 0 24px;
     margin-bottom: 16px;
 
     & > label,

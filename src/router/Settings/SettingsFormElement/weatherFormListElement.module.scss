@@ -1,0 +1,69 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+@use 'styles/mixins/responsive';
+
+.weatherForm {
+  @include flexbox.flexbox(between, start);
+  flex-direction: row;
+  padding: 0 24px;
+  margin-bottom: 16px;
+}
+
+.weatherFormLeft {
+  @include flexbox.flexbox(between, start);
+  flex-direction: column;
+  width: 25%;
+  max-width: 120px;
+  height: 96px;
+  margin-right: 10px;
+
+  & > label {
+    overflow: hidden;
+    line-height: 40px;
+    color: colors.$DARK50;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.weatherFormMiddle {
+  @include flexbox.flexbox(between, start);
+  flex-direction: column;
+  max-width: 100px;
+  height: 96px;
+
+  & > div {
+    @include flexbox.flexbox(center, center);
+    height: 40px;
+
+    & > input[type='text'] {
+      width: 100%;
+    }
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@include responsive.between(0, 480px) {
+  .weatherForm {
+    padding: 0;
+
+    .weatherFormLeft {
+      max-width: 64px;
+    }
+
+    .weatherFormMiddle {
+      max-width: 96px;
+    }
+
+    button {
+      width: 48px;
+    }
+  }
+}

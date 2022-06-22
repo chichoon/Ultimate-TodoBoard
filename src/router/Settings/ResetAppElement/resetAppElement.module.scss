@@ -4,7 +4,7 @@
 
 .resetAppListWrapper {
   @include flexbox.flexbox(between, center);
-  padding: 0 32px;
+  padding: 0 24px;
   margin-bottom: 16px;
 
   p {
