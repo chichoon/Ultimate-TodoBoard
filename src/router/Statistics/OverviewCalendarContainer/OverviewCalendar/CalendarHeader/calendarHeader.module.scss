@@ -6,11 +6,15 @@
   @include flexbox.flexbox(between, center);
   flex-direction: row;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 
-  button,
-  span {
+  button {
     font-size: sizes.$FONT_ACCENT;
     color: colors.$DARK;
+  }
+
+  .calendarHeaderTitleButton {
+    width: 150px;
+    min-width: 120px;
   }
 }
