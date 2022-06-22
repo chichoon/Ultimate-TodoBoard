@@ -14,7 +14,6 @@ export const useFetchSolvedac = () => {
     suspense: true,
     retry: 1,
     useErrorBoundary: true,
-    enabled: solvedacID.length > 0,
   });
 
   return { data };
