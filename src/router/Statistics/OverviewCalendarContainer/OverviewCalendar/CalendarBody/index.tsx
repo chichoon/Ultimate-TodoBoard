@@ -1,7 +1,7 @@
 import { Dayjs } from 'dayjs';
 import cx from 'classnames';
 
-import { getMonthArray } from 'utils/dateUtils';
+import { getMonthArray } from 'utils/calendarUtils';
 
 import styles from './calendarBody.module.scss';
 
