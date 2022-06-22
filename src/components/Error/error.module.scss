@@ -6,17 +6,21 @@
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   height: 50%;
+  padding: 16px 0;
 
   svg {
     width: 80px;
-    height: 80px;
     margin-bottom: 16px;
-    fill: colors.$DARK50;
+    fill: colors.$DARK;
   }
 
   h3 {
+    width: 100%;
+    overflow: hidden;
     font-size: sizes.$FONT_ACCENT;
-    font-weight: 700;
     color: colors.$DARK;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
