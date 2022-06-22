@@ -3,7 +3,8 @@
 
 .calendarInner {
   @include flexbox.flexbox(center, start);
-  height: 80%;
+  height: 640px;
+  max-height: 640px;
   overflow: auto;
 
   .calendar {
@@ -16,15 +17,9 @@
   .calendarWrapper {
     grid-row: 1 / 5;
     grid-column: 1;
-  }
 
-  .githubGraph > img {
-    height: 100%;
-  }
-}
-
-@include responsive.after(810px) {
-  .githubGraph {
-    @include flexbox.flexbox(center, center);
+    .calendarInner {
+      height: calc(100% - 40px);
+    }
   }
 }
