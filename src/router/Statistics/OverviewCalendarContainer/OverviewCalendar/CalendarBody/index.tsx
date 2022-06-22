@@ -11,7 +11,7 @@ interface IProps {
 
 const CalendarBody = ({ date }: IProps) => {
   const monthArray = getMonthArray(date);
-  console.log(monthArray.numOfDate / 7);
+
   return (
     <div
       className={styles.calendarBodyWrapper}
