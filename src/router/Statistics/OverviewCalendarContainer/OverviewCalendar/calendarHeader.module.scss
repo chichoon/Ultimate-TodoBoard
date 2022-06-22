@@ -1,0 +1,16 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+@use 'styles/constants/sizes';
+
+.calendarHeaderWrapper {
+  @include flexbox.flexbox(between, center);
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 16px;
+
+  button,
+  span {
+    font-size: sizes.$FONT_ACCENT;
+    color: colors.$DARK;
+  }
+}
