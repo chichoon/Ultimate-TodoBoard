@@ -34,12 +34,8 @@ const settingsSlice = createSlice({
       state.githubID = action.payload;
       store.set('settingsData', state);
     },
-    setLatitude: (state: ISettingsInformation, action: PayloadAction<number>) => {
-      state.weather.lat = action.payload;
-      store.set('settingsData', state);
-    },
-    setLongitude: (state: ISettingsInformation, action: PayloadAction<number>) => {
-      state.weather.lon = action.payload;
+    setWeather: (state: ISettingsInformation, action: PayloadAction<IWeather>) => {
+      state.weather = action.payload;
       store.set('settingsData', state);
     },
     setSolvedacID: (state: ISettingsInformation, action: PayloadAction<string>) => {
@@ -49,16 +45,8 @@ const settingsSlice = createSlice({
   },
 });
 
-export const {
-  setSettings,
-  resetSettings,
-  setNickname,
-  setTheme,
-  setGithubID,
-  setLatitude,
-  setLongitude,
-  setSolvedacID,
-} = settingsSlice.actions;
+export const { setSettings, resetSettings, setNickname, setTheme, setGithubID, setWeather, setSolvedacID } =
+  settingsSlice.actions;
 
 export default settingsSlice.reducer;
 

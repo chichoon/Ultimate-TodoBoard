@@ -7,6 +7,7 @@ import SettingsFormDropdown from './SettingsFormDropdown';
 
 import styles from './settingsFormElement.module.scss';
 import SettingsFormListElement from './SettingsFormListElement';
+import WeatherFormListElement from './WeatherFormListElement';
 
 const SettingsFormElement = () => {
   const {
@@ -24,8 +25,7 @@ const SettingsFormElement = () => {
     handleGithubSubmit,
     handleLatitudeChange,
     handleLongitudeChange,
-    handleLatitudeSubmit,
-    handleLongitudeSubmit,
+    handleWeatherSubmit,
     handleSolvedacChange,
     handleSolvedacSubmit,
   } = useSettingsForm();
@@ -46,20 +46,6 @@ const SettingsFormElement = () => {
       onChange: handleGithubChange,
     },
     {
-      name: 'latitude',
-      value: latitudeValue,
-      label: '위도',
-      onSubmit: handleLatitudeSubmit,
-      onChange: handleLatitudeChange,
-    },
-    {
-      name: 'longitude',
-      value: longitudeValue,
-      label: '경도',
-      onSubmit: handleLongitudeSubmit,
-      onChange: handleLongitudeChange,
-    },
-    {
       name: 'solvedacID',
       value: solvedacIDValue,
       label: 'Solved.ac ID',
@@ -67,6 +53,22 @@ const SettingsFormElement = () => {
       onChange: handleSolvedacChange,
     },
   ];
+
+  const latProps = {
+    name: 'latitude',
+    value: latitudeValue,
+    label: '위도',
+    onSubmit: handleWeatherSubmit,
+    onChange: handleLatitudeChange,
+  };
+
+  const lonProps = {
+    name: 'longitude',
+    value: longitudeValue,
+    label: '경도',
+    onSubmit: handleWeatherSubmit,
+    onChange: handleLongitudeChange,
+  };
 
   return (
     <li className={cx(styles.settingsFormWrapper, 'listContainer')}>
@@ -84,6 +86,7 @@ const SettingsFormElement = () => {
         {settingsFormListArray.map((formProps: ISettingsFormProps) => (
           <SettingsFormListElement key={`settings-list-${formProps.name}`} formProps={formProps} />
         ))}
+        <WeatherFormListElement latProps={latProps} lonProps={lonProps} />
       </ul>
     </li>
   );

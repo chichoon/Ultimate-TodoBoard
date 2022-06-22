@@ -8,10 +8,9 @@ import {
   getTheme,
   getNickname,
   getSolvedacID,
+  setWeather,
   setNickname,
   setTheme,
-  setLatitude,
-  setLongitude,
   setGithubID,
   setSolvedacID,
 } from 'states/settings';
@@ -55,14 +54,14 @@ export const useSettingsForm = () => {
     dispatch(setGithubID(githubIDValue));
   };
 
-  const handleLatitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleWeatherSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(setLatitude(Number(latitudeValue)));
-  };
-
-  const handleLongitudeSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(setLongitude(Number(longitudeValue)));
+    dispatch(
+      setWeather({
+        lat: Number(latitudeValue),
+        lon: Number(longitudeValue),
+      })
+    );
   };
 
   const handleSolvedacSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -93,9 +92,8 @@ export const useSettingsForm = () => {
     handleGithubChange,
     handleGithubSubmit,
     handleLatitudeChange,
-    handleLatitudeSubmit,
     handleLongitudeChange,
-    handleLongitudeSubmit,
+    handleWeatherSubmit,
     handleSolvedacChange,
     handleSolvedacSubmit,
   };
