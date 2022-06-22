@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import Router from 'router';
 
+import Router from 'router';
 import { store } from 'states';
 import reportWebVitals from './reportWebVitals';
 
