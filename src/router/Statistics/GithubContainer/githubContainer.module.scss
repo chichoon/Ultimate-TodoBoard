@@ -4,7 +4,7 @@
 @use 'styles/mixins/responsive';
 
 .githubGraph {
-  @include flexbox.flexbox(start, center);
+  @include flexbox.flexbox(start, start);
   overflow: auto;
 }
 
@@ -12,11 +12,11 @@
   @include flexbox.flexbox(center, center);
   flex-direction: column;
   width: 100%;
-  padding: 16px 0;
+  padding: 8px 0;
 
   svg {
-    width: 80px;
-    margin-bottom: 16px;
+    width: 64px;
+    margin-bottom: 8px;
     fill: colors.$DARK;
   }
 
