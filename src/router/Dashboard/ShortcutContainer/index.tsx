@@ -25,7 +25,7 @@ const ShortcutContainer = () => {
           <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
-      <div className={styles.shortcutItemsWrapper}>
+      <div className={cx(styles.shortcutItemsWrapper, 'listContainerBody')}>
         {isAddFormShown && <ShortcutAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {shortcutItems.map((item, index) => {

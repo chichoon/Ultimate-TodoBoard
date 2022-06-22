@@ -46,6 +46,12 @@
   }
 }
 
+.listContainerBody {
+  height: calc(100% - 40px);
+  max-height: 320px;
+  overflow: auto;
+}
+
 .listContainerAddForm {
   width: 100%;
   padding: 8px 0 16px;
@@ -57,6 +63,8 @@
     flex-direction: row;
   }
 }
+
+/* Default Input Designs */
 
 input[type='checkbox'] {
   width: 16px;
@@ -79,12 +87,18 @@ input[type='text'] {
   }
 }
 
+/* Responsive */
+
 @include responsive.after(SD) {
   .listContainer {
     @include position.relative((0, 0));
     width: 100%;
     margin: 0;
     overflow: auto;
+  }
+
+  .listContainerBody {
+    max-height: calc(100% - 40px);
   }
 
   .listContainerAddForm {
@@ -94,14 +108,4 @@ input[type='text'] {
     margin: 0;
     background-color: colors.$WHITE;
   }
-
-  .listContainerHeader,
-  .listContainerAddHeader {
-    padding-bottom: 10px;
-  }
-}
-
-/* stylelint-disable-next-line selector-class-pattern */
-.react-calendar__tile {
-  height: 80px;
 }

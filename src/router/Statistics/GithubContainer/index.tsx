@@ -25,7 +25,7 @@ const GithubContainer = () => {
       <div className={cx('listContainerHeader')}>
         <h3>{githubID}의 커밋 그래프</h3>
       </div>
-      <div className={styles.githubGraph}>
+      <div className={cx(styles.githubGraph, 'listContainerBody')}>
         {!isNotAvailable && (
           <img
             src={`https://ghchart.rshah.org/${THEME.lightblue}/${githubID}`}

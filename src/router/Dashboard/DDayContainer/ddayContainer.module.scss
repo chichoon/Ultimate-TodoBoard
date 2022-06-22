@@ -7,7 +7,6 @@
   @include flexbox.flexbox(start, start);
   flex-direction: column;
   width: 100%;
-  max-height: sizes.$LIST_CONTAINER;
 
   & > ul {
     @include flexbox.flexbox(start, center);
@@ -23,12 +22,8 @@
     grid-row: 1;
     grid-column: 1 / 3;
 
-    .ddayListWrapper {
-      height: 60%;
-
-      & > ul {
-        flex-direction: row;
-      }
+    .ddayListWrapper > ul {
+      flex-direction: row;
     }
   }
 }

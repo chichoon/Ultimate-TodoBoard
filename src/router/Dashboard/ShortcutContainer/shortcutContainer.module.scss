@@ -7,7 +7,6 @@
   @include flexbox.flexbox(start, start);
   flex-direction: column;
   width: 100%;
-  max-height: sizes.$LIST_CONTAINER;
 
   & > ul {
     @include flexbox.flexbox(start, center);
@@ -30,12 +29,8 @@
     grid-row: 4;
     grid-column: 1 / 4;
 
-    .shortcutItemsWrapper {
-      height: 60%;
-
-      & > ul {
-        flex-direction: row;
-      }
+    .shortcutItemsWrapper > ul {
+      flex-direction: row;
     }
   }
 }

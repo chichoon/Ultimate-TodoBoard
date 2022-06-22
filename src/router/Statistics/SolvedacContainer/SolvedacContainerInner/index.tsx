@@ -14,7 +14,7 @@ const SolvedacContainerInner = () => {
       <div className={cx('listContainerHeader')}>
         <h3>{data?.handle ?? '선택한 계정'}의 Solved.ac 현황</h3>
       </div>
-      <div className={styles.solvedacContainerInnerWrapper}>
+      <div className={cx(styles.solvedacContainerInnerWrapper, 'listContainerBody')}>
         <div className={cx(styles.solvedacProfileImage, tierClass)}>
           <img src={data?.profileImageUrl} alt='solvedac-profile' />
           <SolvedacIcon tier={data?.tier ?? 0} />

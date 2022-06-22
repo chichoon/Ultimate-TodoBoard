@@ -26,7 +26,7 @@ const BaekjoonContainer = () => {
           <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
-      <div className={styles.baekjoonItemsWrapper}>
+      <div className={cx(styles.baekjoonItemsWrapper, 'listContainerBody')}>
         {isAddFormShown && <BaekjoonAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {baekjoonItems.map((item, index) => {

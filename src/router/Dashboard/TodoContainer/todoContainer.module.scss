@@ -8,7 +8,6 @@
     @include flexbox.flexbox(start, center);
     flex-direction: column;
     width: 100%;
-    max-height: sizes.$LIST_CONTAINER;
 
     ul {
       width: 100%;
@@ -23,7 +22,6 @@
     grid-column: 1;
 
     .todoListWrapper {
-      max-height: calc(100% - 64px);
       overflow: auto;
     }
   }

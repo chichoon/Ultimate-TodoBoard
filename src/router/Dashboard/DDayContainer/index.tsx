@@ -31,7 +31,7 @@ const DDayContainer = () => {
           <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
-      <div className={styles.ddayListWrapper}>
+      <div className={cx(styles.ddayListWrapper, 'listContainerBody')}>
         {isAddFormShown && <DDayAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {ddays.map((item, index) => {

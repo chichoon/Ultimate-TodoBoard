@@ -25,7 +25,7 @@ const TodoContainer = () => {
           <PlusIcon className={cx('addFormIcon', { isRemoving: isAddFormShown })} />
         </button>
       </div>
-      <div className={styles.todoListWrapper}>
+      <div className={cx(styles.todoListWrapper, 'listContainerBody')}>
         {isAddFormShown && <TodoAddFormElement setIsAddFormShown={setIsAddFormShown} />}
         <ul>
           {todo.items.map((item, index) => {
