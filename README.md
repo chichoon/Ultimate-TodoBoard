@@ -228,207 +228,49 @@ $> yarn start
 .
 ├── assets
 │   ├── images
-│   │   ├── dawn.webp
-│   │   ├── milkyway.webp
-│   │   └── seashore.webp
 │   └── svgs
-│       ├── colorFillIcon.svg
-│       ├── dashboardIcon.svg
-│       ├── downArrowIcon.svg
-│       ├── errorIcon.svg
-│       ├── featherIcon.svg
-│       ├── hamburgerIcon.svg
-│       ├── index.ts
-│       ├── loadingIcon.svg
-│       ├── plusIcon.svg
-│       ├── settingsIcon.svg
-│       ├── solvedac
-│       │   ├── 0.svg
-│       │   ├── 1.svg
-│       │   ├── 10.svg
-│       │   ├── 11.svg
-│       │   ├── 12.svg
-│       │   ├── 13.svg
-│       │   ├── 14.svg
-│       │   ├── 15.svg
-│       │   ├── 16.svg
-│       │   ├── 17.svg
-│       │   ├── 18.svg
-│       │   ├── 19.svg
-│       │   ├── 2.svg
-│       │   ├── 20.svg
-│       │   ├── 21.svg
-│       │   ├── 22.svg
-│       │   ├── 23.svg
-│       │   ├── 24.svg
-│       │   ├── 25.svg
-│       │   ├── 26.svg
-│       │   ├── 27.svg
-│       │   ├── 28.svg
-│       │   ├── 29.svg
-│       │   ├── 3.svg
-│       │   ├── 30.svg
-│       │   ├── 4.svg
-│       │   ├── 5.svg
-│       │   ├── 6.svg
-│       │   ├── 7.svg
-│       │   ├── 8.svg
-│       │   ├── 9.svg
-│       │   └── index.ts
-│       ├── statisticsIcon.svg
-│       └── xIcon.svg
 ├── components
 │   ├── Button
-│   │   ├── button.module.scss
-│   │   └── index.tsx
 │   ├── ColorPalette
-│   │   ├── colorPalette.module.scss
-│   │   └── index.tsx
 │   ├── CustomDatePicker
-│   │   ├── customDatePicker.module.scss
-│   │   └── index.tsx
 │   ├── DeleteConfirmModal
-│   │   ├── deleteConfirmModal.module.scss
-│   │   ├── index.tsx
-│   │   └── modalPortal.ts
 │   ├── Error
-│   │   ├── error.module.scss
-│   │   └── index.tsx
 │   ├── Layout
 │   │   ├── ErrorMessage
-│   │   │   ├── errorMessage.module.scss
-│   │   │   └── index.tsx
 │   │   ├── SideNavigationBar
-│   │   │   ├── index.tsx
-│   │   │   └── sideNavigationBar.module.scss
 │   │   ├── TopNavigationBar
-│   │   │   ├── index.tsx
-│   │   │   └── topNavigationBar.module.scss
-│   │   ├── index.tsx
-│   │   └── layout.module.scss
 │   ├── Loading
-│   │   ├── index.tsx
-│   │   └── loading.module.scss
-│   └── index.ts
-├── global.d.ts
 ├── hooks
-│   ├── index.ts
-│   ├── useAppDispatch.ts
-│   ├── useAppSelector.ts
-│   ├── useDDayForm.ts
-│   ├── useFetchBaekjoon.ts
-│   ├── useFetchWeather.ts
-│   └── useSettingsForm.ts
-├── index.tsx
-├── react-app-env.d.ts
-├── reportWebVitals.ts
 ├── router
 │   ├── Dashboard
 │   │   ├── BaekjoonContainer
 │   │   │   ├── BaekjoonAddFormElement
-│   │   │   │   ├── baekjoonAddFormElement.module.scss
-│   │   │   │   └── index.tsx
 │   │   │   ├── BaekjoonListElement
-│   │   │   │   ├── baekjoonListElement.module.scss
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── solvedacIcon.tsx
-│   │   │   ├── baekjoonContainer.module.scss
-│   │   │   ├── index.tsx
 │   │   │   └── states
-│   │   │       └── problemID.ts
 │   │   ├── DDayContainer
 │   │   │   ├── DDayAddFormElement
-│   │   │   │   ├── ddayAddFormElement.module.scss
-│   │   │   │   └── index.tsx
 │   │   │   ├── DDayListElement
-│   │   │   │   ├── ddayListElement.module.scss
-│   │   │   │   └── index.tsx
-│   │   │   ├── ddayContainer.module.scss
-│   │   │   └── index.tsx
-│   │   ├── DashboardItem.tsx
 │   │   ├── ShortcutContainer
 │   │   │   ├── ShortcutAddFormElement
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── shortcutAddFormElement.module.scss
 │   │   │   ├── ShortcutListElement
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── shortcutListElement.module.scss
-│   │   │   ├── index.tsx
-│   │   │   └── shortcutContainer.module.scss
 │   │   ├── TodoContainer
 │   │   │   ├── TodoAddFormElement
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── todoAddFormElement.module.scss
 │   │   │   ├── TodoListElement
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── todoListElement.module.scss
-│   │   │   ├── index.tsx
-│   │   │   └── todoContainer.module.scss
 │   │   ├── WeatherContainer
-│   │   │   ├── WeatherContainerInner.tsx
 │   │   │   ├── WeatherListElement
-│   │   │   │   ├── index.tsx
-│   │   │   │   └── weatherListElement.module.scss
-│   │   │   ├── index.tsx
-│   │   │   └── weatherContainer.module.scss
-│   │   ├── dashboard.module.scss
-│   │   └── index.tsx
 │   ├── Settings
 │   │   ├── ResetAppElement
-│   │   │   ├── ResetAppListElement.tsx
-│   │   │   ├── index.tsx
-│   │   │   └── resetAppElement.module.scss
 │   │   ├── SettingsFormElement
-│   │   │   ├── SettingsFormDropdown.tsx
-│   │   │   ├── index.tsx
-│   │   │   ├── settingsFormDropdown.module.scss
-│   │   │   └── settingsFormElement.module.scss
-│   │   ├── index.tsx
-│   │   └── settings.module.scss
 │   ├── Statistics
 │   │   ├── GithubContainer
-│   │   │   ├── githubContainer.module.scss
-│   │   │   └── index.tsx
-│   │   ├── index.tsx
-│   │   └── statistics.module.scss
-│   └── index.tsx
 ├── services
-│   ├── getBaekjoonProblem.ts
-│   ├── getWeatherInfo.ts
-│   └── index.ts
-├── setupTests.ts
 ├── states
-│   ├── error.ts
-│   ├── index.ts
-│   ├── information.ts
-│   └── todo.ts
 ├── styles
 │   ├── base
-│   │   ├── _fonts.scss
-│   │   ├── _more.scss
-│   │   └── _reset.scss
-│   ├── colorSetting.scss
 │   ├── constants
-│   │   ├── _colors.scss
-│   │   ├── _levels.scss
-│   │   └── _sizes.scss
-│   ├── global.scss
-│   ├── icons.scss
-│   ├── index.scss
 │   └── mixins
-│       ├── _animation.scss
-│       ├── _flexbox.scss
-│       ├── _position.scss
-│       └── _responsive.scss
 ├── types
-│   ├── information.d.ts
-│   ├── todo.d.ts
-│   ├── weather.d.ts
-│   └── weatherResponse.d.ts
 └── utils
-    ├── infoUtils.ts
-    ├── todoUtils.ts
-    └── weatherUtils.ts
 ```
 
 ## 만든 사람
